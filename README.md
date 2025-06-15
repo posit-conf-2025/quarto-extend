@@ -1,4 +1,4 @@
-WORKSHOP_TITLE
+Extending Quarto
 ================
 
 ### posit::conf(2025)
