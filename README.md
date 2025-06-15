@@ -3,7 +3,7 @@ WORKSHOP_TITLE
 
 ### posit::conf(2025)
 
-by Sam Edwardes, and Michael Beigelmacher
+by Mine Çetinkaya-Rundel and Charlotte Wickham
 
 -----
 
