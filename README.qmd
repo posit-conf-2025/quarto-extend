@@ -1,0 +1,27 @@
+---
+format: gfm
+---
+
+Extending Quarto
+================
+
+### posit::conf(2025)
+
+by Mine Çetinkaya-Rundel and Charlotte Wickham
+
+-----
+
+:spiral_calendar: September 16, 2025  
+:alarm_clock:     09:00 - 17:00  
+:hotel:           ROOM TBD  
+:writing_hand:    [pos.it/conf](http://pos.it/conf)
+
+-----
+
+## Description
+
+{{< include _description.md >}}
+
+## Materials
+
+Materials for this workshop are available at [posit-conf-2025.github.io/posit-conf-2025](https://posit-conf-2025.github.io/posit-conf-2025).

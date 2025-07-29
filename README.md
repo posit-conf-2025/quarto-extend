@@ -1,49 +1,46 @@
-Extending Quarto
-================
+
+
+# Extending Quarto
 
 ### posit::conf(2025)
 
 by Mine Çetinkaya-Rundel and Charlotte Wickham
 
------
-
-INSTRUCTIONS FOR INSTRUCTORS: Please insert information about your workshop below. Then, add workshop content in the materials folder and link to each session’s materials from the schedule below. You are welcomed to add more rows to the schedule. We just ask that you take breaks at the specified times. Once you are done adding information, you can remove these instructions from the README.
-
-Alternatively, you can completely redo the organization of this repo  as a Quarto website or some other format you prefer to host your workshop materials. The only requirement is that your workshop materials are hosted here.
-
------
+------------------------------------------------------------------------
 
 :spiral_calendar: September 16, 2025  
-:alarm_clock:     09:00 - 17:00  
-:hotel:           ROOM TBD  
-:writing_hand:    [pos.it/conf](http://pos.it/conf)
+:alarm_clock: 09:00 - 17:00  
+:hotel: ROOM TBD  
+:writing_hand: [pos.it/conf](http://pos.it/conf)
 
------
+------------------------------------------------------------------------
 
 ## Description
 
-ADD WORKSHOP DESCRIPTION.
+In this workshop, we will dive deep into ways of customizing your Quarto
+outputs with tooling beyond built-in features. This workshop is designed
+for data scientists, analysts, and technical writers looking to extend
+Quarto’s capabilities to suit their unique workflows better.
 
-## Setup
+Participants will learn how to create custom extensions, including new
+formats, templates, and filters, to enhance their document production
+process. Through hands-on exercises and real-world examples, you’ll gain
+practical skills in:
 
-ADD INFORMATION YOU WANT LEARNERS TO HAVE / STEPS THEY WANT THEM TO COMPLETE PRIOR TO THE WORKSHOP. THIS COULD BE A LINK TO A THREAD ON POSIT COMMUNITY, PACKAGE INSTALL INSTRUCTIONS, HOW TO GET AN POSIT CLOUD ACCOUNT, ETC.
+- Developing and integrating custom formats to support diverse outputs
+  while reducing repetition across projects.
+- Substituting Quarto’s templates with your own to customize formats
+  beyond the built-in options.
+- Implementing filters to automate and streamline content
+  transformation.
 
-## Schedule
+By the end of the workshop, you will be able to leverage Quarto’s
+extensibility to create powerful, tailored solutions for your
+documentation needs. Whether you have just worked on a few Quarto
+projects or are an everyday user, this workshop will equip you with the
+tools and knowledge to take your document workflows to the next level.
 
-| Time          | Activity         |
-| :------------ | :--------------- |
-| 09:00 - 10:30 | Session 1        |
-| 10:30 - 11:00 | *Coffee break*   |
-| 11:00 - 12:30 | Session 2        |
-| 12:30 - 13:30 | *Lunch break*    |
-| 13:30 - 15:00 | Session 3        |
-| 15:00 - 15:30 | *Coffee break*   |
-| 15:30 - 17:00 | Session 4        |
+## Materials
 
-## Instructor(s)
-
-ADD INSTRUCTOR(S) INFO.
-
------
-
-![](https://i.creativecommons.org/l/by/4.0/88x31.png) This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+Materials for this workshop are available at
+[posit-conf-2025.github.io/posit-conf-2025](https://posit-conf-2025.github.io/posit-conf-2025).

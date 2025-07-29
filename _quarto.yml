@@ -1,0 +1,34 @@
+project:
+  type: website
+
+website:
+  page-navigation: true
+  site-url: https://posit-conf-2025.github.io/quarto-extend
+  title: "Extending Quarto"
+  description: "A one day workshop at posit::conf(2025) on creating custom extensions, including new formats, templates, and filters."
+  repo-url: https://github.com/posit-conf-2025/quarto-extend
+  page-footer:
+    center:
+      - icon: github
+        href: https://github.com/posit-conf-2025/quarto-extend
+    right: "This page is built with 💙 and [Quarto](https://quarto.org/)."
+  open-graph: true
+  sidebar:
+    id: main
+    logo: images/quarto-icon.svg
+    title: Extending Quarto
+    pinned: true
+    align: center
+    search: true
+    collapse-level: 2
+    contents:
+      - href: index.qmd
+        text: Home
+      - href: setup.qmd
+      - text: "---"
+      - auto: modules/
+    
+format:
+  html:
+    code-overflow: wrap
+
