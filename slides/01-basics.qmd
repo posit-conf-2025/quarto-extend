@@ -3,3 +3,173 @@ title: Extensions Basics
 format: revealjs
 ---
 
+
+## Add an extension
+
+From GitHub:
+
+```{.bash filename="Terminal"}
+quarto add 
+```
+
+Q: Something real like `quarto-ext/fontawesome` or something we craft explicitly for pedagogical purposes? Should be one of types we will focus on e.g. contributes `formats`, `filters` or `shortcodes`.
+
+
+::: aside
+
+You might see old `quarto install extension` commands in the wild. This is now deprecated and replaced by `quarto add`.
+
+:::
+
+## Your turn 
+
+* Can you tell from the prompts what kind of features this extension adds?
+
+* Where did the extension get installed to?
+
+* Compare the contents of the installed extension to the source at <> . What is different?
+
+
+## What happens?
+
+*   E.g. added a `clean` `format`:
+
+    ```markdown
+    The following changes will be made:
+    clean   [Install]   1.3.0 (format)
+    ```
+
+* Created `_extensions/`
+
+* Contents of source `_extensions/`is identical to local `_extensions/org/repo/`. 
+
+* Other files alongside `_extensions/` are not copied with `quarto add`, but would be had we done `quarto use template`.
+
+
+## What is a Quarto extension?
+
+> Quarto extensions are directories that contain an `_extensions` sub-directory with one or more extensions. The files above the `_extensions` directory are not installed, so typically contain `README` and `LICENSE` files, examples, test cases, etc.
+
+> Each extension is defined by its `_extension.yml` file which contains the metadata about the extension as well as the what items it contributes when used. For example, here is the _extension.yml for a filter extension:
+
+
+[`_extension.yml`](https://quarto.org/docs/extensions/distributing.html#extension.yml)
+
+
+## Maybe review process of `.qmd` to output document?
+
+Computation step: not this workshop
+
+Inside pandoc:
+
+  On AST: shortcodes, filters 
+
+  Writers: includes, partials, templates
+
+
+## Things extensions can contribute
+
+One extension can contribute one or many of these item.
+
+**Operates on abstract syntax tree (AST)**: shortcodes, filters
+
+**Sets YAML metadata**: custom formats, project types, metadata
+
+Other: RevealJS plugins
+
+
+## Custom Formats
+
+```{.yaml filename="_extensions/myformat/_extension.yml"}
+contributes:
+  formats:
+    html: 
+      # YAML options merged with the document metadata when this format is targeted
+```
+
+\
+
+```{.markdown filename="document.qmd"}
+---
+format: myformat-html
+---
+```
+
+
+Journal Article: Custom format(s) + resources (often a `.cls` or `.sty` from publisher) + templates/partials 
+
+
+## Project Types
+
+```{.yaml filename="_extensions/myproject/_extension.yml"}
+contributes:
+  project:
+    project: 
+      type: website # must inherit one of the built-in project types
+    website:
+      sidebar: 
+        search: true
+        style: docked
+    # Other YAML options merged with _quarto.yml metadata 
+```
+
+\
+
+```{.yaml filename="_quarto.yml"}
+project:
+  type: myproject  
+```
+
+## Metadata Extensions
+
+```{.yaml filename="_extensions/myproject/_extension.yml"}
+contributes:
+  metadata:
+    project: 
+      # YAML option merged with `project` metadata in _quarto.yml
+```
+
+Any project using this extension.
+
+## Shortcodes
+
+## Filters 
+
+
+## Reveal JS Plugins
+
+RevealJS Plugins <https://revealjs.com/plugins/>
+
+## Finding Extensions
+
+https://m.canouil.dev/quarto-extensions/
+
+## GitHub uses of `_extension.yml`:
+
+These include both use and definition of extensions. 
+
+1.3k examples of `formats` extensions:
+
+<https://github.com/search?q=path%3A%2F%28%5E%7C%5C%2F%29_extension%5C.yml%24%2F++formats%3A&type=code>
+
+400 examples of `filters` extensions:
+
+<https://github.com/search?q=path%3A%2F%28%5E%7C%5C%2F%29_extension%5C.yml%24%2F+%2F%5E++filters%3A%2F&type=code>
+
+256 examples of `shortcodes` extensions:
+
+<https://github.com/search?q=path%3A%2F%28%5E%7C%5C%2F%29_extension%5C.yml%24%2F++%2F%5E++shortcodes%3A%2F&type=code>
+
+132 examples of `project` extensions (includes some `metadata` ones):
+
+https://github.com/search?q=path%3A%2F%28%5E%7C%5C%2F%29_extension%5C.yml%24%2F+project%3A&type=code
+
+90 examples of `revealjs-plugins` extensions:
+
+<https://github.com/search?q=path%3A%2F%28%5E%7C%5C%2F%29_extension%5C.yml%24%2F++%2F%5E++revealjs-plugins%2F&type=code>
+
+10 examples of `metadata` extensions:
+
+<https://github.com/search?q=path%3A%2F%28%5E%7C%5C%2F%29_extension%5C.yml%24%2F+%22metadata%3A%22&type=code>
+
+

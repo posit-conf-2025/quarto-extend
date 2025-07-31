@@ -4,3 +4,14 @@ title: Extensions Basics
 
 {{< include _slides.md >}}
 
+## Learning Objectives
+
+By the end of this module, you will be able to:
+
+*   Discover and install extensions
+
+*   Compare and contrast the structure of the raw source and installed source for a Quarto extension
+
+*   Describe the types of extensions you can build 
+
+*   Create an custom format extension that sets format metadata 
