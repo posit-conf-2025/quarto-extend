@@ -1,6 +1,10 @@
 ---
 title: Extensions Basics
-format: revealjs
+format:  
+  revealjs: default
+  revealjs-dark:
+    brand-mode: dark
+    output-file: 01-basics-dark.html
 ---
 
 

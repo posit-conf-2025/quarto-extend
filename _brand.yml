@@ -9,8 +9,16 @@ color:
     gray: "#404041"
     black: "#151515"
     white: "#FFFFFF"
-  primary: blue
-  foreground: black
+    light-blue-2: "#A2B8CB"
+  primary: 
+    light: blue
+    dark: light-blue-2
+  foreground: 
+    light: black
+    dark: white
+  background:
+    light: white
+    dark: gray
 
 typography: 
   fonts:
