@@ -8,5 +8,20 @@ title: Filters and Shortcodes
 
 By the end of this module, you will be able to:
 
+* Describe how Pandoc filters modify the Abstract Syntax Tree (AST)
 
+* Write a simple Pandoc filter for an `Inline` element
 
+* Locate documentation for LUA modules provided by Pandoc and Quarto
+
+* Use spans or divs to target specific content for a filter
+
+* Specify an order to apply filters 
+
+* Describe how shortcodes modify the AST
+
+* Package a filter as a Quarto extension
+
+## Links
+
+* Positron/VS Code Lua extension: [OpenVSX](https://open-vsx.org/extension/sumneko/lua) or [MS Marketplace](https://marketplace.visualstudio.com/items?itemName=sumneko.lua)

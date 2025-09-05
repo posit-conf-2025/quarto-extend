@@ -1,0 +1,7 @@
+I *really* like bold and *really* like italics, and *really **really*** can't decide which to use.
+
+:::{.shout}
+And sometimes I **really** need to shout!
+
+It's like I want to `toupper()` everything!
+:::
