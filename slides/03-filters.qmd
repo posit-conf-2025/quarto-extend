@@ -3,3 +3,619 @@ title: Filters and Shortcodes
 format: revealjs
 ---
 
+# What are filters?
+
+## What are filters?
+
+> [Filters] allow the pandoc abstract syntax tree (AST) to be manipulated between the parsing and the writing phase.
+
+-- <https://pandoc.org/lua-filters.html>
+
+TODO: Re-use figure from earlier module showing the process of rendering a document. Zoom into Pandoc step. Show `.md`, read into AST, filters, new AST, write to output format. 
+
+Pandoc filter vs. Quarto filter
+
+## A document is composed of `Blocks`
+
+::: {.columns}
+::: {.column}
+```{.markdown .wrap filename="example.qmd"}
+{{< include _ast-diagrams/ast-1.qmd >}}
+```
+:::
+::: {.column}
+![](images/ast-1-blocks.png){}
+:::
+:::
+
+:::{.notes}
+Dive into the AST in increasing level of detail.
+
+A document is composed of a series of blocks.
+
+In the AST diagram, blocks stack vertically. 
+
+At the top-level this document has a `Para` block followed by a `Div` block.
+
+Some blocks can contain other blocks, like this `Div` contains two `Para` blocks. 
+
+
+:::
+
+## Some `Blocks` contain other `Blocks`
+
+
+## Some `Blocks` contain `Inlines`
+
+::: {.columns}
+::: {.column}
+```{.markdown .wrap filename="example.qmd"}
+I **really** like bold and *really* like italics, and *really **really*** can't decide which to use.
+
+...
+```
+:::
+::: {.column}
+![](images/ast-1-inlines-para-1.png){}
+:::
+:::
+
+:::{.notes}
+Blocks can also contain `Inlines`. 
+
+In the AST diagram, inlines flow horizontally.
+
+This first `Para` block contains a series of `Inline` elements.
+
+The most basic are `Str` and `Space`. 
+
+Inlines can also contain other inlines.
+E.g. a `Strong` that contains a single `Str`, an `Emph` that contains a `Str`, `Space` and `Strong`.
+
+`Str` and `Space` can't contain anything else, so are often collapsed in diagrams. 
+:::
+
+
+## Diagrams sometimes collapse `Str` and `Space`
+
+::: {.columns}
+::: {.column}
+```{.markdown .wrap filename="example.qmd"}
+{{< include _ast-diagrams/ast-1.qmd >}}
+```
+:::
+::: {.column}
+![](images/ast-1-inlines.png){}
+:::
+:::
+
+:::{.notes}
+Why is this useful? 
+
+1. To offer new output formats, Pandoc just needs a writer that converts the AST to that format.
+
+2. We can describe transformations of the document in a format independent way.
+
+:::
+
+## A filters function transforms a type of node
+
+E.g. `Emph` (TODO: fix screenshots to match example) 
+
+::: {.columns}
+::: {.column width="35%"}
+::: {.r-stack}
+![](images/ast-1-inlines.png){}
+
+![](images/filter-one-strong.jpg){.fragment}
+:::
+:::
+::: {.column width="30%"}
+::: {.r-stack}
+![](images/filter-input.jpg){.fragment}
+
+![](images/filter-input-output.jpg){.fragment}
+
+:::
+:::
+::: {.column width="35%"}
+![](images/filter-one-emph.jpg){.fragment}
+:::
+::: 
+
+
+:::{.notes}
+A function called on every instance of that type of node
+
+The input to the function is the node itself
+
+The output of the function replaces the node
+::: 
+
+
+## Output can be ... a single node of the same kind 
+
+E.g. A single `Inline`
+
+## Output can be ... an array of nodes of the same kind 
+
+E.g. An array of `Inline`, a.k.a an `Inlines`
+
+## Output can be ... an empty array 
+
+
+## Output can be ... `nil`
+
+
+## AST and filter review
+
+A document is an array of `Block` elements (e.g. `Para`, `Div`)
+
+Some `Block` elements contain other `Block` elements (e.g. `Div` can contain `Para`)
+
+Some `Block` elements contain `Inline` elements (e.g. `Para` contains `Str`)
+
+Some `Inline` elements contain other `Inline` elements (e.g. `Emph` contains `Str`, `Space`, `Strong`)
+
+A filter is a function that is called on every instance of a particular type of node.
+
+The input is the node itself, the output replaces the node.
+
+## Your Turn {.smaller}
+
+Take a look at the AST diagram on the next slide. 
+
+*   What are some other types of `Block` nodes?
+
+*   What are some other types of `Inline` nodes?
+
+*   If we wrote a filter for `Para`, how many times would it be called?
+
+*   If we wrote a filter for `Str`, which of the following would be affected?
+    
+    * The text `Introduction` in the heading
+    * The text `Lua` in the link text 
+    * The text `lua-filters` in the link URL
+    * the text `quarto` in the code block
+
+{{< countdown "6:00" >}}
+
+## AST
+
+[View Full Screen](_ast-diagrams/your-turn-1-ast.html)
+
+```{=html}
+<iframe src="_ast-diagrams/your-turn-1-ast.html" class = "ast-diagram"></iframe>
+```
+
+## Solution {visibility="hidden"}
+
+* Other `Block` nodes: `Header`, `BulletList`, `CodeBlock`
+
+* Other `Inline` nodes: `Link`, `Image`, `Code`
+
+* A filter function for `Para` would be called four times.
+
+* Affected by a `Str` filter function?
+
+    * The text `Introduction` in the heading. **Yes**
+    * The text `Lua` in the link text. **Yes**
+    * The test `lua-filters` in the link URL. **No**
+    * The text `quarto` in the code block. **No** 
+
+{{< countdown "6:00" >}}
+
+# Writing filters
+
+## Writing filters
+
+Filters are written in the programming language [Lua](https://www.lua.org/).
+
+A **filter** is a Lua file that contains one or more filter functions.
+
+A **filter function** is a function whose name is a type of node.
+
+## A filter function on `Emph` nodes
+
+::: {.columns}
+::: {.column}
+Define a function named `Emph`:
+
+```{.lua filename="no-change.lua"}
+Emph = function(el)
+  return nil
+end
+```   
+:::
+::: {.column  .fragment}
+To use the filter, specify it in the document header:
+
+```{.yaml filename="example.qmd"}
+---
+title: "Filter Basics"
+filters:
+  - no-change.lua
+---
+```
+:::
+:::
+
+[A filter function that returns `nil`, leaves the node unchanged.]{.fragment}
+
+::: {.aside}
+TODO: give path to example code
+:::
+
+## "Print" debugging 
+
+::: {.columns}
+::: {.column}
+```{.lua filename="no-change.lua" code-line-numbers="2,3"}
+Emph = function(el)
+  quarto.log.output("Here!")
+  quarto.log.output(el)
+  return nil
+end
+```
+
+`quarto.log.output()`: Positron/VS Code look in Terminal, RStudio look in Background Jobs.
+
+:::
+::: {.column}
+*  `Emph` filter function is called twice.
+* `el` is an `Emph` object, an example of an `Inline`. 
+* `el` contains a `content` field which is an `Inlines`.
+:::
+::: 
+
+::: aside
+<https://pandoc.org/lua-filters.html#type-emph>
+:::
+
+## Replace italic text with bold text
+
+::: {.columns}
+::: {.column}
+```{.lua filename="replace-emph.lua"}
+Emph = function(el)
+  return pandoc.Strong(el.content)
+end
+```   
+:::
+::: {.column}
+* [`pandoc.Strong()`](https://pandoc.org/lua-filters.html#pandoc.Strong) creates a `Strong` node another example of an `Inline` node.
+* `el.content` gets the `content` field from the `el` object.
+:::
+:::
+
+## Other similar types of `Inline` elements
+
+| Type             | Constructor | Fields |
+|------------------|-------------|--------|
+| Emph | `pandoc.Emph(content)` | `content`  |
+| SmallCaps | `pandoc.SmallCaps(content)` | `content`  |
+| Strikeout | `pandoc.Strikeout(content)` | `content`  |
+| Strong | `pandoc.Strong(content)` | `content`  |
+| Subscript | `pandoc.Subscript(content)` | `content`  |
+| Superscript | `pandoc.Superscript(content)` | `content`  |
+| Underline | `pandoc.Underline(content)` | `content`  |
+| Quoted | `pandoc.Quoted(quotetype, content)`,  `quotetype`: `SingleQuote` or `DoubleQuote` | `quotetype`, `content` |
+
+`content` is an `Inlines` object (a list of `Inline` elements).
+
+## Your Turn
+
+1. Write a filter, `replace-bold.lua`, that turns all bold text to underlined text.
+
+2. Add the `Emph` filter function from `replace-emph.lua` to `replace-bold.lua`. What happens?
+
+**Other challenges**: 
+
+* Write a filter that removes all bold and italic formatting, leaving just the text.
+
+* Write a filter that converts all double quotes to single quotes.
+
+{{< countdown "10:00" >}}
+
+## Solution {visibility="hidden"}
+
+```{.lua filename="replace-bold.lua"}
+Strong = function(el)
+  return pandoc.Underline(el.content)
+end
+```  
+
+
+## Solution {visibility="hidden"}
+
+```{.lua filename="replace-double-quotes.lua"}
+Quoted = function(el)
+  if el.quotetype == "DoubleQuote" then
+    return pandoc.Quoted("SingleQuote", el.content)
+  end
+end
+```
+
+## Valid return values
+
+A filter on an `Inline` must return either:
+
+* `nil`, node is unchanged, e.g. `no-change.lua`
+* an `Inline` which replaces the original, e.g. `replace-emph.lua`
+* a list of `Inline` (known as an `Inlines`)  which replaces the original, spliced into the list of its siblings.
+
+::: {.aside}
+For `Block` elements, replace `Inline` with `Block`, and `Inlines` with `Blocks`.
+:::
+
+
+## An `Inlines` with three elements
+
+::: {.columns}
+::: {.column}
+```{.lua .wrap filename="double-emph.lua"}
+Emph = function(el)
+  return pandoc.Inlines({
+    el, 
+    pandoc.Space(), 
+    el
+  })
+end
+```  
+:::
+::: {.column}
+> I **really** like bold and *really* *really* like italics, and *really **really*** *really **really*** can't decide which to use.
+:::
+:::
+
+
+## An empty list 
+
+::: {.columns}
+::: {.column}
+```{.lua filename="remove-emph.lua"}
+Emph = function(el)
+  return {}
+end
+```
+:::
+::: {.column}
+> I **really** like bold and like italics, and can't decide which to use.
+:::
+::: 
+
+::: aside
+
+Link to something that explains LUA tables
+
+:::
+
+
+## Common mistake: an array of `Inlines`
+
+This won't work because `el.content` is an `Inlines` object:
+
+```{.lua}
+return pandoc.Inlines({el.content, el.content})
+```
+  
+```{.default}
+Error running filter /Applications/quarto/share/filters/main.lua:
+Inline expected, got Inlines
+```
+
+Useful pattern: create an empty `Inlines` object, then use `insert` for `Inline`, and `extend` for `Inlines`:
+
+```{.lua}
+local result = pandoc.Inlines({})
+result:extend(el.content)
+result:insert(pandoc.Str(" "))
+result:extend(el.content)
+return result
+```
+
+::: aside
+
+Works with `Blocks` too.
+
+:::
+
+# Targeting specific content 
+
+## Targeting specific content 
+
+```{.markdown .wrap filename="target-span.qmd"}
+---
+title: "Filter Basics"
+filters:
+  - shout.lua
+---
+
+I **really** like bold and *really* like italics, and *really **really*** can't decide which to use.
+
+[And sometimes I **really** need to shout!]{.shout}
+```
+
+
+![](images/ast-target-span.png){}
+
+
+::: aside
+TODO: show path for example
+::: 
+
+## Smallcaps all spans with class `shout`
+
+```{.lua filename="shout.lua"}
+Span = function(el)
+  if el.classes:includes("shout") then
+    return pandoc.SmallCaps(el.content)
+  end  
+end
+```
+
+* Classes are in `el.classes` (also `el.identifier` and `el.attributes`).
+
+* `includes()` is a method on Pandoc lists <https://pandoc.org/lua-filters.html#methods-2>
+
+
+## Shouts all strings
+
+Shouts all strings:
+
+```{.lua filename="shout.lua"}
+Str = function(el)
+  return pandoc.Str(pandoc.text.upper(el.text))
+end
+```
+
+* `pandoc.text.upper()` converts a **string** to uppercase
+
+* Want to apply `pandoc.text.upper()`  to the `text` field of `Str` nodes
+
+## Use `walk` to apply a filter to children of a node
+
+```{.lua filename="shout.lua"}
+Span = function(el)
+  if el.classes:includes("shout") then
+    return el:walk({
+      Str = function (el) 
+        return pandoc.Str(pandoc.text.upper(el.text))
+      end
+    })
+  end  
+end
+```
+
+Each `Str` node inside the `Span` gets upper-cased.
+
+## Return `content` to remove `Span` (and `class`)
+
+Look at node diagram, note there's still a `Span` with `shout` class.
+
+```{.lua filename="shout.lua"}
+Span = function(el)
+  if el.classes:includes("shout") then
+    return el:walk({
+      Str = function (el) 
+        return pandoc.Str(pandoc.text.upper(el.text))
+      end
+    }).content
+  end  
+end
+```
+
+Look at node diagram, no `Span`.
+
+## Target content in a div
+
+What if you want to do this for a whole area of content?
+
+````{.markdown .wrap filename="target-div.qmd"}
+---
+title: "Filter Basics"
+filters:
+  - shout.lua
+---
+
+I **really** like bold and *really* like italics, and *really **really*** can't decide which to use.
+
+::: {.shout}
+And sometimes I **really** need to shout!
+
+```r
+library(scream)
+```
+:::
+````
+
+## Target content in a div 
+
+AST Diagram
+
+## Your Turn
+
+Confirm that if you edit `Span` to `Div` in `shout.lua`, the paragraph text gets "shouted".
+
+Using the AST, can you describe to your neighbor why the code in the code block is unaffected by the filter?
+
+**Challenges**: 
+
+* Modify the filter so that the code in the code block is also shouted. 
+
+{{< countdown "10:00" >}}
+
+## Solution {visibility="hidden"}
+
+```{.lua filename="shout.lua"}
+Div = function(el)
+  if el.classes:includes("shout") then
+    return el:walk({
+      Str = function (el) 
+        return pandoc.Str(pandoc.text.upper(el.text))
+      end,
+      CodeBlock = function (el) 
+        quarto.log.output(el)
+        return pandoc.CodeBlock(pandoc.text.upper(el.text), el.attr)
+      end
+    }).content
+  end  
+end
+```
+
+* Filter on `Span` nodes 
+
+* If the `Span` has class `shout`, then walk its children and apply a `Str` and `CodeBlock` filter. 
+
+# Filters in practice
+
+<!-- give example code/pseudo code mostly for reference -->
+
+## Constructing content in a filter
+
+Q: swap with `walk` example?
+
+## Format specific output
+
+## Controlling the order of filter functions
+
+E.g. filter sets
+
+## Controlling when a filter runs
+
+E.g. `pre-ast`, `post-ast`, `pre-quarto`, `post-quarto`,`pre-render`, `post-render`
+
+<https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/filters/main.lua>
+
+# Wrapping Up
+
+## Filters as extensions
+
+`quarto create extension filter` creates boilerplate. Drop your `.lua` files in. 
+
+Your users will still need to specify the filter in the document header.
+
+Might also be part of a custom format extension.
+
+::: aside
+
+<https://quarto.org/docs/extensions/filters.html#filter-extensions>
+
+:::
+
+## Shortcodes
+
+Lua functions that insert their output into the AST.
+
+Give example.
+
+## Caution: AST diagrams
+
+The AST diagrams you've seen are produced using Pandoc's version of markdown.
+
+Quarto specific features won't appear in the AST diagrams as you might expect. E.g. cross-references, executable code blocks (ones with `{`), shortcodes, callouts, etc..
+
+Use `quarto.log.output()` to examine the AST as it is when your filter is run.
+
+This will improve!
+
