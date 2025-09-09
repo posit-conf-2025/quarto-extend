@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker');
 
 /* Use .wrap on code cells to avoid scrollbars */
 .reveal pre.sourceCode.wrap code {
@@ -15,3 +16,15 @@
   border:none;
 }
 
+.box {
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.rotated-text {
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-size: 100px; 
+  display: inline-block;
+  transform: rotate(20deg);
+}

@@ -15,3 +15,8 @@ By the end of this module, you will be able to:
 *   Describe the types of extensions you can build 
 
 *   Create an custom format extension that sets format metadata 
+
+## Links
+
+* Get exercises: <https://github.com/posit-conf-2025/quarto-extend-exercises>
+
