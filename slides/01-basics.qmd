@@ -103,19 +103,20 @@ Introduce yourself to your neighbor(s):
 
 ## Goal: Reduce repetition
 
-Within documents, across documents, across projects, and across people
+Within documents, across documents, across projects, and across people 
 
-1. Quarto Extensions: the mechanism for sharing across projects and people. **This module**
+::: {.incremental}
+1. **Quarto Extensions:** the mechanism for sharing across projects and people. **This module** 
 
-2. Extending Quarto: entrypoints for customizing Quarto regardless of whether you bundle them as an extension. Most useful:
+2. **Extending Quarto:** entrypoints for customizing Quarto regardless of whether you bundle them as an extension. Most useful:
 
     * Partials and templates. **Next module**
     * Filters and shortcodes. **After lunch**
-  
+:::
 
 ## 
 
-::: {.r-fit-text}
+::: {.marker .r-fit-text}
 Let's jump in! 
 :::
 
@@ -264,7 +265,7 @@ quarto create extension
 
 # Extending Quarto
 
-## What happens when you `quarto render`?
+## What happens when render?
 
 ![](images/quarto-render-process.jpg){fig-alt="Diagram showing a `.qmd` file entering a box labelled Quarto, it flows through `knitr` to a `.html.md` file, then through Pandoc, exiting the box as a `.html` file along with a folder with the name `_files.`."}
 
@@ -402,7 +403,7 @@ Title slide in every slide deck controlled by metadata
 
 TODO: screenshot of title slide
 :::
-::: {.rotated-text .fragment data-fragment-index="3"}
+::: {.rotated-text .marker .fragment data-fragment-index="3"}
 Partial
 :::
 :::
@@ -416,7 +417,7 @@ Special participation slides combine boilerplate with custom content.
 
 TODO: screenshot of participation slide
 :::
-::: {.rotated-text .fragment data-fragment-index="4"}
+::: {.rotated-text .marker .fragment data-fragment-index="4"}
 Filter
 :::
 :::

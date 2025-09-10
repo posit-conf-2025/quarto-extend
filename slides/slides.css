@@ -21,8 +21,11 @@
   border-radius: 5px;
 }
 
-.rotated-text {
+.marker {
   font-family: "Permanent Marker", cursive;
+}
+
+.rotated-text {
   font-weight: 400;
   font-size: 100px; 
   display: inline-block;
