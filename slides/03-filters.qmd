@@ -18,13 +18,13 @@ Filters manipulate the AST between the parsing and the writing phase. First, und
 ## [AST: A document is composed of `Blocks`]{.small}
 
 ::: {.columns}
-::: {.column}
+::: {.column width="45%"}
 ```{.markdown .wrap filename="example.qmd"}
 {{< include _ast-diagrams/ast-1.qmd >}}
 ```
 :::
-::: {.column}
-![](images/ast-1-blocks.png){}
+::: {.column width="55%"}
+![](images/ast-1-blocks.png){.fragment}
 :::
 :::
 
@@ -45,12 +45,12 @@ Some blocks can contain other blocks, like this `Div` contains two `Para` blocks
 ## [AST: Some `Blocks` contain other `Blocks`]{.small}
 
 ::: {.columns}
-::: {.column}
+::: {.column width="45%"}
 ```{.markdown .wrap filename="example.qmd"}
 {{< include _ast-diagrams/ast-1.qmd >}}
 ```
 :::
-::: {.column}
+::: {.column width="55%"}
 ![](images/ast-1-blocks-highlight.png){}
 :::
 :::
@@ -58,14 +58,14 @@ Some blocks can contain other blocks, like this `Div` contains two `Para` blocks
 ## [AST: Some `Blocks` contain `Inlines`]{.small}
 
 ::: {.columns}
-::: {.column}
+::: {.column  width="45%"}
 ```{.markdown .wrap filename="example.qmd"}
 I **really** like bold and *really* like italics, and *really **really*** can't decide which to use.
 
 ...
 ```
 :::
-::: {.column}
+::: {.column  width="55%"}
 ![](images/ast-1-inlines-para-1.png){}
 :::
 :::
@@ -88,12 +88,12 @@ E.g. a `Strong` that contains a single `Str`, an `Emph` that contains a `Str`, `
 ## [AST: Diagrams might collapse `Str` and `Space`]{.small}
 
 ::: {.columns}
-::: {.column}
+::: {.column  width="45%"}
 ```{.markdown .wrap filename="example.qmd"}
 {{< include _ast-diagrams/ast-1.qmd >}}
 ```
 :::
-::: {.column}
+::: {.column  width="55%"}
 ![](images/ast-1-inlines.png){}
 :::
 :::
@@ -109,28 +109,36 @@ Why is this useful?
 
 ## [A filter function transforms a type of node]{.small}
 
-E.g. `Emph` (TODO: fix screenshots to match example) 
+E.g. A `Strong` filter function
 
-::: {.columns}
-::: {.column width="35%"}
-::: {.r-stack}
-![](images/ast-1-inlines.png){}
-
-![](images/filter-one-strong.jpg){.fragment}
-:::
-:::
-::: {.column width="30%"}
 ::: {.r-stack}
 ![](images/filter-input.jpg){.fragment}
 
 ![](images/filter-input-output.jpg){.fragment}
 
 :::
+
+
+::: {.columns}
+::: {.column width="47%"}
+::: {.r-stack}
+![](images/ast-1-para-1.png){.fragment}
+
+![](images/ast-1-para-1-strong.jpg){.fragment}
 :::
-::: {.column width="35%"}
-![](images/filter-one-emph.jpg){.fragment}
+:::
+::: {.column width="5%"}
+[→]{.fragment}
+:::
+::: {.column  width="48%"}
+::: {.r-stack}
+![](images/ast-2-para-1.png){.fragment}
+
+![](images/ast-2-para-1-strong.jpg){.fragment}
+:::
 :::
 ::: 
+
 
 
 :::{.notes}
@@ -142,29 +150,46 @@ The output of the function replaces the node
 ::: 
 
 
-## Output can be ... a single node of the same kind 
+## [Output: a single node of the same kind]{.small}
 
-E.g. A single `Inline`
+E.g. A single `Inline`. Node is replaced.
 
-## Output can be ... an array of nodes of the same kind 
+![](images/filter-input-output.jpg)
 
-E.g. An array of `Inline`, a.k.a an `Inlines`
-
-## Output can be ... an empty array 
+![](images/ast-2-para-1.png)
 
 
-## Output can be ... `nil`
+## [Output: an array of nodes of the same kind]{.small}
 
+E.g. An array of `Inline`, a.k.a an `Inlines`. Spliced in.
+
+![](images/filter-output-array.jpg){.r-stretch}
+
+![](images/ast-1-array.png)
+
+## [Output: an empty array]{.small}
+
+Node is removed
+
+![](images/filter-output-empty.jpg){.r-stretch}
+
+![](images/ast-1-empty.png)
+
+
+## [Output: `nil`]{.small}
+
+Node is unchanged
+
+![](images/filter-output-nil.jpg){.r-stretch}
+
+![](images/ast-1-nil.png)
 
 ## AST and filter review
 
-A document is an array of `Block` elements (e.g. `Para`, `Div`)
-
-Some `Block` elements contain other `Block` elements (e.g. `Div` can contain `Para`)
-
-Some `Block` elements contain `Inline` elements (e.g. `Para` contains `Str`)
-
-Some `Inline` elements contain other `Inline` elements (e.g. `Emph` contains `Str`, `Space`, `Strong`)
+* A document is an array of `Block` elements
+* Some `Block` elements contain other `Block` elements
+* Some `Block` elements contain `Inline` elements
+* Some `Inline` elements contain other `Inline` elements 
 
 A filter function is called on every instance of a particular type of node.
 
@@ -182,12 +207,17 @@ Take a look at the AST diagram on the next slide.
 
 *   If we wrote a filter for `Str`, which of the following would be affected?
     
+    * The text `Filter` in the title
     * The text `Introduction` in the heading
     * The text `Lua` in the link text 
     * The text `lua-filters` in the link URL
     * the text `quarto` in the code block
 
 {{< countdown "6:00" >}}
+
+::: footer
+`quarto-extend-exercises/03-filters/your-turns/1-explore-ast`
+:::
 
 ## AST
 
@@ -199,14 +229,14 @@ Take a look at the AST diagram on the next slide.
 
 ## Solution {visibility="hidden"}
 
-* Other `Block` nodes: `Header`, `BulletList`, `CodeBlock`
+* Other `Block` nodes: `Header`, `BulletList`, `CodeBlock`, `Meta` is special. 
 
 * Other `Inline` nodes: `Link`, `Image`, `Code`
 
 * A filter function for `Para` would be called four times.
 
 * Affected by a `Str` filter function?
-
+    * The text `Filter` in the title **Yes**
     * The text `Introduction` in the heading. **Yes**
     * The text `Lua` in the link text. **Yes**
     * The test `lua-filters` in the link URL. **No**
@@ -214,9 +244,15 @@ Take a look at the AST diagram on the next slide.
 
 {{< countdown "6:00" >}}
 
-## Filter examples
+## Problems solved with filters
 
+* Remove `# fmt: skip` comments from code cells. [Discussion](https://github.com/quarto-dev/quarto-cli/discussions/13335)
 
+* Add paragraph numbers. [Discussion](https://github.com/quarto-dev/quarto-cli/discussions/13177)
+
+* Collect all code chunks and display in a code appendix. [Discussion](https://github.com/quarto-dev/quarto-cli/discussions/12498)
+
+* Put the contents of an SVG image in a raw HTML block rather than using `<img>`. [Discussion](https://github.com/quarto-dev/quarto-cli/discussions/13251)
 
 # Writing filters
 
@@ -228,14 +264,14 @@ A **filter** is a Lua file that contains one or more filter functions.
 
 A **filter function** is a function whose name is a type of node.
 
-## A filter function on `Emph` nodes
+## A filter function on `Strong` nodes
 
 ::: {.columns}
 ::: {.column}
-Define a function named `Emph`:
+Define a function named `Strong`:
 
 ```{.lua filename="no-change.lua"}
-Emph = function(el)
+Strong = function(el)
   return nil
 end
 ```   
@@ -255,16 +291,16 @@ filters:
 
 [A filter function that returns `nil`, leaves the node unchanged.]{.fragment}
 
-::: {.aside}
-TODO: give path to example code
+::: {.footer}
+`quarto-extend-examples/03-filters/examples/1-writing-filters`
 :::
 
-## "Print" debugging 
+## Live Code: "Print" debugging 
 
 ::: {.columns}
 ::: {.column}
 ```{.lua filename="no-change.lua" code-line-numbers="2,3"}
-Emph = function(el)
+Strong = function(el)
   quarto.log.output("Here!")
   quarto.log.output(el)
   return nil
@@ -275,28 +311,25 @@ end
 
 :::
 ::: {.column}
-*  `Emph` filter function is called twice.
-* `el` is an `Emph` object, an example of an `Inline`. 
+*  `Strong` filter function is called twice.
+* `el` is an [`Strong`](https://pandoc.org/lua-filters.html#type-strong) object, an example of an `Inline`. 
 * `el` contains a `content` field which is an `Inlines`.
 :::
 ::: 
 
-::: aside
-<https://pandoc.org/lua-filters.html#type-emph>
-:::
 
-## Replace italic text with bold text
+## Live Code: Replace bold text with italic text
 
 ::: {.columns}
 ::: {.column}
-```{.lua filename="replace-emph.lua"}
-Emph = function(el)
-  return pandoc.Strong(el.content)
+```{.lua filename="replace-strong.lua"}
+Strong = function(el)
+  return pandoc.Emph(el.content)
 end
 ```   
 :::
 ::: {.column}
-* [`pandoc.Strong()`](https://pandoc.org/lua-filters.html#pandoc.Strong) creates a `Strong` node another example of an `Inline` node.
+* [`pandoc.Emph()`](https://pandoc.org/lua-filters.html#pandoc.Strong) creates a `Emph` node another example of an `Inline` node.
 * `el.content` gets the `content` field from the `el` object.
 :::
 :::
@@ -318,9 +351,9 @@ end
 
 ## Your Turn
 
-1. Write a filter, `replace-bold.lua`, that turns all bold text to underlined text.
+1. Write a filter, `replace-emph.lua`, that turns all italic text to underlined text.
 
-2. Add the `Emph` filter function from `replace-emph.lua` to `replace-bold.lua`. What happens?
+2. Add the `Strong` filter function from `replace-strong.lua` to `replace-emph.lua`. What happens?
 
 **Other challenges**: 
 
@@ -332,8 +365,8 @@ end
 
 ## Solution {visibility="hidden"}
 
-```{.lua filename="replace-bold.lua"}
-Strong = function(el)
+```{.lua filename="replace-emph.lua"}
+Emph = function(el)
   return pandoc.Underline(el.content)
 end
 ```  
@@ -354,7 +387,7 @@ end
 A filter on an `Inline` must return either:
 
 * `nil`, node is unchanged, e.g. `no-change.lua`
-* an `Inline` which replaces the original, e.g. `replace-emph.lua`
+* an `Inline` which replaces the original, e.g. `replace-strong.lua`
 * a list of `Inline` (known as an `Inlines`)  which replaces the original, spliced into its siblings.
 
 ::: {.aside}
@@ -366,8 +399,8 @@ For `Block` elements, replace `Inline` with `Block`, and `Inlines` with `Blocks`
 
 ::: {.columns}
 ::: {.column}
-```{.lua .wrap filename="double-emph.lua"}
-Emph = function(el)
+```{.lua .wrap filename="double-strong.lua"}
+Strong = function(el)
   return pandoc.Inlines({
     el, 
     pandoc.Space(), 
@@ -377,7 +410,7 @@ end
 ```  
 :::
 ::: {.column}
-> I **really** like bold and *really* *really* like italics, and *really **really*** *really **really*** can't decide which to use.
+> I **really** **really** like bold and *really* like italics, and *really **really** **really*** can't decide which to use.
 :::
 :::
 
@@ -386,8 +419,8 @@ end
 
 ::: {.columns}
 ::: {.column}
-```{.lua filename="remove-emph.lua"}
-Emph = function(el)
+```{.lua filename="remove-strong.lua"}
+Strong = function(el)
   return {}
 end
 ```
@@ -397,13 +430,6 @@ end
 :::
 ::: 
 
-::: aside
-
-Link to something that explains LUA tables
-
-:::
-
-
 ## Common mistake: an array of `Inlines`
 
 This won't work because `el.content` is an `Inlines` object:
@@ -411,31 +437,19 @@ This won't work because `el.content` is an `Inlines` object:
 ```{.lua}
 return pandoc.Inlines({el.content, el.content})
 ```
-  
+
+\ 
+
 ```{.default}
 Error running filter /Applications/quarto/share/filters/main.lua:
 Inline expected, got Inlines
 ```
 
-Useful pattern: create an empty `Inlines` object, then use `insert` for `Inline`, and `extend` for `Inlines`:
-
-```{.lua}
-local result = pandoc.Inlines({})
-result:extend(el.content)
-result:insert(pandoc.Str(" "))
-result:extend(el.content)
-return result
-```
-
-::: aside
-
-Works with `Blocks` too.
-
-:::
+See a useful pattern in the next section.
 
 # Targeting specific content 
 
-## Targeting specific content 
+## Live Code: Targeting specific content 
 
 ```{.markdown .wrap filename="target-span.qmd"}
 ---
@@ -449,18 +463,17 @@ I **really** like bold and *really* like italics, and *really **really*** can't 
 [And sometimes I **really** need to shout]{.shout}
 ```
 
-
 ![](images/ast-target-span.png){}
 
 
 ::: aside
-TODO: show path for example
+Example: `03-filters/examples/3-target-text`
 ::: 
 
-## Smallcaps all spans with class `shout`
+## Live Code: Smallcaps all spans with class `shout`
 
 ::: {.columns}
-::: {.column}
+::: {.column width="55%"}
 ```{.lua filename="shout.lua"}
 Span = function(el)
   if el.classes:includes("shout") then
@@ -469,20 +482,20 @@ Span = function(el)
 end
 ```
 :::
-::: {.column}
+::: {.column width="45%"}
 
 * Classes are in `el.classes` (also `el.identifier` and `el.attributes`).
 
-* `includes()` is a method on Pandoc lists <https://pandoc.org/lua-filters.html#methods-2>
+* `includes()` is a [method on Pandoc lists](https://pandoc.org/lua-filters.html#methods-2).
 
 :::
 ::: 
 
 
-## Constructing content in a filter
+## Live Code: Constructing content
 
 ::: {.columns}
-::: {.column}
+::: {.column width="55%"}
 ```{.lua filename="shout.lua"}
 Span = function(el)
   if el.classes:includes("shout") then
@@ -494,7 +507,7 @@ Span = function(el)
 end
 ```
 :::
-::: {.column}
+::: {.column width="45%"}
 A useful pattern:
 
 * Create an empty `Inlines` object
@@ -533,6 +546,12 @@ Simon says "Write a filter"
 
 **Challenge:** Instead of `Simon`, let the user specify the name as an attribute, e.g. `[Write a filter]{.says name="Charlotte"}`
 
+{{< countdown "10:00" >}}
+
+::: footer
+`03-filters/your-turns/3-simon-says`
+:::
+
 ## Solution {visibility="hidden"}
 
 ```{.lua filename="says.lua"}
@@ -554,7 +573,7 @@ end
 
 ::: {.columns}
 ::: {.column width="40%"}
-````{.markdown .wrap filename="target-div.qmd"}
+````{.markdown .wrap filename="target-div.qmd" code-line-numbers="|7,13"}
 ---
 title: "Filter Basics"
 filters:
@@ -806,7 +825,7 @@ Filter sequence in source:
 title: Shout
 author: Charlotte Wickham
 version: 1.0.0
-quarto-required: ">=99.9.0"
+quarto-required: ">=1.7.0"
 contributes:
   filters:
     - shout.lua
@@ -847,7 +866,7 @@ filters:
 title: Shouty
 author: Charlotte Wickham
 version: 1.0.0
-quarto-required: ">=99.9.0"
+quarto-required: ">=1.7.0"
 contributes:
   formats:
     html:

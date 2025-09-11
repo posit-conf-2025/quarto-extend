@@ -1,2 +1,6 @@
 css: slides.css
 code-line-numbers: false
+subtitle: "Extending Quarto workshop @ `posit::conf(2025)`"
+authors:
+  - Charlotte Wickham
+  - Mine Çetinkaya-Rundel
