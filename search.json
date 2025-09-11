@@ -39,49 +39,49 @@
     "href": "slides/03-filters.html#a-filter-function-transforms-a-type-of-node",
     "title": "Filters and Shortcodes",
     "section": "A filter function transforms a type of node",
-    "text": "A filter function transforms a type of node\nE.g. Emph (TODO: fix screenshots to match example)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA function called on every instance of that type of node\nThe input to the function is the node itself\nThe output of the function replaces the node"
+    "text": "A filter function transforms a type of node\nE.g. A Strong filter function\n\n\n\n\n\n\n\n\n\n\n\n→\n\n\n\n\n\n\n\nA function called on every instance of that type of node\nThe input to the function is the node itself\nThe output of the function replaces the node"
   },
   {
-    "objectID": "slides/03-filters.html#output-can-be-a-single-node-of-the-same-kind",
-    "href": "slides/03-filters.html#output-can-be-a-single-node-of-the-same-kind",
+    "objectID": "slides/03-filters.html#output-a-single-node-of-the-same-kind",
+    "href": "slides/03-filters.html#output-a-single-node-of-the-same-kind",
     "title": "Filters and Shortcodes",
-    "section": "Output can be … a single node of the same kind",
-    "text": "Output can be … a single node of the same kind\nE.g. A single Inline"
+    "section": "Output: a single node of the same kind",
+    "text": "Output: a single node of the same kind\nE.g. A single Inline. Node is replaced."
   },
   {
-    "objectID": "slides/03-filters.html#output-can-be-an-array-of-nodes-of-the-same-kind",
-    "href": "slides/03-filters.html#output-can-be-an-array-of-nodes-of-the-same-kind",
+    "objectID": "slides/03-filters.html#output-an-array-of-nodes-of-the-same-kind",
+    "href": "slides/03-filters.html#output-an-array-of-nodes-of-the-same-kind",
     "title": "Filters and Shortcodes",
-    "section": "Output can be … an array of nodes of the same kind",
-    "text": "Output can be … an array of nodes of the same kind\nE.g. An array of Inline, a.k.a an Inlines"
+    "section": "Output: an array of nodes of the same kind",
+    "text": "Output: an array of nodes of the same kind\nE.g. An array of Inline, a.k.a an Inlines. Spliced in."
   },
   {
-    "objectID": "slides/03-filters.html#output-can-be-an-empty-array",
-    "href": "slides/03-filters.html#output-can-be-an-empty-array",
+    "objectID": "slides/03-filters.html#output-an-empty-array",
+    "href": "slides/03-filters.html#output-an-empty-array",
     "title": "Filters and Shortcodes",
-    "section": "Output can be … an empty array",
-    "text": "Output can be … an empty array"
+    "section": "Output: an empty array",
+    "text": "Output: an empty array\nNode is removed"
   },
   {
-    "objectID": "slides/03-filters.html#output-can-be-nil",
-    "href": "slides/03-filters.html#output-can-be-nil",
+    "objectID": "slides/03-filters.html#output-nil",
+    "href": "slides/03-filters.html#output-nil",
     "title": "Filters and Shortcodes",
-    "section": "Output can be … nil",
-    "text": "Output can be … nil"
+    "section": "Output: nil",
+    "text": "Output: nil\nNode is unchanged"
   },
   {
     "objectID": "slides/03-filters.html#ast-and-filter-review",
     "href": "slides/03-filters.html#ast-and-filter-review",
     "title": "Filters and Shortcodes",
     "section": "AST and filter review",
-    "text": "AST and filter review\nA document is an array of Block elements (e.g. Para, Div)\nSome Block elements contain other Block elements (e.g. Div can contain Para)\nSome Block elements contain Inline elements (e.g. Para contains Str)\nSome Inline elements contain other Inline elements (e.g. Emph contains Str, Space, Strong)\nA filter function is called on every instance of a particular type of node.\nThe input is the node itself, the output replaces the node."
+    "text": "AST and filter review\n\nA document is an array of Block elements\nSome Block elements contain other Block elements\nSome Block elements contain Inline elements\nSome Inline elements contain other Inline elements\n\nA filter function is called on every instance of a particular type of node.\nThe input is the node itself, the output replaces the node."
   },
   {
     "objectID": "slides/03-filters.html#your-turn",
     "href": "slides/03-filters.html#your-turn",
     "title": "Filters and Shortcodes",
     "section": "Your Turn",
-    "text": "Your Turn\nTake a look at the AST diagram on the next slide.\n\nWhat are some other types of Block nodes?\nWhat are some other types of Inline nodes?\nIf we wrote a filter for Para, how many times would it be called?\nIf we wrote a filter for Str, which of the following would be affected?\n\nThe text Introduction in the heading\nThe text Lua in the link text\nThe text lua-filters in the link URL\nthe text quarto in the code block\n\n\n\n  \n    −\n    +\n \n 06:00"
+    "text": "Your Turn\nTake a look at the AST diagram on the next slide.\n\nWhat are some other types of Block nodes?\nWhat are some other types of Inline nodes?\nIf we wrote a filter for Para, how many times would it be called?\nIf we wrote a filter for Str, which of the following would be affected?\n\nThe text Filter in the title\nThe text Introduction in the heading\nThe text Lua in the link text\nThe text lua-filters in the link URL\nthe text quarto in the code block\n\n\n\n  \n    −\n    +\n \n 06:00\n \n\nquarto-extend-exercises/03-filters/your-turns/1-explore-ast"
   },
   {
     "objectID": "slides/03-filters.html#ast",
@@ -91,11 +91,11 @@
     "text": "AST\nView Full Screen"
   },
   {
-    "objectID": "slides/03-filters.html#filter-examples",
-    "href": "slides/03-filters.html#filter-examples",
+    "objectID": "slides/03-filters.html#problems-solved-with-filters",
+    "href": "slides/03-filters.html#problems-solved-with-filters",
     "title": "Filters and Shortcodes",
-    "section": "Filter examples",
-    "text": "Filter examples"
+    "section": "Problems solved with filters",
+    "text": "Problems solved with filters\n\nRemove # fmt: skip comments from code cells. Discussion\nAdd paragraph numbers. Discussion\nCollect all code chunks and display in a code appendix. Discussion\nPut the contents of an SVG image in a raw HTML block rather than using &lt;img&gt;. Discussion"
   },
   {
     "objectID": "slides/03-filters.html#writing-filters-1",
@@ -105,25 +105,25 @@
     "text": "Writing filters\nFilters are written in the programming language Lua.\nA filter is a Lua file that contains one or more filter functions.\nA filter function is a function whose name is a type of node."
   },
   {
-    "objectID": "slides/03-filters.html#a-filter-function-on-emph-nodes",
-    "href": "slides/03-filters.html#a-filter-function-on-emph-nodes",
+    "objectID": "slides/03-filters.html#a-filter-function-on-strong-nodes",
+    "href": "slides/03-filters.html#a-filter-function-on-strong-nodes",
     "title": "Filters and Shortcodes",
-    "section": "A filter function on Emph nodes",
-    "text": "A filter function on Emph nodes\n\n\nDefine a function named Emph:\n\n\nno-change.lua\n\nEmph = function(el)\n  return nil\nend\n\n\nTo use the filter, specify it in the document header:\n\n\nexample.qmd\n\n---\ntitle: \"Filter Basics\"\nfilters:\n  - no-change.lua\n---\n\n\nA filter function that returns nil, leaves the node unchanged.\n\n\nTODO: give path to example code"
+    "section": "A filter function on Strong nodes",
+    "text": "A filter function on Strong nodes\n\n\nDefine a function named Strong:\n\n\nno-change.lua\n\nStrong = function(el)\n  return nil\nend\n\n\nTo use the filter, specify it in the document header:\n\n\nexample.qmd\n\n---\ntitle: \"Filter Basics\"\nfilters:\n  - no-change.lua\n---\n\n\nA filter function that returns nil, leaves the node unchanged.\n\nquarto-extend-examples/03-filters/examples/1-writing-filters"
   },
   {
-    "objectID": "slides/03-filters.html#print-debugging",
-    "href": "slides/03-filters.html#print-debugging",
+    "objectID": "slides/03-filters.html#live-code-print-debugging",
+    "href": "slides/03-filters.html#live-code-print-debugging",
     "title": "Filters and Shortcodes",
-    "section": "“Print” debugging",
-    "text": "“Print” debugging\n\n\n\n\nno-change.lua\n\nEmph = function(el)\n  quarto.log.output(\"Here!\")\n  quarto.log.output(el)\n  return nil\nend\n\nquarto.log.output(): Positron/VS Code look in Terminal, RStudio look in Background Jobs.\n\n\nEmph filter function is called twice.\nel is an Emph object, an example of an Inline.\nel contains a content field which is an Inlines.\n\n\n\n\nhttps://pandoc.org/lua-filters.html#type-emph"
+    "section": "Live Code: “Print” debugging",
+    "text": "Live Code: “Print” debugging\n\n\n\n\nno-change.lua\n\nStrong = function(el)\n  quarto.log.output(\"Here!\")\n  quarto.log.output(el)\n  return nil\nend\n\nquarto.log.output(): Positron/VS Code look in Terminal, RStudio look in Background Jobs.\n\n\nStrong filter function is called twice.\nel is an Strong object, an example of an Inline.\nel contains a content field which is an Inlines."
   },
   {
-    "objectID": "slides/03-filters.html#replace-italic-text-with-bold-text",
-    "href": "slides/03-filters.html#replace-italic-text-with-bold-text",
+    "objectID": "slides/03-filters.html#live-code-replace-bold-text-with-italic-text",
+    "href": "slides/03-filters.html#live-code-replace-bold-text-with-italic-text",
     "title": "Filters and Shortcodes",
-    "section": "Replace italic text with bold text",
-    "text": "Replace italic text with bold text\n\n\n\n\nreplace-emph.lua\n\nEmph = function(el)\n  return pandoc.Strong(el.content)\nend\n\n\n\npandoc.Strong() creates a Strong node another example of an Inline node.\nel.content gets the content field from the el object."
+    "section": "Live Code: Replace bold text with italic text",
+    "text": "Live Code: Replace bold text with italic text\n\n\n\n\nreplace-strong.lua\n\nStrong = function(el)\n  return pandoc.Emph(el.content)\nend\n\n\n\npandoc.Emph() creates a Emph node another example of an Inline node.\nel.content gets the content field from the el object."
   },
   {
     "objectID": "slides/03-filters.html#other-similar-types-of-inline-elements",
@@ -137,63 +137,63 @@
     "href": "slides/03-filters.html#your-turn-1",
     "title": "Filters and Shortcodes",
     "section": "Your Turn",
-    "text": "Your Turn\n\nWrite a filter, replace-bold.lua, that turns all bold text to underlined text.\nAdd the Emph filter function from replace-emph.lua to replace-bold.lua. What happens?\n\nOther challenges:\n\nWrite a filter that removes all bold and italic formatting, leaving just the text.\nWrite a filter that converts all double quotes to single quotes.\n\n\n  \n    −\n    +\n \n 10:00"
+    "text": "Your Turn\n\nWrite a filter, replace-emph.lua, that turns all italic text to underlined text.\nAdd the Strong filter function from replace-strong.lua to replace-emph.lua. What happens?\n\nOther challenges:\n\nWrite a filter that removes all bold and italic formatting, leaving just the text.\nWrite a filter that converts all double quotes to single quotes.\n\n\n  \n    −\n    +\n \n 10:00"
   },
   {
     "objectID": "slides/03-filters.html#valid-return-values",
     "href": "slides/03-filters.html#valid-return-values",
     "title": "Filters and Shortcodes",
     "section": "Valid return values",
-    "text": "Valid return values\nA filter on an Inline must return either:\n\nnil, node is unchanged, e.g. no-change.lua\nan Inline which replaces the original, e.g. replace-emph.lua\na list of Inline (known as an Inlines) which replaces the original, spliced into its siblings.\n\n\n\nFor Block elements, replace Inline with Block, and Inlines with Blocks."
+    "text": "Valid return values\nA filter on an Inline must return either:\n\nnil, node is unchanged, e.g. no-change.lua\nan Inline which replaces the original, e.g. replace-strong.lua\na list of Inline (known as an Inlines) which replaces the original, spliced into its siblings.\n\n\n\nFor Block elements, replace Inline with Block, and Inlines with Blocks."
   },
   {
     "objectID": "slides/03-filters.html#an-inlines-with-three-elements",
     "href": "slides/03-filters.html#an-inlines-with-three-elements",
     "title": "Filters and Shortcodes",
     "section": "An Inlines with three elements",
-    "text": "An Inlines with three elements\n\n\n\n\ndouble-emph.lua\n\nEmph = function(el)\n  return pandoc.Inlines({\n    el, \n    pandoc.Space(), \n    el\n  })\nend\n\n\n\nI really like bold and really really like italics, and really really really really can’t decide which to use."
+    "text": "An Inlines with three elements\n\n\n\n\ndouble-strong.lua\n\nStrong = function(el)\n  return pandoc.Inlines({\n    el, \n    pandoc.Space(), \n    el\n  })\nend\n\n\n\nI really really like bold and really like italics, and really really really can’t decide which to use."
   },
   {
     "objectID": "slides/03-filters.html#an-empty-list",
     "href": "slides/03-filters.html#an-empty-list",
     "title": "Filters and Shortcodes",
     "section": "An empty list",
-    "text": "An empty list\n\n\n\n\nremove-emph.lua\n\nEmph = function(el)\n  return {}\nend\n\n\n\nI really like bold and like italics, and can’t decide which to use.\n\n\n\n\nLink to something that explains LUA tables"
+    "text": "An empty list\n\n\n\n\nremove-strong.lua\n\nStrong = function(el)\n  return {}\nend\n\n\n\nI really like bold and like italics, and can’t decide which to use."
   },
   {
     "objectID": "slides/03-filters.html#common-mistake-an-array-of-inlines",
     "href": "slides/03-filters.html#common-mistake-an-array-of-inlines",
     "title": "Filters and Shortcodes",
     "section": "Common mistake: an array of Inlines",
-    "text": "Common mistake: an array of Inlines\nThis won’t work because el.content is an Inlines object:\nreturn pandoc.Inlines({el.content, el.content})\nError running filter /Applications/quarto/share/filters/main.lua:\nInline expected, got Inlines\nUseful pattern: create an empty Inlines object, then use insert for Inline, and extend for Inlines:\nlocal result = pandoc.Inlines({})\nresult:extend(el.content)\nresult:insert(pandoc.Str(\" \"))\nresult:extend(el.content)\nreturn result\n\n\nWorks with Blocks too."
+    "text": "Common mistake: an array of Inlines\nThis won’t work because el.content is an Inlines object:\nreturn pandoc.Inlines({el.content, el.content})\n \nError running filter /Applications/quarto/share/filters/main.lua:\nInline expected, got Inlines\nSee a useful pattern in the next section."
   },
   {
-    "objectID": "slides/03-filters.html#targeting-specific-content-1",
-    "href": "slides/03-filters.html#targeting-specific-content-1",
+    "objectID": "slides/03-filters.html#live-code-targeting-specific-content",
+    "href": "slides/03-filters.html#live-code-targeting-specific-content",
     "title": "Filters and Shortcodes",
-    "section": "Targeting specific content",
-    "text": "Targeting specific content\n\n\ntarget-span.qmd\n\n---\ntitle: \"Filter Basics\"\nfilters:\n  - shout.lua\n---\n\nI **really** like bold and *really* like italics, and *really **really*** can't decide which to use.\n\n[And sometimes I **really** need to shout]{.shout}\n\n\n\n\nTODO: show path for example"
+    "section": "Live Code: Targeting specific content",
+    "text": "Live Code: Targeting specific content\n\n\ntarget-span.qmd\n\n---\ntitle: \"Filter Basics\"\nfilters:\n  - shout.lua\n---\n\nI **really** like bold and *really* like italics, and *really **really*** can't decide which to use.\n\n[And sometimes I **really** need to shout]{.shout}\n\n\n\n\nExample: 03-filters/examples/3-target-text"
   },
   {
-    "objectID": "slides/03-filters.html#smallcaps-all-spans-with-class-shout",
-    "href": "slides/03-filters.html#smallcaps-all-spans-with-class-shout",
+    "objectID": "slides/03-filters.html#live-code-smallcaps-all-spans-with-class-shout",
+    "href": "slides/03-filters.html#live-code-smallcaps-all-spans-with-class-shout",
     "title": "Filters and Shortcodes",
-    "section": "Smallcaps all spans with class shout",
-    "text": "Smallcaps all spans with class shout\n\n\n\n\nshout.lua\n\nSpan = function(el)\n  if el.classes:includes(\"shout\") then\n    return pandoc.SmallCaps(el.content)\n  end  \nend\n\n\n\nClasses are in el.classes (also el.identifier and el.attributes).\nincludes() is a method on Pandoc lists https://pandoc.org/lua-filters.html#methods-2"
+    "section": "Live Code: Smallcaps all spans with class shout",
+    "text": "Live Code: Smallcaps all spans with class shout\n\n\n\n\nshout.lua\n\nSpan = function(el)\n  if el.classes:includes(\"shout\") then\n    return pandoc.SmallCaps(el.content)\n  end  \nend\n\n\n\nClasses are in el.classes (also el.identifier and el.attributes).\nincludes() is a method on Pandoc lists."
   },
   {
-    "objectID": "slides/03-filters.html#constructing-content-in-a-filter",
-    "href": "slides/03-filters.html#constructing-content-in-a-filter",
+    "objectID": "slides/03-filters.html#live-code-constructing-content",
+    "href": "slides/03-filters.html#live-code-constructing-content",
     "title": "Filters and Shortcodes",
-    "section": "Constructing content in a filter",
-    "text": "Constructing content in a filter\n\n\n\n\nshout.lua\n\nSpan = function(el)\n  if el.classes:includes(\"shout\") then\n    local result = pandoc.Inlines({})\n    result:extend(el.content)\n    result:insert(pandoc.Str(\"!\"))\n    return result\n  end  \nend\n\n\nA useful pattern:\n\nCreate an empty Inlines object\nUse extend() to add Inlines\nUse insert() to add Inline\n\n\n\n\nWorks with Block/Blocks too."
+    "section": "Live Code: Constructing content",
+    "text": "Live Code: Constructing content\n\n\n\n\nshout.lua\n\nSpan = function(el)\n  if el.classes:includes(\"shout\") then\n    local result = pandoc.Inlines({})\n    result:extend(el.content)\n    result:insert(pandoc.Str(\"!\"))\n    return result\n  end  \nend\n\n\nA useful pattern:\n\nCreate an empty Inlines object\nUse extend() to add Inlines\nUse insert() to add Inline\n\n\n\n\nWorks with Block/Blocks too."
   },
   {
     "objectID": "slides/03-filters.html#your-turn-simon-says",
     "href": "slides/03-filters.html#your-turn-simon-says",
     "title": "Filters and Shortcodes",
     "section": "Your turn: Simon says",
-    "text": "Your turn: Simon says\nComplete says.lua, a filter that:\n\ntargets Span elements with class says, and\nturns them into “Simon says” instructions.\n\n\n\nE.g. source:\n\n\nBefore\n\n[Write a filter]{.says}\n\n\nBecomes equivalent to:\n\n\nAfter\n\nSimon says \"Write a filter\"\n\n\nChallenge: Instead of Simon, let the user specify the name as an attribute, e.g. [Write a filter]{.says name=\"Charlotte\"}"
+    "text": "Your turn: Simon says\nComplete says.lua, a filter that:\n\ntargets Span elements with class says, and\nturns them into “Simon says” instructions.\n\n\n\nE.g. source:\n\n\nBefore\n\n[Write a filter]{.says}\n\n\nBecomes equivalent to:\n\n\nAfter\n\nSimon says \"Write a filter\"\n\n\nChallenge: Instead of Simon, let the user specify the name as an attribute, e.g. [Write a filter]{.says name=\"Charlotte\"}\n\n  \n    −\n    +\n \n 10:00\n \n\n03-filters/your-turns/3-simon-says"
   },
   {
     "objectID": "slides/03-filters.html#target-content-in-a-div",
@@ -242,14 +242,14 @@
     "href": "slides/03-filters.html#filter-extensions",
     "title": "Filters and Shortcodes",
     "section": "Filter extensions",
-    "text": "Filter extensions\nquarto create extension filter creates boilerplate. Drop your .lua files in.\n\n\n\n\nshout/\n\n├── README.md\n├── _extensions\n│   └── shout\n│       ├── _extension.yml\n│       └── shout.lua\n└── example.qmd\n\n\n\n\n_extension.yml\n\ntitle: Shout\nauthor: Charlotte Wickham\nversion: 1.0.0\nquarto-required: \"&gt;=99.9.0\"\ncontributes:\n  filters:\n    - shout.lua\n\n\nUsers must opt-in to extension under filters:\n\n\nexample.qmd\n\n---\nfilters:\n  - shout\n---\n\n\nhttps://quarto.org/docs/extensions/filters.html#filter-extensions"
+    "text": "Filter extensions\nquarto create extension filter creates boilerplate. Drop your .lua files in.\n\n\n\n\nshout/\n\n├── README.md\n├── _extensions\n│   └── shout\n│       ├── _extension.yml\n│       └── shout.lua\n└── example.qmd\n\n\n\n\n_extension.yml\n\ntitle: Shout\nauthor: Charlotte Wickham\nversion: 1.0.0\nquarto-required: \"&gt;=1.7.0\"\ncontributes:\n  filters:\n    - shout.lua\n\n\nUsers must opt-in to extension under filters:\n\n\nexample.qmd\n\n---\nfilters:\n  - shout\n---\n\n\nhttps://quarto.org/docs/extensions/filters.html#filter-extensions"
   },
   {
     "objectID": "slides/03-filters.html#filters-in-custom-format-extensions",
     "href": "slides/03-filters.html#filters-in-custom-format-extensions",
     "title": "Filters and Shortcodes",
     "section": "Filters in custom format extensions",
-    "text": "Filters in custom format extensions\n\n\n\n\nshouty/\n\n├── README.md\n├── _extensions\n│   └── shouty\n│       ├── _extension.yml\n│       └── shout.lua\n└── template.qmd\n\n\n\n\n_extension.yml\n\ntitle: Shouty\nauthor: Charlotte Wickham\nversion: 1.0.0\nquarto-required: \"&gt;=99.9.0\"\ncontributes:\n  formats:\n    html:\n      filters:\n        - shout.lua\n\n\nUsers specify format: shouty-html, and get filter applied automatically."
+    "text": "Filters in custom format extensions\n\n\n\n\nshouty/\n\n├── README.md\n├── _extensions\n│   └── shouty\n│       ├── _extension.yml\n│       └── shout.lua\n└── template.qmd\n\n\n\n\n_extension.yml\n\ntitle: Shouty\nauthor: Charlotte Wickham\nversion: 1.0.0\nquarto-required: \"&gt;=1.7.0\"\ncontributes:\n  formats:\n    html:\n      filters:\n        - shout.lua\n\n\nUsers specify format: shouty-html, and get filter applied automatically."
   },
   {
     "objectID": "slides/03-filters.html#shortcodes",
