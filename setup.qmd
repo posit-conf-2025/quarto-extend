@@ -1,3 +1,20 @@
 ---
 title: Setup
 ---
+
+## Software requirements
+
+1. **Quarto 1.8** 
+
+    We'll rely on some of the latest features of Quarto, so please ensure you have v1.8 installed. Download at: <https://quarto.org/docs/download/prerelease/>
+
+2. **Positron, VS Code or RStudio** 
+
+    We'll be live-coding in Positron, but we recognize that you probably already have an IDE you like to use with Quarto.
+    If that IDE is one of Positron, VS Code or RStudio, stick with it.
+    For Positron and VS Code ensure you have the Quarto ([OpenVSX](https://open-vsx.org/extension/quarto/quarto) or [MS Marketplace](https://marketplace.visualstudio.com/items?itemName=quarto.quarto)) and
+  Lua ([OpenVSX](https://open-vsx.org/extension/sumneko/lua) or [MS Marketplace](https://marketplace.visualstudio.com/items?itemName=sumneko.lua)) extensions.
+    
+    If you use another IDE, be prepared to preview Quarto documents (`.qmd`), use the integrated terminal, and open and edit `.tex`, `.html`, and `.lua` files. 
+    You might consider installing [Positron](https://positron.posit.co/download.html) as a backup in case you have trouble following along from your IDE.
+

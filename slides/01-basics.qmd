@@ -1,5 +1,427 @@
 ---
-title: Extensions Basics
+title: Extension Basics
 format: revealjs
+footer: <http://pos.it/quarto-extend-conf25>
 ---
 
+# Logistics
+
+## Extending Quarto: Welcome! {.center}
+
+**Wifi**: Posit Conf 2025 **Password**: conf2025
+
+::: {.columns}
+::: {.column width="75%"}
+1. Materials: [pos.it/quarto-extend-conf25](http://pos.it/quarto-extend-conf25)
+
+2. Get [Quarto version 1.8](https://quarto.org/docs/download/)
+
+3. Download exercises: <https://github.com/posit-conf-2025/quarto-extend-exercises>
+
+4. Join the discord: #workshop-quarto-extend
+
+:::
+::: {.column width="25%"}
+{{< qrcode http://pos.it/quarto-extend-conf25 width=300 height=300 >}}
+:::
+::: 
+
+## Housekeeping
+
+-   Gender-neutral bathrooms: LL2 - Next to Chicago A
+-   Meditation/prayer room: LL2 - Chicago A 
+-   Mother's/lactation room: LL2 - Chicago B
+-   Red lanyards = No photos
+-   Code of Conduct: <https://posit.co/code-of-conduct>. Please review carefully. You can report Code of Conduct violations in person, by email, or by phone. Please see the policy linked above for contact information.
+
+## Breaks 
+
+Full schedule at: [pos.it/quarto-extend-conf25](https://pos.it/quarto-extend-conf25)
+
+| Time          |                |
+|---------------|----------------|
+| 10:30 - 11:00 | *Coffee Break* |
+| 12:30 - 13:30 | *Lunch*        |
+| 15:00 - 15:30 | *Coffee Break* |
+| 17:00         | END            |
+
+## Instructors
+
+::: {.columns}
+::: {.column}
+Charlotte
+:::
+::: {.column}
+Mine
+:::
+::: 
+
+## Teaching Assistants
+
+::: {.columns}
+::: {.column}
+Carlos
+:::
+::: {.column}
+Elliot
+:::
+::: 
+
+## Your Turn: Introductions
+
+Introduce yourself to your neighbor(s):
+
+* Name
+* Affiliation
+* What you use Quarto for
+
+{{< countdown 4:00 >}}
+
+## My questions {visibility="hidden"}
+
+* What language do you mostly use?
+
+* What IDE?
+
+* Have you written:
+  * a Quarto extension?
+  * a filter?
+  * a shortcode?
+  * a template partial?
+
+## How to get help?
+
+-   Raise your *color* post-it note
+
+    🟧 "I'm stuck and need help!"
+
+    🟦 "I've finished, and ready to move on."
+
+-   Ask in Discord
+
+-   Talk to us during breaks or your-turns
+
+## Goal: Reduce repetition
+
+Within documents, across documents, across projects, and across people 
+
+::: {.incremental}
+1. **Quarto Extensions:** the mechanism for sharing across projects and people. **This module** 
+
+2. **Extending Quarto:** entrypoints for customizing Quarto regardless of whether you bundle them as an extension. Most useful:
+
+    * Partials and templates. **Next module**
+    * Filters and shortcodes. **After lunch**
+:::
+
+## 
+
+::: {.marker .r-fit-text}
+Let's jump in! 
+:::
+
+# Quarto Extensions
+
+## [Your turn: Install and explore an extension]{.r-fit-text} {.smaller}
+
+1. Add the `quarto-revealjs-clean` extension to the project in `01-basics/`, by running:
+
+    ```{.bash filename="Terminal"}
+    cd 01-basics
+    quarto add grantmcdermott/quarto-revealjs-clean@v1.3
+    ```
+
+2. Where did the file `_extension.yml` get installed?
+
+3. Compare `_extension.yml` and the files alongside it to those in the [source on GitHub](https://github.com/grantmcdermott/quarto-revealjs-clean/tree/v1.3/_extensions/clean). What's the same? What's different?
+
+4. Preview `slides.qmd`. Then, edit to use the `clean-revealjs` format, and preview.
+
+Done? Browse <https://m.canouil.dev/quarto-extensions> for other extensions and explore their source.
+
+{{< countdown 10:00 >}}
+
+## Your turn: Solutions {visibility="hidden"}
+
+Installed: `_extensions/grantmcdermott/clean/_extension.yml`  
+Source: [`https://github.com/grantmcdermott/quarto-revealjs-clean/_extensions/clean/_extension.yml`](https://github.com/grantmcdermott/quarto-revealjs-clean/blob/v1.3/_extensions/clean/_extension.yml)
+
+**Installing** copies the contents of the `_extensions/clean` to our project.
+
+Other files alongside `_extensions/` are not copied with `quarto add`, but would be had we done `quarto use template`:
+
+```{.bash filename="Terminal"}
+quarto use template grantmcdermott/quarto-revealjs-clean@v1.3
+```
+
+::: aside
+`quarto-revealjs-clean` is the most popular custom format extension on <https://m.canouil.dev/quarto-extensions/>
+::: 
+
+## What is a Quarto extension?
+
+::: {.columns}
+::: {.column}
+```{.default}
+quarto-revealjs-clean
+└── _extensions
+        └── clean
+            ├── _extension.yml
+            └── clean.scss
+```
+:::
+::: {.column}
+"Quarto extensions are directories that contain an `_extensions` sub-directory with one or more extensions."
+:::
+::: 
+
+::: aside
+<https://quarto.org/docs/extensions/distributing.html>
+:::
+
+## What is a Quarto extension?
+
+::: {.columns}
+::: {.column}
+```{.yaml filename="_extension.yml"}
+title: clean
+author: Grant McDermott
+version: 1.3.0
+quarto-required: ">=1.3.0"
+contributes:
+  formats:
+    revealjs:
+      theme: [default, clean.scss]
+      menu:
+        side: left
+      slide-number: true
+      date-format: long
+```
+:::
+::: {.column}
+"Each extension is defined by its `_extension.yml` file which contains the metadata about the extension as well as the what items it contributes when used."
+:::
+::: 
+
+
+Possible `contributes`: `formats`, `project`, `metadata`, `brand`, `shortcodes`, `filters`, `revealjs-plugins`
+
+::: aside
+<https://quarto.org/docs/extensions/distributing.html>
+:::
+
+## Custom formats 
+
+`quarto-revealjs-clean` is an example of a custom format extension.
+
+A way to share Quarto options:
+
+```{.yaml filename="_extensions/myformat/_extension.yml"}
+contributes:
+  formats:
+    html: 
+      toc: true
+      code-fold: true
+      theme: flatly
+```    
+
+User needs to specify `format: myformat-html` in their document or `_quarto.yml`.
+
+## Custom formats
+
+Combine with other resources, for highly customized outputs:
+
+```{.yaml filename="_extensions/myformat/_extension.yml"}
+contributes:
+  formats:
+    html: 
+      theme: [flatly, theme.scss]
+      include-in-header:
+        - file: analytics.html
+      partials:
+        - title-block.html
+      filters:
+        - details.lua
+```    
+
+## Your turn: Create a custom format 
+
+Still in `01-basics/your-turns/1-install-and-explore/`
+
+1. Edit `_extension.yml` to add a custom `html` format that sets 2-3 of your favorite HTML options.
+
+3. Edit `slides.qmd` to use your custom format, and preview.
+
+{{< countdown 8:00 >}}
+
+## Get boilerplate with `quarto create extension`
+
+```{.bash filename="Terminal"}
+quarto create extension
+```
+::: aside 
+<https://quarto.org/docs/extensions/creating.html>
+:::
+
+# Extending Quarto
+
+## What happens when you render?
+
+![](images/quarto-render-process.jpg){fig-alt="Diagram showing a `.qmd` file entering a box labelled Quarto, it flows through `knitr` to a `.html.md` file, then through Pandoc, exiting the box as a `.html` file along with a folder with the name `_files.`."}
+
+::: notes
+Two main steps:
+
+1. Computational engine (e.g. `knitr`, `jupyter`) executes code cells. Intermediate markdown. Not this workshop
+
+2. Use pandoc to convert the markdown to the desired output format.
+
+Action for types of extensions we'll focus on today happens in the Pandoc step.
+
+Computation step: not this workshop
+
+::: 
+
+## Inside the Pandoc step
+
+![](images/pandoc-step.jpg)
+
+## `.md` → Reader → AST
+
+::: {.columns}
+::: {.column}
+```{.markdown filename="example.md"}
+## Introduction
+
+In @sec-data
+
+## Data {#sec-data}
+```
+:::
+::: {.column}
+::: {.box}
+![](images/ast-before-filters.png)
+:::
+:::
+::: 
+
+Markdown is parsed into a representation called the Abstract Syntax Tree (AST)
+
+## AST → Filters → AST
+
+::: {.columns}
+::: {.column}
+::: {.box}
+![](images/ast-before-filters.png)
+:::
+:::
+::: {.column}
+::: {.box}
+![](images/ast-after-filters.png)
+:::
+::: 
+:::
+
+Filters transform nodes in the AST
+
+E.g. cross-references (Quarto), citations (Pandoc), and custom filters (extensions & you). 
+
+## AST → Writer → `.html` {auto-animate=true}
+
+::: {.columns}
+::: {.column}
+::: {.box}
+![](images/ast-after-filters.png)
+:::
+:::
+::: {.column}
+:::{.box style="padding: 5px;"}
+
+```{.html .wrap}
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In <a href="#sec-data" class="quarto-xref">Section&nbsp;2</a></p>
+</section>
+<section id="sec-data" class="level2">
+<h2 class="anchored" data-anchor-id="sec-data">Data</h2>
+</section>
+```
+:::
+::: 
+:::
+
+Writers convert the content to the desired output format.  
+
+## AST → Writer → `.html` {auto-animate=true}
+
+::: {.columns}
+::: {.column}
+::: {.box}
+![](images/ast-after-filters.png)
+:::
+
+Combined with boilerplate from template and partials.
+
+:::
+::: {.column}
+:::{.box style="padding: 5px;"}
+```{.html .wrap }
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+...
+```
+
+```{.html .wrap}
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In <a href="#sec-data" class="quarto-xref">Section&nbsp;2</a></p>
+</section>
+<section id="sec-data" class="level2">
+<h2 class="anchored" data-anchor-id="sec-data">Data</h2>
+</section>
+```
+```{.html}
+...
+</html>
+```
+
+:::
+::: 
+:::
+
+
+
+## A case study: Course notes
+
+Notes that we want as slides (`format: revealjs`) and a document (`format: html`).
+
+::: {.columns}
+::: {.column}
+::: {.r-stack}
+::: {.fragment data-fragment-index="1"}
+Title slide in every slide deck controlled by metadata
+
+TODO: screenshot of title slide
+:::
+::: {.rotated-text .marker .fragment data-fragment-index="3"}
+Partial
+:::
+:::
+:::
+
+
+::: {.column}
+::: {.r-stack}
+::: {.fragment data-fragment-index="2"}
+Special participation slides combine boilerplate with custom content.
+
+TODO: screenshot of participation slide
+:::
+::: {.rotated-text .marker .fragment data-fragment-index="4"}
+Filter
+:::
+:::
+:::
+::: 
+
+# Questions?

@@ -1,0 +1,6 @@
+---
+title: Case Study
+---
+ 
+{{< include _slides.md >}}
+
