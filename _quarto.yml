@@ -17,7 +17,7 @@ website:
   open-graph: true
   sidebar:
     id: main
-    logo: images/quarto-icon.svg
+    logo: images/quarto.png
     title: Extending Quarto
     pinned: true
     align: center
