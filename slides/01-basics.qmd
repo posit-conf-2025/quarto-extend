@@ -8,7 +8,7 @@ footer: <http://pos.it/quarto-extend-conf25>
 
 ## Extending Quarto: Welcome! {.center}
 
-**Wifi**:  **Password**:
+**Wifi**: Posit Conf 2025 **Password**: conf2025
 
 ::: {.columns}
 ::: {.column width="75%"}
@@ -124,10 +124,10 @@ Let's jump in!
 
 ## [Your turn: Install and explore an extension]{.r-fit-text} {.smaller}
 
-1. Add the `quarto-revealjs-clean` extension to the project in `01-basics/your-turns/1-install-and-explore/`, by running:
+1. Add the `quarto-revealjs-clean` extension to the project in `01-basics/`, by running:
 
     ```{.bash filename="Terminal"}
-    cd 01-basics/your-turns/1-install-and-explore/
+    cd 01-basics
     quarto add grantmcdermott/quarto-revealjs-clean@v1.3
     ```
 
@@ -265,7 +265,7 @@ quarto create extension
 
 # Extending Quarto
 
-## What happens when render?
+## What happens when you render?
 
 ![](images/quarto-render-process.jpg){fig-alt="Diagram showing a `.qmd` file entering a box labelled Quarto, it flows through `knitr` to a `.html.md` file, then through Pandoc, exiting the box as a `.html` file along with a folder with the name `_files.`."}
 
