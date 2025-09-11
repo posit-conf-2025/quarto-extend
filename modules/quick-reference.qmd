@@ -1,0 +1,152 @@
+---
+title: "Pandoc Types Quick Reference"
+format: html
+toc: true
+toc-expand: true
+toc-location: right-body
+tbl-colwidths: [25, 40, 35]
+---
+
+## General Notes
+
+* Most common elements are listed here, but not all.
+
+* Quarto has some custom node types too: Callout, Tabset, ConditionalBlock, FloatRefTarget
+
+* The syntax `[, arg]` indicates an optional argument
+
+* All types have a `t`/`tag` field to access the type as a string (e.g. `pandoc.Space().t` returns `Space`)
+
+* Any type with the `attr` field also has shortcuts for: `identifier`, `classes`, and `attributes`
+
+* `attr` is an [`Attr` object](https://pandoc.org/lua-filters.html#type-attr). Create one with `pandoc.Attr()`:
+
+    ```{.lua}
+    pandoc.Attr(
+      "my-id",                       --identifier
+      {"class-one", "class-two"},    --classes
+      {key="value", key2="value2"}   --attributes
+    )
+    ```
+
+## Document Structure 
+
+| Type | Constructor | Fields |
+|------------------|-----------|--------|
+| Pandoc |  `pandoc.Pandoc(blocks, meta)` | `blocks`, `meta` |
+| Meta | `pandoc.Meta(table)` | key-value pairs of document metadata |
+
+## Block Elements
+
+### Paragraphs and Headings 
+
+`content` is an `Inlines` object (a list of `Inline` elements)
+
+| Type | Constructor  | Fields |
+|------------------|-----------|--------|
+| Para |`pandoc.Para(content)` `content`: `Inlines` | `content`  |
+| Plain | `pandoc.Plain(content)` `content`: `Inlines`  | `content`  |
+| Header | `pandoc.Header (level, content[, attr]))`  `content`: `Inlines`| `level`, `content`, `attr` |
+
+### Lists
+
+`content` a list of `Blocks`, or for DefinitionList something complicated.
+
+| Type | Constructor  | Fields |
+|------------------|-----------|--------|
+| BulletList | `pandoc.BulletList(items)` `<br>`{=html} `items`: `{Blocks, ... }`| `content` |
+| OrderedList | `pandoc.OrderedList(items[, listAttributes])` `<br>`{=html} `items`: `{Blocks, ... }` | `content`, `listAttributes`, `start`, `style`, `delimiter` |
+| DefinitionList | `pandoc.DefinitionList(content)` `<br>`{=html} `content`: `{{Inlines, {Blocks, ...}}, ...}`  | `content` (list of definition pairs) |
+
+
+### Code and raw blocks
+
+`text` is a simple LUA string (not a `Str`)
+
+| Type | Constructor  | Fields |
+|------------------|-----------|--------|
+| CodeBlock | `CodeBlock(text[, attr])` `text`: string| `text`, `attr` |
+| RawBlock | `pandoc.RawBlock (format, text)`  `text`: string | `format`, `text` |
+
+### Divs, BlockQuotes, Figures
+
+`content` is a `Blocks` object (a list of `Block` elements)
+
+| Type | Constructor  | Fields |
+|------------------|-----------|--------|
+| Div | `pandoc.Div(content[, attr])` `content`: `Blocks` | `content`, `attr` |
+| BlockQuote | `pandoc.BlockQuote(content)` `content`: `Blocks` | `content` |
+| Figure | `pandoc.Figure(content[, caption[, attr]])`  `content`: `Blocks` | `content`, `caption`, `attr` | 
+
+### Other
+
+| Type | Constructor  | Fields |
+|------------------|-----------|--------|
+| Table | `pandoc.Table (caption, colspecs, head, bodies, foot[, attr])` | `caption`, `colspecs`, `head`, `bodies`, `foot`, `attr` |
+| LineBlock | `pandoc.LineBlock(content)`  `content`: `{Inlines, ...}` | `content`  |
+: {tbl-colwidths="[25, 40, 35]"}
+
+
+
+## Inline Elements
+
+### Whitespace
+
+Takes no arguments, has no fields.
+
+| Type             | Constructor |
+|------------------|-------------|
+| Space | `pandoc.Space()` | 
+| SoftBreak | `pandoc.SoftBreak()` |
+| LineBreak | `pandoc.LineBreak()` |
+
+: {tbl-colwidths="[25, 40]"}
+
+### Basic Elements
+
+`text` is a simple LUA string (not a `Str`)
+
+| Type             | Constructor | Fields |
+|------------------|-------------|--------|
+| Str | `pandoc.Str(text)` | `text` |
+| Code | `pandoc.Code(code[, attr])` | `text`, `attr` |
+| Math | `pandoc.Math(mathtype, text)`,`<br>`{=html}   `mathtype`: `'InlineMath'` or `'DisplayMath'` | `mathtype`, `text` |
+| RawInline | `pandoc.RawInline(format, text)`  | `format`, `text` |
+
+: {tbl-colwidths="[25, 45, 30]"}
+
+### Text Formatting 
+
+`content` is an `Inlines` object (a list of `Inline` elements).
+
+| Type             | Constructor | Fields |
+|------------------|-------------|--------|
+| Emph | `pandoc.Emph(content)` | `content`  |
+| SmallCaps | `pandoc.SmallCaps(content)` | `content`  |
+| Strikeout | `pandoc.Strikeout(content)` | `content`  |
+| Strong | `pandoc.Strong(content)` | `content`  |
+| Subscript | `pandoc.Subscript(content)` | `content`  |
+| Superscript | `pandoc.Superscript(content)` | `content`  |
+| Underline | `pandoc.Underline(content)` | `content`  |
+| Quoted | `pandoc.Quoted(quotetype, content)`, `<br>`{=html} `quotetype`: `'SingleQuote'` or `'DoubleQuote'` | `quotetype`, `content` |
+
+: {tbl-colwidths="[25, 40, 35]"}
+
+### Other
+
+`content` and `title` are `Inlines` unless otherwise noted.
+
+`src`, `target` are simple LUA strings.
+
+`attr` is an [`Attr` object](https://pandoc.org/lua-filters.html#type-attr).
+
+| Type             | Constructor | Fields |
+|------------------|-------------|--------|
+| Span | `pandoc.Span(content[, attr])` | `content`, `attr` |
+| Image | `pandoc.Image(caption, src[, title[, attr]])` | `caption`, `src`, `title`, `attr` |
+| Link | `pandoc.Link(content, target[, title[, attr]])`| `content`, `target`, `title`, `attr` |
+| | | |
+| Cite | `pandoc.Cite(Inlines, citations)` | `content`, `citations` |
+| Note | `pandoc.Note(content)` `<br>`{=html} `content`: `Blocks` | `content`|
+
+

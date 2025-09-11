@@ -334,7 +334,9 @@ end
 :::
 :::
 
-## Other similar types of `Inline` elements
+## Other similar types of `Inline` elements {.smaller}
+
+See [Pandoc LUA types Quick Reference](/modules/quick-reference.qmd#text-formatting)
 
 | Type             | Constructor | Fields |
 |------------------|-------------|--------|
