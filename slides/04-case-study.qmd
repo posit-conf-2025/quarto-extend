@@ -23,7 +23,7 @@ Add a partial that updated your title slide.
 
 ## Includes vs. partials
 
-- {{< include >}}s are a convenient way to reuse content across documents
+- `{{{< include >}}}`s are a convenient way to reuse content across documents
 
   - The _same_ content
   - Basically copy-paste

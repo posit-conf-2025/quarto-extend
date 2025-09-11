@@ -1,10 +1,9 @@
 ---
-title: "Extending Quarto"
+title: "Extending Quarto Workshop"
 ---
 
-## Description
-
-{{< include _description.md >}}
+> Sep 16th, 2025  
+> `posit::conf(2025)`
 
 ## Setup
 
@@ -20,12 +19,16 @@ Please check the [Setup Instructions](setup.qmd) for recommended steps to take b
 | 12:30 - 13:30 | *Lunch break*    |
 | 13:30 - 15:00 | [Filters and Shortcodes](modules/03-filters.qmd)       |
 | 15:00 - 15:30 | *Coffee break*   |
-| 15:30 - 17:00 | Session 4        |
+| 15:30 - 17:00 | [Case Study](modules/04-case-study.qmd)      |
 
 ## Instructors
 
 [Mine Çetinkaya-Rundel](https://mine-cr.com) is Professor of the Practice and the Director of Undergraduate Studies at the Department of Statistical Science and Developer Educator at Posit, PBC. Mine's work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education. [{{< iconify fa7-brands:linkedin >}}](https://www.linkedin.com/in/minec/) [{{< iconify fa7-brands:github >}}](https://github.com/mine-cetinkaya-rundel) 
 
 [Charlotte Wickham](https://cwick.co.nz) (she/her) is a Developer Educator on the Developer Relations team at Posit with a focus on [Quarto](https://quarto.org). Prior to Posit, she taught Statistics and Data Science at Oregon State University where she received awards for her in-person and online teaching.  [{{< iconify fa7-brands:linkedin >}}](https://www.linkedin.com/in/cvwickham/) [{{< iconify fa7-brands:github >}}](https://github.com/cwickham) 
+
+## Description
+
+{{< include _description.md >}}
 
 {{< include _license.md >}}

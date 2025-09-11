@@ -1,5 +1,5 @@
 ---
-title: Extensions Basics
+title: Extension Basics
 format: revealjs
 footer: <http://pos.it/quarto-extend-conf25>
 ---
