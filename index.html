@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.16">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Extending Quarto</title>
+<title>Extending Quarto Workshop – Extending Quarto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -37,14 +37,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dd755132419e67449ef99e0994c660a4.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-851848c28120d2406e1a7eca1927a189.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dd755132419e67449ef99e0994c660a4.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4a56eb16f013320b38488e0869220965.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-4a56eb16f013320b38488e0869220965.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-4a56eb16f013320b38488e0869220965.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-73da7c3b27e53ecbe2aa456779fad870.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-73da7c3b27e53ecbe2aa456779fad870.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-73da7c3b27e53ecbe2aa456779fad870.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Extending Quarto">
+<meta property="og:title" content="Extending Quarto Workshop – Extending Quarto">
 <meta property="og:description" content="A one day workshop at posit::conf(2025) on creating custom extensions, including new formats, templates, and filters.">
 <meta property="og:site_name" content="Extending Quarto">
 </head>
@@ -104,8 +104,8 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/quarto-icon.svg" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="./images/quarto-icon.svg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      <img src="./images/quarto.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./images/quarto.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Extending Quarto</a> 
@@ -143,7 +143,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./modules/01-basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Extensions Basics</span></a>
+ <span class="menu-text">Extension Basics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modules/03-filters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Filters and Shortcodes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modules/04-case-study.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Case Study</span></a>
   </div>
 </li>
       </ul>
@@ -159,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Extending Quarto</h1>
+<h1 class="title">Extending Quarto Workshop</h1>
 </div>
 
 
@@ -176,17 +188,10 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="description" class="level2">
-<h2 class="anchored" data-anchor-id="description">Description</h2>
-<p>In this workshop, we will dive deep into ways of customizing your Quarto outputs with tooling beyond built-in features. This workshop is designed for data scientists, analysts, and technical writers looking to extend Quarto’s capabilities to suit their unique workflows better.</p>
-<p>Participants will learn how to create custom extensions, including new formats, templates, and filters, to enhance their document production process. Through hands-on exercises and real-world examples, you’ll gain practical skills in:</p>
-<ul>
-<li>Developing and integrating custom formats to support diverse outputs while reducing repetition across projects.</li>
-<li>Substituting Quarto’s templates with your own to customize formats beyond the built-in options.</li>
-<li>Implementing filters to automate and streamline content transformation.</li>
-</ul>
-<p>By the end of the workshop, you will be able to leverage Quarto’s extensibility to create powerful, tailored solutions for your documentation needs. Whether you have just worked on a few Quarto projects or are an everyday user, this workshop will equip you with the tools and knowledge to take your document workflows to the next level.</p>
-</section>
+<blockquote class="blockquote">
+<p>Sep 16th, 2025<br>
+<code>posit::conf(2025)</code></p>
+</blockquote>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>Please check the <a href="./setup.html">Setup Instructions</a> for recommended steps to take before the workshop.</p>
@@ -219,7 +224,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td style="text-align: left;">13:30 - 15:00</td>
-<td style="text-align: left;">Session 3</td>
+<td style="text-align: left;"><a href="./modules/03-filters.html">Filters and Shortcodes</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">15:00 - 15:30</td>
@@ -227,7 +232,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td style="text-align: left;">15:30 - 17:00</td>
-<td style="text-align: left;">Session 4</td>
+<td style="text-align: left;"><a href="./modules/04-case-study.html">Case Study</a></td>
 </tr>
 </tbody>
 </table>
@@ -236,6 +241,17 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="instructors">Instructors</h2>
 <p><a href="https://mine-cr.com">Mine Çetinkaya-Rundel</a> is Professor of the Practice and the Director of Undergraduate Studies at the Department of Statistical Science and Developer Educator at Posit, PBC. Mine’s work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education. <a href="https://www.linkedin.com/in/minec/"><iconify-icon role="img" inline="" icon="fa7-brands:linkedin" aria-label="Icon linkedin from fa7-brands Iconify.design set." title="Icon linkedin from fa7-brands Iconify.design set."></iconify-icon></a> <a href="https://github.com/mine-cetinkaya-rundel"><iconify-icon role="img" inline="" icon="fa7-brands:github" aria-label="Icon github from fa7-brands Iconify.design set." title="Icon github from fa7-brands Iconify.design set."></iconify-icon></a></p>
 <p><a href="https://cwick.co.nz">Charlotte Wickham</a> (she/her) is a Developer Educator on the Developer Relations team at Posit with a focus on <a href="https://quarto.org">Quarto</a>. Prior to Posit, she taught Statistics and Data Science at Oregon State University where she received awards for her in-person and online teaching. <a href="https://www.linkedin.com/in/cvwickham/"><iconify-icon role="img" inline="" icon="fa7-brands:linkedin" aria-label="Icon linkedin from fa7-brands Iconify.design set." title="Icon linkedin from fa7-brands Iconify.design set."></iconify-icon></a> <a href="https://github.com/cwickham"><iconify-icon role="img" inline="" icon="fa7-brands:github" aria-label="Icon github from fa7-brands Iconify.design set." title="Icon github from fa7-brands Iconify.design set."></iconify-icon></a></p>
+</section>
+<section id="description" class="level2">
+<h2 class="anchored" data-anchor-id="description">Description</h2>
+<p>In this workshop, we will dive deep into ways of customizing your Quarto outputs with tooling beyond built-in features. This workshop is designed for data scientists, analysts, and technical writers looking to extend Quarto’s capabilities to suit their unique workflows better.</p>
+<p>Participants will learn how to create custom extensions, including new formats, templates, and filters, to enhance their document production process. Through hands-on exercises and real-world examples, you’ll gain practical skills in:</p>
+<ul>
+<li>Developing and integrating custom formats to support diverse outputs while reducing repetition across projects.</li>
+<li>Substituting Quarto’s templates with your own to customize formats beyond the built-in options.</li>
+<li>Implementing filters to automate and streamline content transformation.</li>
+</ul>
+<p>By the end of the workshop, you will be able to leverage Quarto’s extensibility to create powerful, tailored solutions for your documentation needs. Whether you have just worked on a few Quarto projects or are an everyday user, this workshop will equip you with the tools and knowledge to take your document workflows to the next level.</p>
 </section>
 <section id="license" class="level2">
 <h2 class="anchored" data-anchor-id="license">License</h2>
@@ -296,13 +312,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

@@ -6,10 +6,10 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dd755132419e67449ef99e0994c660a4.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.16">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.24">
 
-  <title>Extending Quarto – Introduction</title>
+  <title>Extending Quarto – Case study</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,6 +29,7 @@
     }
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-124b3b28a33d08e5b09f66ada358bc50.css">
+  <link rel="stylesheet" href="slides.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -120,7 +121,7 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Introduction – Extending Quarto">
+<meta property="og:title" content="Case study – Extending Quarto">
 <meta property="og:site_name" content="Extending Quarto">
 </head>
 <body class="quarto-light">
@@ -128,17 +129,78 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Introduction</h1>
+  <h1 class="title">Case study</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section class="slide level2">
-
-
+<section>
+<section id="exercise-1" class="title-slide slide level1 center">
+<h1>Exercise 1</h1>
 
 </section>
+<section id="section" class="slide level2">
+<h2>…</h2>
+<p>[Charlotte]</p>
+</section></section>
+<section>
+<section id="exercise-2" class="title-slide slide level1 center">
+<h1>Exercise 2</h1>
+
+</section>
+<section id="now-add-a-partial" class="slide level2">
+<h2>Now add a partial!</h2>
+<p>Add a partial that updated your title slide.</p>
+<ul>
+<li><p>This could be <em>the</em> partial from Module 2</p></li>
+<li><p>It could be a new partial you develop during the time allotted</p></li>
+</ul>
+</section></section>
+<section>
+<section id="wrap-up" class="title-slide slide level1 center">
+<h1>Wrap up</h1>
+
+</section>
+<section id="includes-vs.-partials" class="slide level2">
+<h2>Includes vs.&nbsp;partials</h2>
+<ul>
+<li><p><code>{{&lt; include &gt;}}</code>s are a convenient way to reuse content across documents</p>
+<ul>
+<li>The <em>same</em> content</li>
+<li>Basically copy-paste</li>
+</ul></li>
+<li><p><code>partial</code>s are a way to create reusable components</p>
+<ul>
+<li>The <em>same</em> structure, but different content</li>
+<li>Copy-paste with substitutions from meta-data fields</li>
+</ul></li>
+<li><p>Shortcode is like copy-paste with substitutions in the body of your document</p></li>
+<li><p><code>filter</code>s are a way to modify content</p>
+<ul>
+<li>The <em>same</em> structure, but different content</li>
+<li>Operating on the document content</li>
+</ul></li>
+<li><p>Any combinations of <code>partial</code>s and <code>filter</code>s, and possibly other things, that are designed for reusability</p></li>
+</ul>
+</section>
+<section id="filters-vs.-extensions" class="slide level2">
+<h2>Filters vs.&nbsp;extensions</h2>
+<ul>
+<li><p>One off use</p></li>
+<li><p>Reusable, for multiple people or multiple projects</p></li>
+</ul>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p>[TO DO: Say anything about filters for changing document content?]</p>
+</section>
+<section id="invitation-for-questions" class="slide level2">
+<h2>Invitation for questions</h2>
+<p>how do I solve X with?</p>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -328,7 +390,7 @@
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -402,13 +464,14 @@
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

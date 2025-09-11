@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Setup – Extending Quarto</title>
+<title>notes – Extending Quarto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,28 +23,27 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./index.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-73da7c3b27e53ecbe2aa456779fad870.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-73da7c3b27e53ecbe2aa456779fad870.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-73da7c3b27e53ecbe2aa456779fad870.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-73da7c3b27e53ecbe2aa456779fad870.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-73da7c3b27e53ecbe2aa456779fad870.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-73da7c3b27e53ecbe2aa456779fad870.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,127 +73,75 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Setup – Extending Quarto">
+<link rel="stylesheet" href="slides.css">
+<meta property="og:title" content="Extending Quarto">
+<meta property="og:description" content="A one day workshop at posit::conf(2025) on creating custom extensions, including new formats, templates, and filters.">
 <meta property="og:site_name" content="Extending Quarto">
 </head>
 
-<body class="nav-sidebar floating fullcontent quarto-light">
+<body class="fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setup.html">Setup</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/quarto.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="./images/quarto.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
-      </a>
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Extending Quarto</a> 
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./setup.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Setup</span></a>
-  </div>
-</li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Modules</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./modules/01-basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Extension Basics</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./modules/03-filters.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Filters and Shortcodes</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./modules/04-case-study.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Case Study</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Setup</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="software-requirements" class="level2">
-<h2 class="anchored" data-anchor-id="software-requirements">Software requirements</h2>
-<ol type="1">
-<li><p><strong>Quarto 1.8</strong></p>
-<p>We’ll rely on some of the latest features of Quarto, so please ensure you have v1.8 installed. Download at: <a href="https://quarto.org/docs/download/prerelease/" class="uri">https://quarto.org/docs/download/prerelease/</a></p></li>
-<li><p><strong>Positron, VS Code or RStudio</strong></p>
-<p>We’ll be live-coding in Positron, but we recognize that you probably already have an IDE you like to use with Quarto. If that IDE is one of Positron, VS Code or RStudio, stick with it. For Positron and VS Code ensure you have the Quarto (<a href="https://open-vsx.org/extension/quarto/quarto">OpenVSX</a> or <a href="https://marketplace.visualstudio.com/items?itemName=quarto.quarto">MS Marketplace</a>) and Lua (<a href="https://open-vsx.org/extension/sumneko/lua">OpenVSX</a> or <a href="https://marketplace.visualstudio.com/items?itemName=sumneko.lua">MS Marketplace</a>) extensions.</p>
-<p>If you use another IDE, be prepared to preview Quarto documents (<code>.qmd</code>), use the integrated terminal, and open and edit <code>.tex</code>, <code>.html</code>, and <code>.lua</code> files. You might consider installing <a href="https://positron.posit.co/download.html">Positron</a> as a backup in case you have trouble following along from your IDE.</p></li>
-</ol>
+<ul>
+<li>Shortcode example that shows how to target different formats: https://github.com/quarto-ext/fancy-text</li>
+</ul>
+<section id="filter-ideas" class="level2">
+<h2 class="anchored" data-anchor-id="filter-ideas">Filter Ideas</h2>
+<blockquote class="blockquote">
+<p>You’d want to write a filter that looks at all the Header elements, finds the Appendix, and then for all subsequent headings adds unlisted to the classes</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>reorder figures on document</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Create a filter on divs with a certain class.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><code>walk()</code> recursive filter inside a element</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Custom callout</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>return nil, return unchanged `quarto.log.output``</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>return {}, return nothing</p>
+</blockquote>
+<p><code>pandoc.utils.type</code> <code>object.t</code></p>
+<p><code>Block</code> vs <code>Blocks</code></p>
+<p>Custom callout example:</p>
+<ul>
+<li>Quarto custom nodes</li>
+<li>use a filter to edit values of that node</li>
+<li>return a new Pandoc node/element, hand constructed (as opposed to using a template)</li>
+</ul>
+<p>Using var shortcode in ID</p>
+<ul>
+<li><p>returning more than one filter to control the order</p></li>
+<li><p>variable <code>var_value</code> shared across filters</p></li>
+<li><p>example identifying the content of interest with a span with specific ID</p></li>
+<li><p>ALternative: filter <code>Header()</code> and walk <code>Span()</code>,</p></li>
+<li><p>Alternative 1.8 filter: remove reliance on shortcode and use <code>quarto.variables.get()</code> api.</p></li>
+</ul>
+<p>Hello world filter:</p>
+<ul>
+<li>filters operate of nodes of AST</li>
+<li>write a function with same name as node type</li>
+<li>return: <code>nil</code> unchanged, <code>quarto.log.output</code>; a single element created by a call to pandoc node constructor; many elements as an array; an empty array to remove the node</li>
+</ul>
+<p>Use spans:</p>
 
 
 </section>
@@ -600,15 +547,6 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Home">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Home</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

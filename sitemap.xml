@@ -2,22 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://posit-conf-2025.github.io/quarto-extend/setup.html</loc>
-    <lastmod>2025-07-29T17:10:07.702Z</lastmod>
+    <lastmod>2025-09-04T18:34:07.101Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2025.github.io/quarto-extend/modules/01-basics.html</loc>
+    <lastmod>2025-09-11T18:51:24.221Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2025.github.io/quarto-extend/slides/notes.html</loc>
+    <lastmod>2025-08-22T21:36:31.295Z</lastmod>
   </url>
   <url>
     <loc>https://posit-conf-2025.github.io/quarto-extend/slides/01-basics.html</loc>
-    <lastmod>2025-07-29T17:10:07.703Z</lastmod>
+    <lastmod>2025-09-11T18:53:00.210Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2025.github.io/quarto-extend/index.html</loc>
+    <lastmod>2025-09-11T18:56:47.363Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2025.github.io/quarto-extend/carlos.html</loc>
+    <lastmod>2025-09-08T21:09:51.538Z</lastmod>
   </url>
   <url>
     <loc>https://posit-conf-2025.github.io/quarto-extend/LICENSE.html</loc>
     <lastmod>2025-07-29T17:10:07.696Z</lastmod>
   </url>
   <url>
-    <loc>https://posit-conf-2025.github.io/quarto-extend/index.html</loc>
-    <lastmod>2025-07-29T17:10:30.897Z</lastmod>
+    <loc>https://posit-conf-2025.github.io/quarto-extend/todo.html</loc>
+    <lastmod>2025-09-10T18:05:50.184Z</lastmod>
   </url>
   <url>
-    <loc>https://posit-conf-2025.github.io/quarto-extend/modules/01-basics.html</loc>
-    <lastmod>2025-07-29T17:10:07.701Z</lastmod>
+    <loc>https://posit-conf-2025.github.io/quarto-extend/slides/03-filters.html</loc>
+    <lastmod>2025-09-11T18:48:08.447Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2025.github.io/quarto-extend/slides/04-case-study.html</loc>
+    <lastmod>2025-09-11T18:49:09.621Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2025.github.io/quarto-extend/modules/03-filters.html</loc>
+    <lastmod>2025-08-22T21:48:38.584Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2025.github.io/quarto-extend/modules/04-case-study.html</loc>
+    <lastmod>2025-09-11T18:51:48.461Z</lastmod>
   </url>
 </urlset>
