@@ -1,0 +1,58 @@
+---
+title: Case study
+format: revealjs
+---
+
+# Exercise 1
+
+## ...
+
+[Charlotte]
+
+# Exercise 2
+
+## Now add a partial!
+
+Add a partial that updated your title slide.
+
+- This could be _the_ partial from Module 2
+
+- It could be a new partial you develop during the time allotted
+
+# Wrap up
+
+## Includes vs. partials
+
+- {{< include >}}s are a convenient way to reuse content across documents
+
+  - The _same_ content
+  - Basically copy-paste
+
+- `partial`s are a way to create reusable components
+
+  - The _same_ structure, but different content
+  - Copy-paste with substitutions from meta-data fields
+
+- Shortcode is like copy-paste with substitutions in the body of your document
+
+- `filter`s are a way to modify content
+
+  - The _same_ structure, but different content
+  - Operating on the document content
+
+- Any combinations of `partial`s and `filter`s, and possibly other things, that are designed for reusability
+
+## Filters vs. extensions
+
+- One off use
+
+- Reusable, for multiple people or multiple projects
+
+## 
+
+[TO DO: Say anything about filters for changing document content?]
+
+## Invitation for questions
+
+how do I solve X with?
+
