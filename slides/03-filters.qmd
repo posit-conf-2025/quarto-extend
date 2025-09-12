@@ -248,11 +248,13 @@ Take a look at the AST diagram on the next slide.
 
 * Remove `# fmt: skip` comments from code cells. [Discussion](https://github.com/quarto-dev/quarto-cli/discussions/13335)
 
-* Add paragraph numbers. [Discussion](https://github.com/quarto-dev/quarto-cli/discussions/13177)
-
-* Collect all code chunks and display in a code appendix. [Discussion](https://github.com/quarto-dev/quarto-cli/discussions/12498)
+* Number all callouts. [Discussion](https://github.com/quarto-dev/quarto-cli/discussions/10240)
 
 * Put the contents of an SVG image in a raw HTML block rather than using `<img>`. [Discussion](https://github.com/quarto-dev/quarto-cli/discussions/13251)
+
+* Display the language on every code cell. [Discussion](https://github.com/quarto-dev/quarto-cli/discussions/10400)
+
+* Collect all code chunks and display in a code appendix. [Discussion](https://github.com/quarto-dev/quarto-cli/discussions/12498)
 
 # Writing filters
 
@@ -334,22 +336,13 @@ end
 :::
 :::
 
-## Other similar types of `Inline` elements {.smaller}
+## [Other similar types of `Inline` elements]{.small}
 
-See [Pandoc LUA types Quick Reference](/modules/quick-reference.qmd#text-formatting)
+See [Pandoc Lua types Quick Reference](/modules/quick-reference.qmd#text-formatting)
 
-| Type             | Constructor | Fields |
-|------------------|-------------|--------|
-| Emph | `pandoc.Emph(content)` | `content`  |
-| SmallCaps | `pandoc.SmallCaps(content)` | `content`  |
-| Strikeout | `pandoc.Strikeout(content)` | `content`  |
-| Strong | `pandoc.Strong(content)` | `content`  |
-| Subscript | `pandoc.Subscript(content)` | `content`  |
-| Superscript | `pandoc.Superscript(content)` | `content`  |
-| Underline | `pandoc.Underline(content)` | `content`  |
-| Quoted | `pandoc.Quoted(quotetype, content)`,  `quotetype`: `SingleQuote` or `DoubleQuote` | `quotetype`, `content` |
-
-`content` is an `Inlines` object (a list of `Inline` elements).
+```{=html}
+<iframe src="/modules/quick-reference.html#text-formatting" class="ast-diagram"></iframe>
+```
 
 ## Your Turn
 
@@ -432,7 +425,7 @@ end
 :::
 ::: 
 
-## Common mistake: an array of `Inlines`
+## [Common mistake: an array of `Inlines`]{.small}
 
 This won't work because `el.content` is an `Inlines` object:
 

@@ -4,7 +4,7 @@ format: html
 toc: true
 toc-expand: true
 toc-location: right-body
-tbl-colwidths: [25, 40, 35]
+tbl-colwidths: [20, 50, 30]
 ---
 
 ## General Notes
@@ -84,7 +84,6 @@ tbl-colwidths: [25, 40, 35]
 |------------------|-----------|--------|
 | [Table](https://pandoc.org/lua-filters.html#type-table) | [`pandoc.Table(caption, colspecs, head, bodies, foot[, attr])`](https://pandoc.org/lua-filters.html#pandoc.Table) | `caption`, `colspecs`, `head`, `bodies`, `foot`, `attr` |
 | [LineBlock](https://pandoc.org/lua-filters.html#type-lineblock) | [`pandoc.LineBlock(content)`](https://pandoc.org/lua-filters.html#pandoc.LineBlock) `<br>`{=html} `content`: `{Inlines, ...}` | `content`  |
-: {tbl-colwidths="[25, 40, 35]"}
 
 ## Inline Elements
 
@@ -111,7 +110,6 @@ Takes no arguments, has no fields.
 | [Math](https://pandoc.org/lua-filters.html#type-math) | [`pandoc.Math(mathtype, text)`](https://pandoc.org/lua-filters.html#pandoc.Math) `<br>`{=html} `mathtype`: `'InlineMath'` or `'DisplayMath'` | `mathtype`, `text` |
 | [RawInline](https://pandoc.org/lua-filters.html#type-rawinline) | [`pandoc.RawInline(format, text)`](https://pandoc.org/lua-filters.html#pandoc.RawInline) `<br>`{=html} `format`: `'html'`, `'latex'` etc. | `format`, `text` |
 
-: {tbl-colwidths="[25, 45, 30]"}
 
 ### Text Formatting 
 
@@ -127,8 +125,6 @@ Takes no arguments, has no fields.
 | [Superscript](https://pandoc.org/lua-filters.html#type-superscript) | [`pandoc.Superscript(content)`](https://pandoc.org/lua-filters.html#pandoc.Superscript) | `content`  |
 | [Underline](https://pandoc.org/lua-filters.html#type-underline) | [`pandoc.Underline(content)`](https://pandoc.org/lua-filters.html#pandoc.Underline) | `content`  |
 | [Quoted](https://pandoc.org/lua-filters.html#type-quoted) | [`pandoc.Quoted(quotetype, content)`](https://pandoc.org/lua-filters.html#pandoc.Quoted) `<br>`{=html} `quotetype`: `'SingleQuote'` or `'DoubleQuote'` | `quotetype`, `content` |
-
-: {tbl-colwidths="[25, 40, 35]"}
 
 ### Other
 
