@@ -363,7 +363,7 @@
     "href": "modules/quick-reference.html#inline-elements",
     "title": "Pandoc Types Quick Reference",
     "section": "Inline Elements",
-    "text": "Inline Elements\n\nWhitespace\nTakes no arguments, has no fields.\n\n\n\n\n\n\n\nType\nConstructor\n\n\n\n\nSpace\npandoc.Space()\n\n\nSoftBreak\npandoc.SoftBreak()\n\n\nLineBreak\npandoc.LineBreak()\n\n\n\n\n\nBasic Elements\ntext is a simple LUA string (not a Str)\n\n\n\n\n\n\n\n\nType\nConstructor\nFields\n\n\n\n\nStr\npandoc.Str(text)\ntext\n\n\nCode\npandoc.Code(code[, attr])\ntext, attr\n\n\nMath\npandoc.Math(mathtype, text)  mathtype: 'InlineMath' or 'DisplayMath'\nmathtype, text\n\n\nRawInline\npandoc.RawInline(format, text)  format: 'html', 'latex' etc.\nformat, text\n\n\n\n\n\nText Formatting\ncontent is an Inlines object (a list of Inline elements).\n\n\n\n\n\n\n\n\nType\nConstructor\nFields\n\n\n\n\nEmph\npandoc.Emph(content)\ncontent\n\n\nSmallCaps\npandoc.SmallCaps(content)\ncontent\n\n\nStrikeout\npandoc.Strikeout(content)\ncontent\n\n\nStrong\npandoc.Strong(content)\ncontent\n\n\nSubscript\npandoc.Subscript(content)\ncontent\n\n\nSuperscript\npandoc.Superscript(content)\ncontent\n\n\nUnderline\npandoc.Underline(content)\ncontent\n\n\nQuoted\npandoc.Quoted(quotetype, content)  quotetype: 'SingleQuote' or 'DoubleQuote'\nquotetype, content\n\n\n\n\n\nOther\ncontent and title are Inlines unless otherwise noted.\nsrc, target are simple LUA strings.\nattr is an Attr object.\n\n\n\n\n\n\n\n\nType\nConstructor\nFields\n\n\n\n\nSpan\npandoc.Span(content[, attr])\ncontent, attr\n\n\nImage\npandoc.Image(caption, src[, title[, attr]])\ncaption, src, title, attr\n\n\nLink\npandoc.Link(content, target[, title[, attr]])\ncontent, target, title, attr\n\n\n\n\n\n\n\nCite\npandoc.Cite(content, citations)\ncontent, citations\n\n\nNote\npandoc.Note(content)  content: Blocks\ncontent",
+    "text": "Inline Elements\n\nWhitespace\nTakes no arguments, has no fields.\n\n\n\n\n\n\n\nType\nConstructor\n\n\n\n\nSpace\npandoc.Space()\n\n\nSoftBreak\npandoc.SoftBreak()\n\n\nLineBreak\npandoc.LineBreak()\n\n\n\n\n\nBasic Elements\ntext is a simple Lua string (not a Str)\n\n\n\n\n\n\n\n\nType\nConstructor\nFields\n\n\n\n\nStr\npandoc.Str(text)\ntext\n\n\nCode\npandoc.Code(code[, attr])\ntext, attr\n\n\nMath\npandoc.Math(mathtype, text)  mathtype: 'InlineMath' or 'DisplayMath'\nmathtype, text\n\n\nRawInline\npandoc.RawInline(format, text)  format: 'html', 'latex' etc.\nformat, text\n\n\n\n\n\nText Formatting\ncontent is an Inlines object (a list of Inline elements).\n\n\n\n\n\n\n\n\nType\nConstructor\nFields\n\n\n\n\nEmph\npandoc.Emph(content)\ncontent\n\n\nSmallCaps\npandoc.SmallCaps(content)\ncontent\n\n\nStrikeout\npandoc.Strikeout(content)\ncontent\n\n\nStrong\npandoc.Strong(content)\ncontent\n\n\nSubscript\npandoc.Subscript(content)\ncontent\n\n\nSuperscript\npandoc.Superscript(content)\ncontent\n\n\nUnderline\npandoc.Underline(content)\ncontent\n\n\nQuoted\npandoc.Quoted(quotetype, content)  quotetype: 'SingleQuote' or 'DoubleQuote'\nquotetype, content\n\n\n\n\n\nOther\ncontent and title are Inlines unless otherwise noted.\nsrc, target are simple Lua strings.\nattr is an Attr object.\n\n\n\n\n\n\n\n\nType\nConstructor\nFields\n\n\n\n\nSpan\npandoc.Span(content[, attr])\ncontent, attr\n\n\nImage\npandoc.Image(caption, src[, title[, attr]])\ncaption, src, title, attr\n\n\nLink\npandoc.Link(content, target[, title[, attr]])\ncontent, target, title, attr\n\n\n\n\n\n\n\nCite\npandoc.Cite(content, citations)\ncontent, citations\n\n\nNote\npandoc.Note(content)  content: Blocks\ncontent",
     "crumbs": [
       "Modules",
       "Pandoc Types Quick Reference"
@@ -429,7 +429,7 @@
     "href": "modules/03-filters.html#learning-objectives",
     "title": "Filters and Shortcodes",
     "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nDescribe how Pandoc filters modify the Abstract Syntax Tree (AST)\nWrite a simple Pandoc filter for an Inline element\nLocate documentation for LUA modules provided by Pandoc and Quarto\nUse spans or divs to target specific content for a filter\nSpecify an order to apply filters\nDescribe how shortcodes modify the AST\nPackage a filter as a Quarto extension",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nDescribe how Pandoc filters modify the Abstract Syntax Tree (AST)\nWrite a simple Pandoc filter for an Inline element\nLocate documentation for Lua modules provided by Pandoc and Quarto\nUse spans or divs to target specific content for a filter\nSpecify an order to apply filters\nDescribe how shortcodes modify the AST\nPackage a filter as a Quarto extension",
     "crumbs": [
       "Modules",
       "Filters and Shortcodes"
@@ -440,7 +440,7 @@
     "href": "modules/03-filters.html#links",
     "title": "Filters and Shortcodes",
     "section": "Links",
-    "text": "Links\n\nPandoc LUA types Quick Reference\nPositron/VS Code Lua extension: OpenVSX or MS Marketplace",
+    "text": "Links\n\nPandoc Lua types Quick Reference\nPositron/VS Code Lua extension: OpenVSX or MS Marketplace",
     "crumbs": [
       "Modules",
       "Filters and Shortcodes"
