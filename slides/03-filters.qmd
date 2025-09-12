@@ -320,7 +320,7 @@ end
 ::: 
 
 
-## Live Code: Replace bold text with italic text
+## [Live Code: Replace bold text with italic text]{.small}
 
 ::: {.columns}
 ::: {.column}
@@ -903,6 +903,16 @@ Can take arguments: `args`, `kwargs`, `meta`, `raw_args`, `context`
 ::: footer
 <https://quarto.org/docs/extensions/shortcodes.html>
 :::
+
+## Learning Lua
+
+<https://quarto.org/docs/extensions/lua.html#learning-lua>
+
+```{=html}
+<iframe src="https://quarto.org/docs/extensions/lua.html#learning-lua" class = "ast-diagram" style="height: 350px"></iframe>
+```
+
+I also quite liked: <https://ebens.me/posts/lua-for-programmers-part-1/>
 
 # Questions? {.r-fit-text .center}
 
