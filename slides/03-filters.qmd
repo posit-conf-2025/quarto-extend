@@ -338,10 +338,10 @@ end
 
 ## [Other similar types of `Inline` elements]{.small}
 
-See [Pandoc Lua types Quick Reference](/modules/quick-reference.qmd#text-formatting)
+See [Pandoc Lua types Quick Reference](/quick-reference.qmd#text-formatting)
 
 ```{=html}
-<iframe src="/modules/quick-reference.html#text-formatting" class="ast-diagram"></iframe>
+<iframe src="/quick-reference.html#text-formatting" class="ast-diagram"></iframe>
 ```
 
 ## Your Turn

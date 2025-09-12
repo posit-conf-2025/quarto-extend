@@ -24,6 +24,6 @@ By the end of this module, you will be able to:
 
 ## Links
 
-* [Pandoc Lua types Quick Reference](quick-reference.qmd)
+* [Pandoc Lua types Quick Reference](/quick-reference.qmd)
 
 * Positron/VS Code Lua extension: [OpenVSX](https://open-vsx.org/extension/sumneko/lua) or [MS Marketplace](https://marketplace.visualstudio.com/items?itemName=sumneko.lua)
