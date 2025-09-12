@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -67,14 +67,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../modules/04-case-study.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-38713b05c516be34131662213c8e30d7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5565130c8da6fd76e7f0915b3a28508e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-5565130c8da6fd76e7f0915b3a28508e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5565130c8da6fd76e7f0915b3a28508e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -132,7 +137,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../images/quarto.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../images/quarto.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../images/quarto.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Extending Quarto</a> 
@@ -271,25 +277,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="general-notes">General Notes</h2>
 <ul>
 <li><p>Most common elements are listed here, but not all.</p></li>
-<li><p>Quarto has some custom node types too: Callout, Tabset, ConditionalBlock, FloatRefTarget</p></li>
+<li><p>Quarto has some custom node types too: <a href="https://quarto.org/docs/prerelease/1.3/custom-ast-nodes/callout.html">Callout</a>, <a href="https://quarto.org/docs/prerelease/1.3/custom-ast-nodes/tabset.html">Tabset</a>, <a href="https://quarto.org/docs/prerelease/1.3/custom-ast-nodes/conditional-block.html">ConditionalBlock</a>, <a href="https://quarto.org/docs/prerelease/1.4/lua_changes.html#the-floatreftarget-ast-node">FloatRefTarget</a></p></li>
 <li><p>The syntax <code>[, arg]</code> indicates an optional argument</p></li>
 <li><p>All types have a <code>t</code>/<code>tag</code> field to access the type as a string (e.g.&nbsp;<code>pandoc.Space().t</code> returns <code>Space</code>)</p></li>
 <li><p>Any type with the <code>attr</code> field also has shortcuts for: <code>identifier</code>, <code>classes</code>, and <code>attributes</code></p></li>
 <li><p><code>attr</code> is an <a href="https://pandoc.org/lua-filters.html#type-attr"><code>Attr</code> object</a>. Create one with <code>pandoc.Attr()</code>:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">pandoc</span><span class="op">.</span>Attr<span class="op">(</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">pandoc</span><span class="op">.</span>Attr<span class="op">(</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"my-id"</span><span class="op">,</span>                       <span class="co">--identifier</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span><span class="st">"class-one"</span><span class="op">,</span> <span class="st">"class-two"</span><span class="op">},</span>    <span class="co">--classes</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span><span class="va">key</span><span class="op">=</span><span class="st">"value"</span><span class="op">,</span> <span class="va">key2</span><span class="op">=</span><span class="st">"value2"</span><span class="op">}</span>   <span class="co">--attributes</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ul>
 </section>
 <section id="document-structure" class="level2">
 <h2 class="anchored" data-anchor-id="document-structure">Document Structure</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 40%">
-<col style="width: 35%">
+<col style="width: 20%">
+<col style="width: 50%">
+<col style="width: 30%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -300,13 +306,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td>Pandoc</td>
-<td><code>pandoc.Pandoc(blocks, meta)</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-pandoc">Pandoc</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.Pandoc"><code>pandoc.Pandoc(blocks, meta)</code></a></td>
 <td><code>blocks</code>, <code>meta</code></td>
 </tr>
 <tr class="even">
-<td>Meta</td>
-<td><code>pandoc.Meta(table)</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-meta">Meta</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.Meta"><code>pandoc.Meta(table)</code></a></td>
 <td>key-value pairs of document metadata</td>
 </tr>
 </tbody>
@@ -319,9 +325,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>content</code> is an <code>Inlines</code> object (a list of <code>Inline</code> elements)</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 40%">
-<col style="width: 35%">
+<col style="width: 20%">
+<col style="width: 50%">
+<col style="width: 30%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -332,18 +338,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td>Para</td>
-<td><code>pandoc.Para(content)</code> <code>content</code>: <code>Inlines</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-para">Para</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.Para"><code>pandoc.Para(content)</code></a> <br> <code>content</code>: <code>Inlines</code></td>
 <td><code>content</code></td>
 </tr>
 <tr class="even">
-<td>Plain</td>
-<td><code>pandoc.Plain(content)</code> <code>content</code>: <code>Inlines</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-plain">Plain</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.Plain"><code>pandoc.Plain(content)</code></a> <br> <code>content</code>: <code>Inlines</code></td>
 <td><code>content</code></td>
 </tr>
 <tr class="odd">
-<td>Header</td>
-<td><code>pandoc.Header (level, content[, attr]))</code> <code>content</code>: <code>Inlines</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-header">Header</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.Header"><code>pandoc.Header (level, content[, attr]))</code></a> <br> <code>content</code>: <code>Inlines</code> <br><code>level</code>: integer</td>
 <td><code>level</code>, <code>content</code>, <code>attr</code></td>
 </tr>
 </tbody>
@@ -351,12 +357,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="lists" class="level3">
 <h3 class="anchored" data-anchor-id="lists">Lists</h3>
-<p><code>content</code> a list of <code>Blocks</code>, or for DefinitionList something complicated.</p>
+<p><code>content</code> is a list of <code>Blocks</code>, or for DefinitionList something complicated.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 40%">
-<col style="width: 35%">
+<col style="width: 20%">
+<col style="width: 50%">
+<col style="width: 30%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -367,18 +373,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td>BulletList</td>
-<td><code>pandoc.BulletList(items)</code> <br> <code>items</code>: <code>{Blocks, ... }</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-bulletlist">BulletList</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.BulletList"><code>pandoc.BulletList(items)</code></a> <br> <code>items</code>: <code>{Blocks, ... }</code></td>
 <td><code>content</code></td>
 </tr>
 <tr class="even">
-<td>OrderedList</td>
-<td><code>pandoc.OrderedList(items[, listAttributes])</code> <br> <code>items</code>: <code>{Blocks, ... }</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-orderedlist">OrderedList</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.OrderedList"><code>pandoc.OrderedList(items[, listAttributes])</code></a> <br> <code>items</code>: <code>{Blocks, ... }</code></td>
 <td><code>content</code>, <code>listAttributes</code>, <code>start</code>, <code>style</code>, <code>delimiter</code></td>
 </tr>
 <tr class="odd">
-<td>DefinitionList</td>
-<td><code>pandoc.DefinitionList(content)</code> <br> <code>content</code>: <code>{Inlines, {Blocks, ...}, ...}</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-definitionlist">DefinitionList</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.DefinitionList"><code>pandoc.DefinitionList(content)</code></a> <br> <code>content</code>: <code>{Inlines, {Blocks, ...}, ...}</code></td>
 <td><code>content</code> (list of definition pairs)</td>
 </tr>
 </tbody>
@@ -386,12 +392,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="code-and-raw-blocks" class="level3">
 <h3 class="anchored" data-anchor-id="code-and-raw-blocks">Code and raw blocks</h3>
-<p><code>text</code> is a simple LUA string (not a <code>Str</code>)</p>
+<p><code>text</code> is a simple Lua string (not a <code>Str</code>)</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 40%">
-<col style="width: 35%">
+<col style="width: 20%">
+<col style="width: 50%">
+<col style="width: 30%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -402,13 +408,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td>CodeBlock</td>
-<td><code>CodeBlock(text[, attr])</code> <code>text</code>: string</td>
+<td><a href="https://pandoc.org/lua-filters.html#type-codeblock">CodeBlock</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.CodeBlock"><code>pandoc.CodeBlock(text[, attr])</code></a> <br> <code>text</code>: string</td>
 <td><code>text</code>, <code>attr</code></td>
 </tr>
 <tr class="even">
-<td>RawBlock</td>
-<td><code>pandoc.RawBlock (format, text)</code> <code>text</code>: string</td>
+<td><a href="https://pandoc.org/lua-filters.html#type-rawblock">RawBlock</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.RawBlock"><code>pandoc.RawBlock(format, text)</code></a> <br> <code>text</code>: string</td>
 <td><code>format</code>, <code>text</code></td>
 </tr>
 </tbody>
@@ -419,9 +425,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>content</code> is a <code>Blocks</code> object (a list of <code>Block</code> elements)</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 40%">
-<col style="width: 35%">
+<col style="width: 20%">
+<col style="width: 50%">
+<col style="width: 30%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -432,18 +438,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td>Div</td>
-<td><code>pandoc.Div(content[, attr])</code> <code>content</code>: <code>Blocks</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-div">Div</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.Div"><code>pandoc.Div(content[, attr])</code></a> <br> <code>content</code>: <code>Blocks</code></td>
 <td><code>content</code>, <code>attr</code></td>
 </tr>
 <tr class="even">
-<td>BlockQuote</td>
-<td><code>pandoc.BlockQuote(content)</code> <code>content</code>: <code>Blocks</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-blockquote">BlockQuote</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.BlockQuote"><code>pandoc.BlockQuote(content)</code></a> <br> <code>content</code>: <code>Blocks</code></td>
 <td><code>content</code></td>
 </tr>
 <tr class="odd">
-<td>Figure</td>
-<td><code>pandoc.Figure(content[, caption[, attr]])</code> <code>content</code>: <code>Blocks</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-figure">Figure</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.Figure"><code>pandoc.Figure(content[, caption[, attr]])</code></a> <br> <code>content</code>: <code>Blocks</code></td>
 <td><code>content</code>, <code>caption</code>, <code>attr</code></td>
 </tr>
 </tbody>
@@ -453,9 +459,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="other">Other</h3>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 40%">
-<col style="width: 35%">
+<col style="width: 20%">
+<col style="width: 50%">
+<col style="width: 30%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -466,13 +472,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td>Table</td>
-<td><code>pandoc.Table (caption, colspecs, head, bodies, foot[, attr])</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-table">Table</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.Table"><code>pandoc.Table(caption, colspecs, head, bodies, foot[, attr])</code></a></td>
 <td><code>caption</code>, <code>colspecs</code>, <code>head</code>, <code>bodies</code>, <code>foot</code>, <code>attr</code></td>
 </tr>
 <tr class="even">
-<td>LineBlock</td>
-<td><code>pandoc.LineBlock(content)</code> <code>content</code>: <code>{Inlines, ...}</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-lineblock">LineBlock</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.LineBlock"><code>pandoc.LineBlock(content)</code></a> <br> <code>content</code>: <code>{Inlines, ...}</code></td>
 <td><code>content</code></td>
 </tr>
 </tbody>
@@ -487,7 +493,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
-<col style="width: 40%">
+<col style="width: 75%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -497,16 +503,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td>Space</td>
-<td><code>pandoc.Space()</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-space">Space</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.Space"><code>pandoc.Space()</code></a></td>
 </tr>
 <tr class="even">
-<td>SoftBreak</td>
-<td><code>pandoc.SoftBreak()</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-softbreak">SoftBreak</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.SoftBreak"><code>pandoc.SoftBreak()</code></a></td>
 </tr>
 <tr class="odd">
-<td>LineBreak</td>
-<td><code>pandoc.LineBreak()</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-linebreak">LineBreak</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.LineBreak"><code>pandoc.LineBreak()</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -516,8 +522,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>text</code> is a simple LUA string (not a <code>Str</code>)</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 45%">
+<col style="width: 20%">
+<col style="width: 50%">
 <col style="width: 30%">
 </colgroup>
 <thead>
@@ -529,23 +535,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td>Str</td>
-<td><code>pandoc.Str(text)</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-str">Str</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.Str"><code>pandoc.Str(text)</code></a></td>
 <td><code>text</code></td>
 </tr>
 <tr class="even">
-<td>Code</td>
-<td><code>pandoc.Code(code[, attr])</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-code">Code</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.Code"><code>pandoc.Code(code[, attr])</code></a></td>
 <td><code>text</code>, <code>attr</code></td>
 </tr>
 <tr class="odd">
-<td>Math</td>
-<td><code>pandoc.Math(mathtype, text)</code>,<br> <code>mathtype</code>: <code>'InlineMath'</code> or <code>'DisplayMath'</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-math">Math</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.Math"><code>pandoc.Math(mathtype, text)</code></a> <br> <code>mathtype</code>: <code>'InlineMath'</code> or <code>'DisplayMath'</code></td>
 <td><code>mathtype</code>, <code>text</code></td>
 </tr>
 <tr class="even">
-<td>RawInline</td>
-<td><code>pandoc.RawInline(format, text)</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-rawinline">RawInline</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.RawInline"><code>pandoc.RawInline(format, text)</code></a> <br> <code>format</code>: <code>'html'</code>, <code>'latex'</code> etc.</td>
 <td><code>format</code>, <code>text</code></td>
 </tr>
 </tbody>
@@ -556,9 +562,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>content</code> is an <code>Inlines</code> object (a list of <code>Inline</code> elements).</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 40%">
-<col style="width: 35%">
+<col style="width: 20%">
+<col style="width: 50%">
+<col style="width: 30%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -569,43 +575,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td>Emph</td>
-<td><code>pandoc.Emph(content)</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-emph">Emph</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.Emph"><code>pandoc.Emph(content)</code></a></td>
 <td><code>content</code></td>
 </tr>
 <tr class="even">
-<td>SmallCaps</td>
-<td><code>pandoc.SmallCaps(content)</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-smallcaps">SmallCaps</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.SmallCaps"><code>pandoc.SmallCaps(content)</code></a></td>
 <td><code>content</code></td>
 </tr>
 <tr class="odd">
-<td>Strikeout</td>
-<td><code>pandoc.Strikeout(content)</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-strikeout">Strikeout</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.Strikeout"><code>pandoc.Strikeout(content)</code></a></td>
 <td><code>content</code></td>
 </tr>
 <tr class="even">
-<td>Strong</td>
-<td><code>pandoc.Strong(content)</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-strong">Strong</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.Strong"><code>pandoc.Strong(content)</code></a></td>
 <td><code>content</code></td>
 </tr>
 <tr class="odd">
-<td>Subscript</td>
-<td><code>pandoc.Subscript(content)</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-subscript">Subscript</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.Subscript"><code>pandoc.Subscript(content)</code></a></td>
 <td><code>content</code></td>
 </tr>
 <tr class="even">
-<td>Superscript</td>
-<td><code>pandoc.Superscript(content)</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-superscript">Superscript</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.Superscript"><code>pandoc.Superscript(content)</code></a></td>
 <td><code>content</code></td>
 </tr>
 <tr class="odd">
-<td>Underline</td>
-<td><code>pandoc.Underline(content)</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-underline">Underline</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.Underline"><code>pandoc.Underline(content)</code></a></td>
 <td><code>content</code></td>
 </tr>
 <tr class="even">
-<td>Quoted</td>
-<td><code>pandoc.Quoted(quotetype, content)</code>, <br> <code>quotetype</code>: <code>'SingleQuote'</code> or <code>'DoubleQuote'</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-quoted">Quoted</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.Quoted"><code>pandoc.Quoted(quotetype, content)</code></a> <br> <code>quotetype</code>: <code>'SingleQuote'</code> or <code>'DoubleQuote'</code></td>
 <td><code>quotetype</code>, <code>content</code></td>
 </tr>
 </tbody>
@@ -618,9 +624,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>attr</code> is an <a href="https://pandoc.org/lua-filters.html#type-attr"><code>Attr</code> object</a>.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 40%">
-<col style="width: 35%">
+<col style="width: 20%">
+<col style="width: 50%">
+<col style="width: 30%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -631,18 +637,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td>Span</td>
-<td><code>pandoc.Span(content[, attr])</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-span">Span</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.Span"><code>pandoc.Span(content[, attr])</code></a></td>
 <td><code>content</code>, <code>attr</code></td>
 </tr>
 <tr class="even">
-<td>Image</td>
-<td><code>pandoc.Image(caption, src[, title[, attr]])</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-image">Image</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.Image"><code>pandoc.Image(caption, src[, title[, attr]])</code></a></td>
 <td><code>caption</code>, <code>src</code>, <code>title</code>, <code>attr</code></td>
 </tr>
 <tr class="odd">
-<td>Link</td>
-<td><code>pandoc.Link(content, target[, title[, attr]])</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-link">Link</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.Link"><code>pandoc.Link(content, target[, title[, attr]])</code></a></td>
 <td><code>content</code>, <code>target</code>, <code>title</code>, <code>attr</code></td>
 </tr>
 <tr class="even">
@@ -651,13 +657,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td></td>
 </tr>
 <tr class="odd">
-<td>Cite</td>
-<td><code>pandoc.Cite(Inlines, citations)</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-cite">Cite</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.Cite"><code>pandoc.Cite(content, citations)</code></a></td>
 <td><code>content</code>, <code>citations</code></td>
 </tr>
 <tr class="even">
-<td>Note</td>
-<td><code>pandoc.Note(content)</code> <br> <code>content</code>: <code>Blocks</code></td>
+<td><a href="https://pandoc.org/lua-filters.html#type-note">Note</a></td>
+<td><a href="https://pandoc.org/lua-filters.html#pandoc.Note"><code>pandoc.Note(content)</code></a> <br> <code>content</code>: <code>Blocks</code></td>
 <td><code>content</code></td>
 </tr>
 </tbody>
@@ -719,13 +725,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

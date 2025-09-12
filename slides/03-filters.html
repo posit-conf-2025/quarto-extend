@@ -6,10 +6,10 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/countdown-0.5.0/countdown.js"></script>
 <link href="../site_libs/quarto-contrib/countdown-0.5.0/countdown.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.34">
+  <meta name="generator" content="quarto-1.8.24">
 
   <title>Extending Quarto – Filters and Shortcodes</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -96,7 +96,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-22b9a66f027ba819f6fff539c6224c5d.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-124b3b28a33d08e5b09f66ada358bc50.css">
   <link rel="stylesheet" href="slides.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -236,13 +236,13 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>example.qmd</strong></pre>
 </div>
-<div class="sourceCode" id="cb1" data-filename="example.qmd"><pre class="sourceCode markdown wrap code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>I **really** like bold and *really* like italics, and *really **really*** can't decide which to use.</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-filename="example.qmd"><pre class="sourceCode markdown wrap code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>I **really** like bold and *really* like italics, and *really **really*** can't decide which to use.</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>:::{.shout}</span>
 <span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>And sometimes I **really** need to shout!</span>
 <span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>It's like I want to <span class="in">`toupper()`</span> everything!</span>
-<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:55%;">
 <p><img data-src="images/ast-1-blocks.png" class="fragment"></p>
@@ -273,13 +273,13 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>example.qmd</strong></pre>
 </div>
-<div class="sourceCode" id="cb2" data-filename="example.qmd"><pre class="sourceCode markdown wrap code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>I **really** like bold and *really* like italics, and *really **really*** can't decide which to use.</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-filename="example.qmd"><pre class="sourceCode markdown wrap code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>I **really** like bold and *really* like italics, and *really **really*** can't decide which to use.</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>:::{.shout}</span>
 <span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>And sometimes I **really** need to shout!</span>
 <span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a>It's like I want to <span class="in">`toupper()`</span> everything!</span>
-<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:55%;">
 <p><img data-src="images/ast-1-blocks-highlight.png"></p>
@@ -293,9 +293,9 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>example.qmd</strong></pre>
 </div>
-<div class="sourceCode" id="cb3" data-filename="example.qmd"><pre class="sourceCode markdown wrap code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>I **really** like bold and *really* like italics, and *really **really*** can't decide which to use.</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-filename="example.qmd"><pre class="sourceCode markdown wrap code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>I **really** like bold and *really* like italics, and *really **really*** can't decide which to use.</span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:55%;">
 <p><img data-src="images/ast-1-inlines-para-1.png"></p>
@@ -327,13 +327,13 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>example.qmd</strong></pre>
 </div>
-<div class="sourceCode" id="cb4" data-filename="example.qmd"><pre class="sourceCode markdown wrap code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>I **really** like bold and *really* like italics, and *really **really*** can't decide which to use.</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-filename="example.qmd"><pre class="sourceCode markdown wrap code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>I **really** like bold and *really* like italics, and *really **really*** can't decide which to use.</span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>:::{.shout}</span>
 <span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>And sometimes I **really** need to shout!</span>
 <span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>It's like I want to <span class="in">`toupper()`</span> everything!</span>
-<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:55%;">
 <p><img data-src="images/ast-1-inlines.png"></p>
@@ -444,7 +444,7 @@ Mine Çetinkaya-Rundel
 <li>the text <code>quarto</code> in the code block</li>
 </ul></li>
 </ul>
-<div id="timer_f33f97ffc767679a22abd69ff9aee733bf6ffe8d" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_4082c79ab8a2fa06c74425aa5d62cdf27b11e81f" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -465,9 +465,10 @@ Mine Çetinkaya-Rundel
 <h2>Problems solved with filters</h2>
 <ul>
 <li><p>Remove <code># fmt: skip</code> comments from code cells. <a href="https://github.com/quarto-dev/quarto-cli/discussions/13335">Discussion</a></p></li>
-<li><p>Add paragraph numbers. <a href="https://github.com/quarto-dev/quarto-cli/discussions/13177">Discussion</a></p></li>
-<li><p>Collect all code chunks and display in a code appendix. <a href="https://github.com/quarto-dev/quarto-cli/discussions/12498">Discussion</a></p></li>
+<li><p>Number all callouts. <a href="https://github.com/quarto-dev/quarto-cli/discussions/10240">Discussion</a></p></li>
 <li><p>Put the contents of an SVG image in a raw HTML block rather than using <code>&lt;img&gt;</code>. <a href="https://github.com/quarto-dev/quarto-cli/discussions/13251">Discussion</a></p></li>
+<li><p>Display the language on every code cell. <a href="https://github.com/quarto-dev/quarto-cli/discussions/10400">Discussion</a></p></li>
+<li><p>Collect all code chunks and display in a code appendix. <a href="https://github.com/quarto-dev/quarto-cli/discussions/12498">Discussion</a></p></li>
 </ul>
 </section></section>
 <section>
@@ -490,9 +491,9 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>no-change.lua</strong></pre>
 </div>
-<div class="sourceCode" id="cb5" data-filename="no-change.lua"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">Strong</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-filename="no-change.lua"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">Strong</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
 <span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">nil</span></span>
-<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column fragment">
 <p>To use the filter, specify it in the document header:</p>
@@ -500,11 +501,11 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>example.qmd</strong></pre>
 </div>
-<div class="sourceCode" id="cb6" data-filename="example.qmd"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-filename="example.qmd"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Filter Basics"</span></span>
 <span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">filters</span><span class="kw">:</span></span>
 <span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> no-change.lua</span></span>
-<span id="cb6-5"><a aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-5"><a aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 <p><span class="fragment">A filter function that returns <code>nil</code>, leaves the node unchanged.</span></p>
@@ -520,11 +521,11 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>no-change.lua</strong></pre>
 </div>
-<div class="sourceCode" id="cb7" data-filename="no-change.lua" data-code-line-numbers="2,3"><pre class="sourceCode numberSource lua number-lines code-with-copy"><code class="sourceCode lua"><span id="cb7-1"><a></a><span class="va">Strong</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-filename="no-change.lua" data-code-line-numbers="2,3"><pre class="sourceCode numberSource lua number-lines code-with-copy"><code class="sourceCode lua"><span id="cb7-1"><a></a><span class="va">Strong</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
 <span id="cb7-2"><a></a>  <span class="va">quarto</span><span class="op">.</span><span class="va">log</span><span class="op">.</span>output<span class="op">(</span><span class="st">"Here!"</span><span class="op">)</span></span>
 <span id="cb7-3"><a></a>  <span class="va">quarto</span><span class="op">.</span><span class="va">log</span><span class="op">.</span>output<span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
 <span id="cb7-4"><a></a>  <span class="cf">return</span> <span class="kw">nil</span></span>
-<span id="cb7-5"><a></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-5"><a></a><span class="kw">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><code>quarto.log.output()</code>: Positron/VS Code look in Terminal, RStudio look in Background Jobs.</p>
 </div><div class="column">
@@ -543,9 +544,9 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>replace-strong.lua</strong></pre>
 </div>
-<div class="sourceCode" id="cb8" data-filename="replace-strong.lua"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">Strong</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-filename="replace-strong.lua"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">Strong</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
 <span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="va">pandoc</span><span class="op">.</span>Emph<span class="op">(</span><span class="va">el</span><span class="op">.</span><span class="va">content</span><span class="op">)</span></span>
-<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column">
 <ul>
@@ -554,66 +555,10 @@ Mine Çetinkaya-Rundel
 </ul>
 </div></div>
 </section>
-<section id="other-similar-types-of-inline-elements" class="slide level2 smaller">
-<h2>Other similar types of <code>Inline</code> elements</h2>
-<p>See <a href="../modules/quick-reference.html#text-formatting">Pandoc LUA types Quick Reference</a></p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 46%">
-<col style="width: 33%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Type</th>
-<th>Constructor</th>
-<th>Fields</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Emph</td>
-<td><code>pandoc.Emph(content)</code></td>
-<td><code>content</code></td>
-</tr>
-<tr class="even">
-<td>SmallCaps</td>
-<td><code>pandoc.SmallCaps(content)</code></td>
-<td><code>content</code></td>
-</tr>
-<tr class="odd">
-<td>Strikeout</td>
-<td><code>pandoc.Strikeout(content)</code></td>
-<td><code>content</code></td>
-</tr>
-<tr class="even">
-<td>Strong</td>
-<td><code>pandoc.Strong(content)</code></td>
-<td><code>content</code></td>
-</tr>
-<tr class="odd">
-<td>Subscript</td>
-<td><code>pandoc.Subscript(content)</code></td>
-<td><code>content</code></td>
-</tr>
-<tr class="even">
-<td>Superscript</td>
-<td><code>pandoc.Superscript(content)</code></td>
-<td><code>content</code></td>
-</tr>
-<tr class="odd">
-<td>Underline</td>
-<td><code>pandoc.Underline(content)</code></td>
-<td><code>content</code></td>
-</tr>
-<tr class="even">
-<td>Quoted</td>
-<td><code>pandoc.Quoted(quotetype, content)</code>, <code>quotetype</code>: <code>SingleQuote</code> or <code>DoubleQuote</code></td>
-<td><code>quotetype</code>, <code>content</code></td>
-</tr>
-</tbody>
-</table>
-<p><code>content</code> is an <code>Inlines</code> object (a list of <code>Inline</code> elements).</p>
+<section id="other-similar-types-of-inline-elements" class="slide level2">
+<h2><span class="small">Other similar types of <code>Inline</code> elements</span></h2>
+<p>See <a href="../modules/quick-reference.html#text-formatting">Pandoc Lua types Quick Reference</a></p>
+<iframe src="../modules/quick-reference.html#text-formatting" class="ast-diagram"></iframe>
 </section>
 <section id="your-turn-1" class="slide level2">
 <h2>Your Turn</h2>
@@ -626,7 +571,7 @@ Mine Çetinkaya-Rundel
 <li><p>Write a filter that removes all bold and italic formatting, leaving just the text.</p></li>
 <li><p>Write a filter that converts all double quotes to single quotes.</p></li>
 </ul>
-<div id="timer_f33f97ffc767679a22abd69ff9aee733bf6ffe8d" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_4082c79ab8a2fa06c74425aa5d62cdf27b11e81f" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -656,13 +601,13 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>double-strong.lua</strong></pre>
 </div>
-<div class="sourceCode" id="cb11" data-filename="double-strong.lua"><pre class="sourceCode lua wrap code-with-copy"><code class="sourceCode lua"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">Strong</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11" data-filename="double-strong.lua"><pre class="sourceCode lua wrap code-with-copy"><code class="sourceCode lua"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">Strong</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
 <span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="va">pandoc</span><span class="op">.</span>Inlines<span class="op">({</span></span>
 <span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="va">el</span><span class="op">,</span> </span>
 <span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="va">pandoc</span><span class="op">.</span>Space<span class="op">(),</span> </span>
 <span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="va">el</span></span>
 <span id="cb11-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="op">})</span></span>
-<span id="cb11-7"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-7"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column">
 <blockquote>
@@ -678,9 +623,9 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>remove-strong.lua</strong></pre>
 </div>
-<div class="sourceCode" id="cb12" data-filename="remove-strong.lua"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">Strong</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12" data-filename="remove-strong.lua"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">Strong</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
 <span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="op">{}</span></span>
-<span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column">
 <blockquote>
@@ -689,12 +634,12 @@ Mine Çetinkaya-Rundel
 </div></div>
 </section>
 <section id="common-mistake-an-array-of-inlines" class="slide level2">
-<h2>Common mistake: an array of <code>Inlines</code></h2>
+<h2><span class="small">Common mistake: an array of <code>Inlines</code></span></h2>
 <p>This won’t work because <code>el.content</code> is an <code>Inlines</code> object:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> <span class="va">pandoc</span><span class="op">.</span>Inlines<span class="op">({</span><span class="va">el</span><span class="op">.</span><span class="va">content</span><span class="op">,</span> <span class="va">el</span><span class="op">.</span><span class="va">content</span><span class="op">})</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> <span class="va">pandoc</span><span class="op">.</span>Inlines<span class="op">({</span><span class="va">el</span><span class="op">.</span><span class="va">content</span><span class="op">,</span> <span class="va">el</span><span class="op">.</span><span class="va">content</span><span class="op">})</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>&nbsp;</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>Error running filter /Applications/quarto/share/filters/main.lua:</span>
-<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a>Inline expected, got Inlines</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>Error running filter /Applications/quarto/share/filters/main.lua:</span>
+<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a>Inline expected, got Inlines</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>See a useful pattern in the next section.</p>
 </section></section>
 <section>
@@ -708,7 +653,7 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>target-span.qmd</strong></pre>
 </div>
-<div class="sourceCode" id="cb15" data-filename="target-span.qmd"><pre class="sourceCode markdown wrap code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15" data-filename="target-span.qmd"><pre class="sourceCode markdown wrap code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Filter Basics"</span></span>
 <span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a><span class="an">filters:</span></span>
 <span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">  - shout.lua</span></span>
@@ -716,7 +661,7 @@ Mine Çetinkaya-Rundel
 <span id="cb15-6"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-7"><a aria-hidden="true" tabindex="-1"></a>I **really** like bold and *really* like italics, and *really **really*** can't decide which to use.</span>
 <span id="cb15-8"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">And sometimes I **really** need to shout</span><span class="co">]</span>{.shout}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">And sometimes I **really** need to shout</span><span class="co">]</span>{.shout}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><img data-src="images/ast-target-span.png"></p>
 
@@ -731,11 +676,11 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>shout.lua</strong></pre>
 </div>
-<div class="sourceCode" id="cb16" data-filename="shout.lua"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">Span</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16" data-filename="shout.lua"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">Span</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
 <span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="va">el</span><span class="op">.</span><span class="va">classes</span><span class="op">:</span>includes<span class="op">(</span><span class="st">"shout"</span><span class="op">)</span> <span class="cf">then</span></span>
 <span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">pandoc</span><span class="op">.</span>SmallCaps<span class="op">(</span><span class="va">el</span><span class="op">.</span><span class="va">content</span><span class="op">)</span></span>
 <span id="cb16-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span>  </span>
-<span id="cb16-5"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-5"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:45%;">
 <ul>
@@ -752,14 +697,14 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>shout.lua</strong></pre>
 </div>
-<div class="sourceCode" id="cb17" data-filename="shout.lua"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">Span</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17" data-filename="shout.lua"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">Span</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
 <span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="va">el</span><span class="op">.</span><span class="va">classes</span><span class="op">:</span>includes<span class="op">(</span><span class="st">"shout"</span><span class="op">)</span> <span class="cf">then</span></span>
 <span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">local</span> <span class="va">result</span> <span class="op">=</span> <span class="va">pandoc</span><span class="op">.</span>Inlines<span class="op">({})</span></span>
 <span id="cb17-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="va">result</span><span class="op">:</span>extend<span class="op">(</span><span class="va">el</span><span class="op">.</span><span class="va">content</span><span class="op">)</span></span>
 <span id="cb17-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="va">result</span><span class="op">:</span><span class="fu">insert</span><span class="op">(</span><span class="va">pandoc</span><span class="op">.</span>Str<span class="op">(</span><span class="st">"!"</span><span class="op">))</span></span>
 <span id="cb17-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">result</span></span>
 <span id="cb17-7"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span>  </span>
-<span id="cb17-8"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-8"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:45%;">
 <p>A useful pattern:</p>
@@ -787,7 +732,7 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>Before</strong></pre>
 </div>
-<div class="sourceCode" id="cb18" data-filename="Before"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Write a filter</span><span class="co">]</span>{.says}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18" data-filename="Before"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Write a filter</span><span class="co">]</span>{.says}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column">
 <p>Becomes equivalent to:</p>
@@ -795,11 +740,11 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>After</strong></pre>
 </div>
-<div class="sourceCode" id="cb19" data-filename="After"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>Simon says "Write a filter"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19" data-filename="After"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>Simon says "Write a filter"</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 <p><strong>Challenge:</strong> Instead of <code>Simon</code>, let the user specify the name as an attribute, e.g.&nbsp;<code>[Write a filter]{.says name="Charlotte"}</code></p>
-<div id="timer_f33f97ffc767679a22abd69ff9aee733bf6ffe8d" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_4082c79ab8a2fa06c74425aa5d62cdf27b11e81f" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -824,7 +769,7 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>target-div.qmd</strong></pre>
 </div>
-<div class="sourceCode" id="cb21" data-filename="target-div.qmd" data-code-line-numbers="|7,13"><pre class="sourceCode numberSource markdown wrap number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21" data-filename="target-div.qmd" data-code-line-numbers="|7,13"><pre class="sourceCode numberSource markdown wrap number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a></a><span class="co">---</span></span>
 <span id="cb21-2"><a></a><span class="an">title:</span><span class="co"> "Filter Basics"</span></span>
 <span id="cb21-3"><a></a><span class="an">filters:</span></span>
 <span id="cb21-4"><a></a><span class="co">  - shout.lua</span></span>
@@ -836,21 +781,21 @@ Mine Çetinkaya-Rundel
 <span id="cb21-10"><a></a><span class="in">```r</span></span>
 <span id="cb21-11"><a></a><span class="fu">library</span>(scream)</span>
 <span id="cb21-12"><a></a><span class="in">```</span></span>
-<span id="cb21-13"><a></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-13"><a></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:60%;">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>shout.lua</strong></pre>
 </div>
-<div class="sourceCode" id="cb22" data-filename="shout.lua" data-code-line-numbers="|1,5"><pre class="sourceCode numberSource lua number-lines code-with-copy"><code class="sourceCode lua"><span id="cb22-1"><a></a><span class="va">Div</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22" data-filename="shout.lua" data-code-line-numbers="|1,5"><pre class="sourceCode numberSource lua number-lines code-with-copy"><code class="sourceCode lua"><span id="cb22-1"><a></a><span class="va">Div</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
 <span id="cb22-2"><a></a>  <span class="cf">if</span> <span class="kw">not</span> <span class="va">el</span><span class="op">.</span><span class="va">classes</span><span class="op">:</span>includes<span class="op">(</span><span class="st">"shout"</span><span class="op">)</span> <span class="cf">then</span></span>
 <span id="cb22-3"><a></a>    <span class="cf">return</span> <span class="kw">nil</span></span>
 <span id="cb22-4"><a></a>  <span class="cf">end</span></span>
 <span id="cb22-5"><a></a>  <span class="kw">local</span> <span class="va">result</span> <span class="op">=</span> <span class="va">pandoc</span><span class="op">.</span>Blocks<span class="op">({})</span></span>
 <span id="cb22-6"><a></a>  <span class="co">-- Transform el, construct result</span></span>
 <span id="cb22-7"><a></a>  <span class="cf">return</span> <span class="va">result</span> </span>
-<span id="cb22-8"><a></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-8"><a></a><span class="kw">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 <div class="footer">
@@ -865,7 +810,7 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>target-div.qmd</strong></pre>
 </div>
-<div class="sourceCode" id="cb23" data-filename="target-div.qmd"><pre class="sourceCode markdown wrap code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23" data-filename="target-div.qmd"><pre class="sourceCode markdown wrap code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Filter Basics"</span></span>
 <span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a><span class="an">filters:</span></span>
 <span id="cb23-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">  - shout.lua</span></span>
@@ -877,14 +822,14 @@ Mine Çetinkaya-Rundel
 <span id="cb23-10"><a aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
 <span id="cb23-11"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scream)</span>
 <span id="cb23-12"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-13"><a aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-13"><a aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:60%;">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>shout.lua</strong></pre>
 </div>
-<div class="sourceCode" id="cb24" data-filename="shout.lua" data-code-line-numbers="|5-9"><pre class="sourceCode numberSource lua number-lines code-with-copy"><code class="sourceCode lua"><span id="cb24-1"><a></a><span class="va">Div</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24" data-filename="shout.lua" data-code-line-numbers="|5-9"><pre class="sourceCode numberSource lua number-lines code-with-copy"><code class="sourceCode lua"><span id="cb24-1"><a></a><span class="va">Div</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
 <span id="cb24-2"><a></a>  <span class="cf">if</span> <span class="kw">not</span> <span class="va">el</span><span class="op">.</span><span class="va">classes</span><span class="op">:</span>includes<span class="op">(</span><span class="st">"shout"</span><span class="op">)</span> <span class="cf">then</span></span>
 <span id="cb24-3"><a></a>    <span class="cf">return</span> <span class="kw">nil</span></span>
 <span id="cb24-4"><a></a>  <span class="cf">end</span></span>
@@ -894,7 +839,7 @@ Mine Çetinkaya-Rundel
 <span id="cb24-8"><a></a>    <span class="kw">end</span></span>
 <span id="cb24-9"><a></a>  <span class="op">})</span></span>
 <span id="cb24-10"><a></a>  <span class="cf">return</span> <span class="va">result</span><span class="op">.</span><span class="va">content</span></span>
-<span id="cb24-11"><a></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-11"><a></a><span class="kw">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 <p><a href="https://pandoc.org/lua-filters.html#type-pandoc:walk" class="uri">https://pandoc.org/lua-filters.html#type-pandoc:walk</a></p>
@@ -910,7 +855,7 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>example.qmd</strong></pre>
 </div>
-<div class="sourceCode" id="cb25" data-filename="example.qmd"><pre class="sourceCode markdown wrap code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25" data-filename="example.qmd"><pre class="sourceCode markdown wrap code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Format-Specific Output"</span></span>
 <span id="cb25-3"><a aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> pdf</span></span>
 <span id="cb25-4"><a aria-hidden="true" tabindex="-1"></a><span class="an">filters:</span></span>
@@ -923,14 +868,14 @@ Mine Çetinkaya-Rundel
 <span id="cb25-11"><a aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
 <span id="cb25-12"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scream)</span>
 <span id="cb25-13"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb25-14"><a aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-14"><a aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:60%;">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>shout.lua</strong></pre>
 </div>
-<div class="sourceCode" id="cb26" data-filename="shout.lua" data-code-line-numbers="|6,8"><pre class="sourceCode numberSource lua number-lines code-with-copy"><code class="sourceCode lua"><span id="cb26-1"><a></a><span class="va">Div</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26" data-filename="shout.lua" data-code-line-numbers="|6,8"><pre class="sourceCode numberSource lua number-lines code-with-copy"><code class="sourceCode lua"><span id="cb26-1"><a></a><span class="va">Div</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
 <span id="cb26-2"><a></a>  <span class="cf">if</span> <span class="kw">not</span> <span class="va">el</span><span class="op">.</span><span class="va">classes</span><span class="op">:</span>includes<span class="op">(</span><span class="st">"shout"</span><span class="op">)</span> <span class="cf">then</span></span>
 <span id="cb26-3"><a></a>    <span class="cf">return</span> <span class="kw">nil</span></span>
 <span id="cb26-4"><a></a>  <span class="cf">end</span></span>
@@ -941,7 +886,7 @@ Mine Çetinkaya-Rundel
 <span id="cb26-9"><a></a>    <span class="cf">return</span> <span class="va">result</span></span>
 <span id="cb26-10"><a></a>  <span class="cf">end</span></span>
 <span id="cb26-11"><a></a>  </span>
-<span id="cb26-12"><a></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-12"><a></a><span class="kw">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 <div class="footer">
@@ -956,7 +901,7 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>article.qmd</strong></pre>
 </div>
-<div class="sourceCode" id="cb27" data-filename="article.qmd"><pre class="sourceCode markdown wrap code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27" data-filename="article.qmd"><pre class="sourceCode markdown wrap code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb27-2"><a aria-hidden="true" tabindex="-1"></a><span class="an">author:</span></span>
 <span id="cb27-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">  - name: Mine Çetinkaya-Rundel</span></span>
 <span id="cb27-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">    orcid: 0000-0001-6452-2420</span></span>
@@ -969,16 +914,16 @@ Mine Çetinkaya-Rundel
 <span id="cb27-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">    email: charlotte.wickham@posit.co</span></span>
 <span id="cb27-12"><a aria-hidden="true" tabindex="-1"></a><span class="co">    affiliation:</span></span>
 <span id="cb27-13"><a aria-hidden="true" tabindex="-1"></a><span class="co">      - name: Posit, PBC</span></span>
-<span id="cb27-14"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-14"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>meta.lua</strong></pre>
 </div>
-<div class="sourceCode" id="cb28" data-filename="meta.lua"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">Meta</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">meta</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28" data-filename="meta.lua"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">Meta</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">meta</span><span class="op">)</span></span>
 <span id="cb28-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="va">quarto</span><span class="op">.</span><span class="va">log</span><span class="op">.</span>output<span class="op">(</span><span class="va">meta</span><span class="op">)</span></span>
-<span id="cb28-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 <div class="footer">
@@ -996,7 +941,7 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>meta.lua</strong></pre>
 </div>
-<div class="sourceCode" id="cb29" data-filename="meta.lua" data-code-line-numbers="|4-6,9-11|2,3,7,8,12,13"><pre class="sourceCode numberSource lua number-lines code-with-copy"><code class="sourceCode lua"><span id="cb29-1"><a></a><span class="kw">local</span> <span class="va">string_out</span> <span class="op">=</span> <span class="st">""</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29" data-filename="meta.lua" data-code-line-numbers="|4-6,9-11|2,3,7,8,12,13"><pre class="sourceCode numberSource lua number-lines code-with-copy"><code class="sourceCode lua"><span id="cb29-1"><a></a><span class="kw">local</span> <span class="va">string_out</span> <span class="op">=</span> <span class="st">""</span></span>
 <span id="cb29-2"><a></a><span class="cf">return</span> <span class="op">{</span></span>
 <span id="cb29-3"><a></a>  <span class="op">{</span> <span class="co">-- this set is run first</span></span>
 <span id="cb29-4"><a></a>    <span class="va">Meta</span> <span class="op">=</span> <span class="kw">function</span> <span class="op">(</span><span class="va">meta</span><span class="op">)</span></span>
@@ -1008,7 +953,7 @@ Mine Çetinkaya-Rundel
 <span id="cb29-10"><a></a>      <span class="co">-- use `string_out`</span></span>
 <span id="cb29-11"><a></a>    <span class="kw">end</span></span>
 <span id="cb29-12"><a></a>  <span class="op">}</span></span>
-<span id="cb29-13"><a></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-13"><a></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 <div class="footer">
@@ -1028,9 +973,9 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>example.qmd</strong></pre>
 </div>
-<div class="sourceCode" id="cb30" data-filename="example.qmd"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb30-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">filters</span><span class="kw">:</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30" data-filename="example.qmd"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb30-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">filters</span><span class="kw">:</span></span>
 <span id="cb30-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">at</span><span class="kw">:</span><span class="at"> post-quarto</span></span>
-<span id="cb30-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">path</span><span class="kw">:</span><span class="at"> shout.lua</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">path</span><span class="kw">:</span><span class="at"> shout.lua</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Also <code>pre-ast</code>, <code>post-ast</code>, <code>pre-render</code>, <code>post-render</code></p>
 </div></div>
@@ -1052,25 +997,25 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>shout/</strong></pre>
 </div>
-<div class="sourceCode" id="cb31" data-filename="shout/"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb31-1"><a aria-hidden="true" tabindex="-1"></a>├── README.md</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31" data-filename="shout/"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb31-1"><a aria-hidden="true" tabindex="-1"></a>├── README.md</span>
 <span id="cb31-2"><a aria-hidden="true" tabindex="-1"></a>├── _extensions</span>
 <span id="cb31-3"><a aria-hidden="true" tabindex="-1"></a>│   └── shout</span>
 <span id="cb31-4"><a aria-hidden="true" tabindex="-1"></a>│       ├── _extension.yml</span>
 <span id="cb31-5"><a aria-hidden="true" tabindex="-1"></a>│       └── shout.lua</span>
-<span id="cb31-6"><a aria-hidden="true" tabindex="-1"></a>└── example.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-6"><a aria-hidden="true" tabindex="-1"></a>└── example.qmd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>_extension.yml</strong></pre>
 </div>
-<div class="sourceCode" id="cb32" data-filename="_extension.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb32-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Shout</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32" data-filename="_extension.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb32-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Shout</span></span>
 <span id="cb32-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Charlotte Wickham</span></span>
 <span id="cb32-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">version</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.0.0</span></span>
 <span id="cb32-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">quarto-required</span><span class="kw">:</span><span class="at"> </span><span class="st">"&gt;=1.7.0"</span></span>
 <span id="cb32-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">contributes</span><span class="kw">:</span></span>
 <span id="cb32-6"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">filters</span><span class="kw">:</span></span>
-<span id="cb32-7"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> shout.lua</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-7"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> shout.lua</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 <p>Users must opt-in to extension under <code>filters</code>:</p>
@@ -1078,10 +1023,10 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>example.qmd</strong></pre>
 </div>
-<div class="sourceCode" id="cb33" data-filename="example.qmd"><pre class="sourceCode markdown wrap code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33" data-filename="example.qmd"><pre class="sourceCode markdown wrap code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb33-2"><a aria-hidden="true" tabindex="-1"></a><span class="an">filters:</span></span>
 <span id="cb33-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">  - shout</span></span>
-<span id="cb33-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="footer">
 <p><a href="https://quarto.org/docs/extensions/filters.html#filter-extensions" class="uri">https://quarto.org/docs/extensions/filters.html#filter-extensions</a></p>
@@ -1095,19 +1040,19 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>shouty/</strong></pre>
 </div>
-<div class="sourceCode" id="cb34" data-filename="shouty/"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb34-1"><a aria-hidden="true" tabindex="-1"></a>├── README.md</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34" data-filename="shouty/"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb34-1"><a aria-hidden="true" tabindex="-1"></a>├── README.md</span>
 <span id="cb34-2"><a aria-hidden="true" tabindex="-1"></a>├── _extensions</span>
 <span id="cb34-3"><a aria-hidden="true" tabindex="-1"></a>│   └── shouty</span>
 <span id="cb34-4"><a aria-hidden="true" tabindex="-1"></a>│       ├── _extension.yml</span>
 <span id="cb34-5"><a aria-hidden="true" tabindex="-1"></a>│       └── shout.lua</span>
-<span id="cb34-6"><a aria-hidden="true" tabindex="-1"></a>└── template.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb34-6"><a aria-hidden="true" tabindex="-1"></a>└── template.qmd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>_extension.yml</strong></pre>
 </div>
-<div class="sourceCode" id="cb35" data-filename="_extension.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb35-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Shouty</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35" data-filename="_extension.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb35-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Shouty</span></span>
 <span id="cb35-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Charlotte Wickham</span></span>
 <span id="cb35-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">version</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.0.0</span></span>
 <span id="cb35-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">quarto-required</span><span class="kw">:</span><span class="at"> </span><span class="st">"&gt;=1.7.0"</span></span>
@@ -1115,7 +1060,7 @@ Mine Çetinkaya-Rundel
 <span id="cb35-6"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">formats</span><span class="kw">:</span></span>
 <span id="cb35-7"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">html</span><span class="kw">:</span></span>
 <span id="cb35-8"><a aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">filters</span><span class="kw">:</span></span>
-<span id="cb35-9"><a aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="kw">-</span><span class="at"> shout.lua</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-9"><a aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="kw">-</span><span class="at"> shout.lua</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 <p>Users specify <code>format: shouty-html</code>, and get filter applied automatically.</p>
@@ -1129,21 +1074,21 @@ Mine Çetinkaya-Rundel
 <div class="code-with-filename-file">
 <pre><strong>hello.qmd</strong></pre>
 </div>
-<div class="sourceCode" id="cb36" data-filename="hello.qmd" data-shortcodes="false"><pre class="sourceCode markdown wrap code-with-copy"><code class="sourceCode markdown"><span id="cb36-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36" data-filename="hello.qmd" data-shortcodes="false"><pre class="sourceCode markdown wrap code-with-copy"><code class="sourceCode markdown"><span id="cb36-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb36-2"><a aria-hidden="true" tabindex="-1"></a><span class="an">shortcodes:</span></span>
 <span id="cb36-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">  - hello.lua</span></span>
 <span id="cb36-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb36-5"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-6"><a aria-hidden="true" tabindex="-1"></a>{{&lt; hello &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-6"><a aria-hidden="true" tabindex="-1"></a>{{&lt; hello &gt;}}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>hello.lua</strong></pre>
 </div>
-<div class="sourceCode" id="cb37" data-filename="hello.lua"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb37-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">hello</span> <span class="op">=</span> <span class="kw">function</span> <span class="op">()</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37" data-filename="hello.lua"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb37-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">hello</span> <span class="op">=</span> <span class="kw">function</span> <span class="op">()</span></span>
 <span id="cb37-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="va">pandoc</span><span class="op">.</span>Str<span class="op">(</span><span class="st">"Hi there!"</span><span class="op">)</span></span>
-<span id="cb37-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 <p>Can take arguments: <code>args</code>, <code>kwargs</code>, <code>meta</code>, <code>raw_args</code>, <code>context</code></p>
@@ -1366,7 +1311,7 @@ Mine Çetinkaya-Rundel
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -1440,13 +1385,14 @@ Mine Çetinkaya-Rundel
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
