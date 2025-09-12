@@ -101,7 +101,7 @@ Takes no arguments, has no fields.
 
 ### Basic Elements
 
-`text` is a simple LUA string (not a `Str`)
+`text` is a simple Lua string (not a `Str`)
 
 | Type             | Constructor | Fields |
 |------------------|-------------|--------|
@@ -130,7 +130,7 @@ Takes no arguments, has no fields.
 
 `content` and `title` are `Inlines` unless otherwise noted.
 
-`src`, `target` are simple LUA strings.
+`src`, `target` are simple Lua strings.
 
 `attr` is an [`Attr` object](https://pandoc.org/lua-filters.html#type-attr).
 
