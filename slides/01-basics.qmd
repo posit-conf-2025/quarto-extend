@@ -139,6 +139,10 @@ Let's jump in!
 
 Done? Browse <https://m.canouil.dev/quarto-extensions> for other extensions and explore their source.
 
+::: footer
+[Exercise code repo](https://github.com/posit-conf-2025/quarto-extend-exercises): `01-basics/`
+:::
+
 {{< countdown 10:00 >}}
 
 ## Your turn: Solutions {visibility="hidden"}

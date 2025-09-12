@@ -216,12 +216,12 @@ Take a look at the AST diagram on the next slide.
 {{< countdown "6:00" >}}
 
 ::: footer
-`quarto-extend-exercises/03-filters/your-turns/1-explore-ast`
+`03-filters/your-turns/1-explore-ast`
 :::
 
 ## AST
 
-[View Full Screen](_ast-diagrams/your-turn-1-ast.html)
+[View Full Screen](_ast-diagrams/your-turn-1-ast.html){target="_blank"}
 
 ```{=html}
 <iframe src="_ast-diagrams/your-turn-1-ast.html" class = "ast-diagram"></iframe>
@@ -241,8 +241,6 @@ Take a look at the AST diagram on the next slide.
     * The text `Lua` in the link text. **Yes**
     * The test `lua-filters` in the link URL. **No**
     * The text `quarto` in the code block. **No** 
-
-{{< countdown "6:00" >}}
 
 ## Problems solved with filters
 
@@ -294,7 +292,7 @@ filters:
 [A filter function that returns `nil`, leaves the node unchanged.]{.fragment}
 
 ::: {.footer}
-`quarto-extend-examples/03-filters/examples/1-writing-filters`
+`03-filters/examples/1-writing-filters`
 :::
 
 ## Live Code: "Print" debugging 
@@ -358,6 +356,10 @@ See [Pandoc Lua types Quick Reference](/quick-reference.qmd#text-formatting)
 
 {{< countdown "10:00" >}}
 
+::: footer
+`03-filters/your-turns/2-write-a-filter`
+:::
+
 ## Solution {visibility="hidden"}
 
 ```{.lua filename="replace-emph.lua"}
@@ -409,6 +411,9 @@ end
 :::
 :::
 
+::: footer
+03-filters/examples/2-return-types
+::: 
 
 ## An empty list 
 
@@ -423,6 +428,10 @@ end
 ::: {.column}
 > I **really** like bold and like italics, and can't decide which to use.
 :::
+::: 
+
+::: footer
+03-filters/examples/2-return-types
 ::: 
 
 ## [Common mistake: an array of `Inlines`]{.small}
@@ -461,7 +470,7 @@ I **really** like bold and *really* like italics, and *really **really*** can't 
 ![](images/ast-target-span.png){}
 
 
-::: aside
+::: footer
 Example: `03-filters/examples/3-target-text`
 ::: 
 
@@ -486,6 +495,9 @@ end
 :::
 ::: 
 
+::: footer
+Example: `03-filters/examples/3-target-text`
+::: 
 
 ## Live Code: Constructing content
 
