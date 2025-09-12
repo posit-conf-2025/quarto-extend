@@ -444,7 +444,7 @@ Mine Çetinkaya-Rundel
 <li>the text <code>quarto</code> in the code block</li>
 </ul></li>
 </ul>
-<div id="timer_1dec2173701255353774c2f1cbafcee517e5f574" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_b6d09310d1e257c2bf1bbb4da47ffb89f29f5385" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -452,12 +452,12 @@ Mine Çetinkaya-Rundel
  <code class="countdown-time"><span class="countdown-digits minutes">06</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
  </div>
 <div class="footer">
-<p><code>quarto-extend-exercises/03-filters/your-turns/1-explore-ast</code></p>
+<p><code>03-filters/your-turns/1-explore-ast</code></p>
 </div>
 </section>
 <section id="ast" class="slide level2">
 <h2>AST</h2>
-<p><a href="_ast-diagrams/your-turn-1-ast.html">View Full Screen</a></p>
+<p><a href="_ast-diagrams/your-turn-1-ast.html" target="_blank">View Full Screen</a></p>
 <iframe src="_ast-diagrams/your-turn-1-ast.html" class="ast-diagram"></iframe>
 </section>
 
@@ -510,7 +510,7 @@ Mine Çetinkaya-Rundel
 </div></div>
 <p><span class="fragment">A filter function that returns <code>nil</code>, leaves the node unchanged.</span></p>
 <div class="footer">
-<p><code>quarto-extend-examples/03-filters/examples/1-writing-filters</code></p>
+<p><code>03-filters/examples/1-writing-filters</code></p>
 </div>
 </section>
 <section id="live-code-print-debugging" class="slide level2">
@@ -571,13 +571,16 @@ Mine Çetinkaya-Rundel
 <li><p>Write a filter that removes all bold and italic formatting, leaving just the text.</p></li>
 <li><p>Write a filter that converts all double quotes to single quotes.</p></li>
 </ul>
-<div id="timer_1dec2173701255353774c2f1cbafcee517e5f574" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_b6d09310d1e257c2bf1bbb4da47ffb89f29f5385" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
  </div>
  <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
  </div>
+<div class="footer">
+<p><code>03-filters/your-turns/2-write-a-filter</code></p>
+</div>
 </section>
 
 
@@ -614,6 +617,9 @@ Mine Çetinkaya-Rundel
 <p>I <strong>really</strong> <strong>really</strong> like bold and <em>really</em> like italics, and <em>really <strong>really</strong> <strong>really</strong></em> can’t decide which to use.</p>
 </blockquote>
 </div></div>
+<div class="footer">
+<p>03-filters/examples/2-return-types</p>
+</div>
 </section>
 <section id="an-empty-list" class="slide level2">
 <h2>An empty list</h2>
@@ -632,6 +638,9 @@ Mine Çetinkaya-Rundel
 <p>I <strong>really</strong> like bold and like italics, and can’t decide which to use.</p>
 </blockquote>
 </div></div>
+<div class="footer">
+<p>03-filters/examples/2-return-types</p>
+</div>
 </section>
 <section id="common-mistake-an-array-of-inlines" class="slide level2">
 <h2><span class="small">Common mistake: an array of <code>Inlines</code></span></h2>
@@ -663,11 +672,11 @@ Mine Çetinkaya-Rundel
 <span id="cb15-8"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">And sometimes I **really** need to shout</span><span class="co">]</span>{.shout}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p><img data-src="images/ast-target-span.png"></p>
 
-<aside><div>
+<img data-src="images/ast-target-span.png" class="r-stretch"><div class="footer">
 <p>Example: <code>03-filters/examples/3-target-text</code></p>
-</div></aside></section>
+</div>
+</section>
 <section id="live-code-smallcaps-all-spans-with-class-shout" class="slide level2">
 <h2>Live Code: Smallcaps all spans with class <code>shout</code></h2>
 <div class="columns">
@@ -688,6 +697,9 @@ Mine Çetinkaya-Rundel
 <li><p><code>includes()</code> is a <a href="https://pandoc.org/lua-filters.html#methods-2">method on Pandoc lists</a>.</p></li>
 </ul>
 </div></div>
+<div class="footer">
+<p>Example: <code>03-filters/examples/3-target-text</code></p>
+</div>
 </section>
 <section id="live-code-constructing-content" class="slide level2">
 <h2>Live Code: Constructing content</h2>
@@ -744,7 +756,7 @@ Mine Çetinkaya-Rundel
 </div>
 </div></div>
 <p><strong>Challenge:</strong> Instead of <code>Simon</code>, let the user specify the name as an attribute, e.g.&nbsp;<code>[Write a filter]{.says name="Charlotte"}</code></p>
-<div id="timer_1dec2173701255353774c2f1cbafcee517e5f574" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_b6d09310d1e257c2bf1bbb4da47ffb89f29f5385" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>

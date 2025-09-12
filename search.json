@@ -32,7 +32,7 @@
     "href": "slides/01-basics.html#instructors",
     "title": "Extension Basics",
     "section": "Instructors",
-    "text": "Instructors\n\n\nCharlotte\n\nMine"
+    "text": "Instructors\n\n\nCharlotte  \nDeveloper Educator @ Posit\nFocus on Quarto\n\nMine"
   },
   {
     "objectID": "slides/01-basics.html#teaching-assistants",
@@ -74,7 +74,7 @@
     "href": "slides/01-basics.html#your-turn-install-and-explore-an-extension",
     "title": "Extension Basics",
     "section": "Your turn: Install and explore an extension",
-    "text": "Your turn: Install and explore an extension\n\nAdd the quarto-revealjs-clean extension to the project in 01-basics/, by running:\n\n\nTerminal\n\ncd 01-basics\nquarto add grantmcdermott/quarto-revealjs-clean@v1.3\n\nWhere did the file _extension.yml get installed?\nCompare _extension.yml and the files alongside it to those in the source on GitHub. What’s the same? What’s different?\nPreview slides.qmd. Then, edit to use the clean-revealjs format, and preview.\n\nDone? Browse https://m.canouil.dev/quarto-extensions for other extensions and explore their source.\n\n  \n    −\n    +\n \n 10:00"
+    "text": "Your turn: Install and explore an extension\n\nAdd the quarto-revealjs-clean extension to the project in 01-basics/, by running:\n\n\nTerminal\n\ncd 01-basics\nquarto add grantmcdermott/quarto-revealjs-clean@v1.3\n\nWhere did the file _extension.yml get installed?\nCompare _extension.yml and the files alongside it to those in the source on GitHub. What’s the same? What’s different?\nPreview slides.qmd. Then, edit to use the clean-revealjs format, and preview.\n\nDone? Browse https://m.canouil.dev/quarto-extensions for other extensions and explore their source.\n\nExercise code repo: 01-basics/\n\n\n  \n    −\n    +\n \n 10:00"
   },
   {
     "objectID": "slides/01-basics.html#what-is-a-quarto-extension",
@@ -109,7 +109,7 @@
     "href": "slides/01-basics.html#your-turn-create-a-custom-format",
     "title": "Extension Basics",
     "section": "Your turn: Create a custom format",
-    "text": "Your turn: Create a custom format\nStill in 01-basics/your-turns/1-install-and-explore/\n\nEdit _extension.yml to add a custom html format that sets 2-3 of your favorite HTML options.\nEdit slides.qmd to use your custom format, and preview.\n\n\n  \n    −\n    +\n \n 08:00"
+    "text": "Your turn: Create a custom format\nStill in 01-basics/:\n\nEdit _extension.yml to add a custom html format that sets 2-3 of your favorite HTML options.\nEdit slides.qmd to use your custom format, and preview.\n\n\n  \n    −\n    +\n \n 08:00\n \n\nExercise code repo: 01-basics/"
   },
   {
     "objectID": "slides/01-basics.html#get-boilerplate-with-quarto-create-extension",
@@ -236,7 +236,7 @@
     "href": "modules/03-filters.html#links",
     "title": "Filters and Shortcodes",
     "section": "Links",
-    "text": "Links\n\nPandoc Lua types Quick Reference\nPositron/VS Code Lua extension: OpenVSX or MS Marketplace",
+    "text": "Links\n\nPositron/VS Code Lua extension: OpenVSX or MS Marketplace\nPandoc Lua types Quick Reference",
     "crumbs": [
       "Modules",
       "Filters and Shortcodes"
@@ -504,7 +504,7 @@
     "href": "slides/03-filters.html#your-turn",
     "title": "Filters and Shortcodes",
     "section": "Your Turn",
-    "text": "Your Turn\nTake a look at the AST diagram on the next slide.\n\nWhat are some other types of Block nodes?\nWhat are some other types of Inline nodes?\nIf we wrote a filter for Para, how many times would it be called?\nIf we wrote a filter for Str, which of the following would be affected?\n\nThe text Filter in the title\nThe text Introduction in the heading\nThe text Lua in the link text\nThe text lua-filters in the link URL\nthe text quarto in the code block\n\n\n\n  \n    −\n    +\n \n 06:00\n \n\nquarto-extend-exercises/03-filters/your-turns/1-explore-ast"
+    "text": "Your Turn\nTake a look at the AST diagram on the next slide.\n\nWhat are some other types of Block nodes?\nWhat are some other types of Inline nodes?\nIf we wrote a filter for Para, how many times would it be called?\nIf we wrote a filter for Str, which of the following would be affected?\n\nThe text Filter in the title\nThe text Introduction in the heading\nThe text Lua in the link text\nThe text lua-filters in the link URL\nthe text quarto in the code block\n\n\n\n  \n    −\n    +\n \n 06:00\n \n\n03-filters/your-turns/1-explore-ast"
   },
   {
     "objectID": "slides/03-filters.html#ast",
@@ -532,7 +532,7 @@
     "href": "slides/03-filters.html#a-filter-function-on-strong-nodes",
     "title": "Filters and Shortcodes",
     "section": "A filter function on Strong nodes",
-    "text": "A filter function on Strong nodes\n\n\nDefine a function named Strong:\n\n\nno-change.lua\n\nStrong = function(el)\n  return nil\nend\n\n\nTo use the filter, specify it in the document header:\n\n\nexample.qmd\n\n---\ntitle: \"Filter Basics\"\nfilters:\n  - no-change.lua\n---\n\n\nA filter function that returns nil, leaves the node unchanged.\n\nquarto-extend-examples/03-filters/examples/1-writing-filters"
+    "text": "A filter function on Strong nodes\n\n\nDefine a function named Strong:\n\n\nno-change.lua\n\nStrong = function(el)\n  return nil\nend\n\n\nTo use the filter, specify it in the document header:\n\n\nexample.qmd\n\n---\ntitle: \"Filter Basics\"\nfilters:\n  - no-change.lua\n---\n\n\nA filter function that returns nil, leaves the node unchanged.\n\n03-filters/examples/1-writing-filters"
   },
   {
     "objectID": "slides/03-filters.html#live-code-print-debugging",
@@ -560,7 +560,7 @@
     "href": "slides/03-filters.html#your-turn-1",
     "title": "Filters and Shortcodes",
     "section": "Your Turn",
-    "text": "Your Turn\n\nWrite a filter, replace-emph.lua, that turns all italic text to underlined text.\nAdd the Strong filter function from replace-strong.lua to replace-emph.lua. What happens?\n\nOther challenges:\n\nWrite a filter that removes all bold and italic formatting, leaving just the text.\nWrite a filter that converts all double quotes to single quotes.\n\n\n  \n    −\n    +\n \n 10:00"
+    "text": "Your Turn\n\nWrite a filter, replace-emph.lua, that turns all italic text to underlined text.\nAdd the Strong filter function from replace-strong.lua to replace-emph.lua. What happens?\n\nOther challenges:\n\nWrite a filter that removes all bold and italic formatting, leaving just the text.\nWrite a filter that converts all double quotes to single quotes.\n\n\n  \n    −\n    +\n \n 10:00\n \n\n03-filters/your-turns/2-write-a-filter"
   },
   {
     "objectID": "slides/03-filters.html#valid-return-values",
@@ -574,14 +574,14 @@
     "href": "slides/03-filters.html#an-inlines-with-three-elements",
     "title": "Filters and Shortcodes",
     "section": "An Inlines with three elements",
-    "text": "An Inlines with three elements\n\n\n\n\ndouble-strong.lua\n\nStrong = function(el)\n  return pandoc.Inlines({\n    el, \n    pandoc.Space(), \n    el\n  })\nend\n\n\n\nI really really like bold and really like italics, and really really really can’t decide which to use."
+    "text": "An Inlines with three elements\n\n\n\n\ndouble-strong.lua\n\nStrong = function(el)\n  return pandoc.Inlines({\n    el, \n    pandoc.Space(), \n    el\n  })\nend\n\n\n\nI really really like bold and really like italics, and really really really can’t decide which to use.\n\n\n\n03-filters/examples/2-return-types"
   },
   {
     "objectID": "slides/03-filters.html#an-empty-list",
     "href": "slides/03-filters.html#an-empty-list",
     "title": "Filters and Shortcodes",
     "section": "An empty list",
-    "text": "An empty list\n\n\n\n\nremove-strong.lua\n\nStrong = function(el)\n  return {}\nend\n\n\n\nI really like bold and like italics, and can’t decide which to use."
+    "text": "An empty list\n\n\n\n\nremove-strong.lua\n\nStrong = function(el)\n  return {}\nend\n\n\n\nI really like bold and like italics, and can’t decide which to use.\n\n\n\n03-filters/examples/2-return-types"
   },
   {
     "objectID": "slides/03-filters.html#common-mistake-an-array-of-inlines",
@@ -595,14 +595,14 @@
     "href": "slides/03-filters.html#live-code-targeting-specific-content",
     "title": "Filters and Shortcodes",
     "section": "Live Code: Targeting specific content",
-    "text": "Live Code: Targeting specific content\n\n\ntarget-span.qmd\n\n---\ntitle: \"Filter Basics\"\nfilters:\n  - shout.lua\n---\n\nI **really** like bold and *really* like italics, and *really **really*** can't decide which to use.\n\n[And sometimes I **really** need to shout]{.shout}\n\n\n\n\nExample: 03-filters/examples/3-target-text"
+    "text": "Live Code: Targeting specific content\n\n\ntarget-span.qmd\n\n---\ntitle: \"Filter Basics\"\nfilters:\n  - shout.lua\n---\n\nI **really** like bold and *really* like italics, and *really **really*** can't decide which to use.\n\n[And sometimes I **really** need to shout]{.shout}\n\n\n\nExample: 03-filters/examples/3-target-text"
   },
   {
     "objectID": "slides/03-filters.html#live-code-smallcaps-all-spans-with-class-shout",
     "href": "slides/03-filters.html#live-code-smallcaps-all-spans-with-class-shout",
     "title": "Filters and Shortcodes",
     "section": "Live Code: Smallcaps all spans with class shout",
-    "text": "Live Code: Smallcaps all spans with class shout\n\n\n\n\nshout.lua\n\nSpan = function(el)\n  if el.classes:includes(\"shout\") then\n    return pandoc.SmallCaps(el.content)\n  end  \nend\n\n\n\nClasses are in el.classes (also el.identifier and el.attributes).\nincludes() is a method on Pandoc lists."
+    "text": "Live Code: Smallcaps all spans with class shout\n\n\n\n\nshout.lua\n\nSpan = function(el)\n  if el.classes:includes(\"shout\") then\n    return pandoc.SmallCaps(el.content)\n  end  \nend\n\n\n\nClasses are in el.classes (also el.identifier and el.attributes).\nincludes() is a method on Pandoc lists.\n\n\n\nExample: 03-filters/examples/3-target-text"
   },
   {
     "objectID": "slides/03-filters.html#live-code-constructing-content",
