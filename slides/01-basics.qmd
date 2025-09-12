@@ -49,7 +49,10 @@ Full schedule at: [pos.it/quarto-extend-conf25](https://pos.it/quarto-extend-con
 
 ::: {.columns}
 ::: {.column}
-Charlotte
+**Charlotte**  [{{< iconify fa7-brands:linkedin >}}](https://www.linkedin.com/in/cvwickham/) [{{< iconify fa7-brands:github >}}](https://github.com/cwickham) 
+
+Developer Educator @ Posit  
+Focus on Quarto
 :::
 ::: {.column}
 Mine
@@ -250,13 +253,18 @@ contributes:
 
 ## Your turn: Create a custom format 
 
-Still in `01-basics/your-turns/1-install-and-explore/`
+Still in `01-basics/`:
 
 1. Edit `_extension.yml` to add a custom `html` format that sets 2-3 of your favorite HTML options.
 
 3. Edit `slides.qmd` to use your custom format, and preview.
 
 {{< countdown 8:00 >}}
+
+
+::: footer
+[Exercise code repo](https://github.com/posit-conf-2025/quarto-extend-exercises): `01-basics/`
+:::
 
 ## Get boilerplate with `quarto create extension`
 
