@@ -32,7 +32,7 @@
     "href": "slides/01-basics.html#instructors",
     "title": "Extension Basics",
     "section": "Instructors",
-    "text": "Instructors\n\n\nCharlotte  \nDeveloper Educator @ Posit\nFocus on Quarto\n\nMine"
+    "text": "Instructors\n\n\nCharlotte  \nDeveloper Educator @ Posit  Focus on Quarto\n\nMine   \nProfessor @ Duke University  Developer Educator @ Posit  Focus on Quarto, Tidyverse, and Positron"
   },
   {
     "objectID": "slides/01-basics.html#teaching-assistants",
@@ -45,15 +45,15 @@
     "objectID": "slides/01-basics.html#your-turn-introductions",
     "href": "slides/01-basics.html#your-turn-introductions",
     "title": "Extension Basics",
-    "section": "Your Turn: Introductions",
-    "text": "Your Turn: Introductions\nIntroduce yourself to your neighbor(s):\n\nName\nAffiliation\nWhat you use Quarto for\n\n\n  \n    −\n    +\n \n 04:00"
+    "section": "Your turn: Introductions",
+    "text": "Your turn: Introductions\n\nIntroduce yourself to your neighbor(s):\n\nName\nAffiliation\nWhat you use Quarto for\n\n\n\n  \n    −\n    +\n \n 04:00"
   },
   {
     "objectID": "slides/01-basics.html#how-to-get-help",
     "href": "slides/01-basics.html#how-to-get-help",
     "title": "Extension Basics",
     "section": "How to get help?",
-    "text": "How to get help?\n\nRaise your color post-it note\n🟧 “I’m stuck and need help!”\n🟦 “I’ve finished, and ready to move on.”\nAsk in Discord\nTalk to us during breaks or your-turns"
+    "text": "How to get help?\n\nRaise your color post-it note\n “I’m stuck and need help!”\n “I’ve finished, and ready to move on.”\nAsk in Discord\nTalk to us during breaks or your-turns"
   },
   {
     "objectID": "slides/01-basics.html#goal-reduce-repetition",
@@ -74,7 +74,7 @@
     "href": "slides/01-basics.html#your-turn-install-and-explore-an-extension",
     "title": "Extension Basics",
     "section": "Your turn: Install and explore an extension",
-    "text": "Your turn: Install and explore an extension\n\nAdd the quarto-revealjs-clean extension to the project in 01-basics/, by running:\n\n\nTerminal\n\ncd 01-basics\nquarto add grantmcdermott/quarto-revealjs-clean@v1.3\n\nWhere did the file _extension.yml get installed?\nCompare _extension.yml and the files alongside it to those in the source on GitHub. What’s the same? What’s different?\nPreview slides.qmd. Then, edit to use the clean-revealjs format, and preview.\n\nDone? Browse https://m.canouil.dev/quarto-extensions for other extensions and explore their source.\n\nExercise code repo: 01-basics/\n\n\n  \n    −\n    +\n \n 10:00"
+    "text": "Your turn: Install and explore an extension\n\n\nAdd the quarto-revealjs-clean extension to the project in 01-basics/, by running:\n\n\nTerminal\n\ncd 01-basics\nquarto add grantmcdermott/quarto-revealjs-clean@v1.3\n\nWhere did the file _extension.yml get installed?\nCompare _extension.yml and the files alongside it to those in the source on GitHub. What’s the same? What’s different?\nPreview slides.qmd. Then, edit to use the clean-revealjs format, and preview.\n\nDone? Browse https://m.canouil.dev/quarto-extensions for other extensions and explore their source.\n\n\nExercise code repo: 01-basics/\n\n\n  \n    −\n    +\n \n 10:00"
   },
   {
     "objectID": "slides/01-basics.html#what-is-a-quarto-extension",
@@ -109,7 +109,7 @@
     "href": "slides/01-basics.html#your-turn-create-a-custom-format",
     "title": "Extension Basics",
     "section": "Your turn: Create a custom format",
-    "text": "Your turn: Create a custom format\nStill in 01-basics/:\n\nEdit _extension.yml to add a custom html format that sets 2-3 of your favorite HTML options.\nEdit slides.qmd to use your custom format, and preview.\n\n\n  \n    −\n    +\n \n 08:00\n \n\nExercise code repo: 01-basics/"
+    "text": "Your turn: Create a custom format\n\nStill in 01-basics/:\n\nEdit _extension.yml to add a custom html format that sets 2-3 of your favorite HTML options.\nEdit slides.qmd to use your custom format, and preview.\n\n\n\n  \n    −\n    +\n \n 08:00\n \n\nExercise code repo: 01-basics/"
   },
   {
     "objectID": "slides/01-basics.html#get-boilerplate-with-quarto-create-extension",

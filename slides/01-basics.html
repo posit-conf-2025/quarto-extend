@@ -98,8 +98,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-124b3b28a33d08e5b09f66ada358bc50.css">
-  <link rel="stylesheet" href="slides.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-29b746503a5aafa7f55eeb087d1bd30c.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -199,7 +198,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
+<section id="title-slide" data-background-color="#9cbbbd" class="quarto-title-block center">
   <h1 class="title">Extension Basics</h1>
   <p class="subtitle">Extending Quarto workshop @ <code>posit::conf(2025)</code></p>
 
@@ -291,10 +290,10 @@ Mine Çetinkaya-Rundel
 <div class="columns">
 <div class="column">
 <p><strong>Charlotte</strong> <a href="https://www.linkedin.com/in/cvwickham/"><iconify-icon role="img" inline="" icon="fa7-brands:linkedin" aria-label="Icon linkedin from fa7-brands Iconify.design set." title="Icon linkedin from fa7-brands Iconify.design set."></iconify-icon></a> <a href="https://github.com/cwickham"><iconify-icon role="img" inline="" icon="fa7-brands:github" aria-label="Icon github from fa7-brands Iconify.design set." title="Icon github from fa7-brands Iconify.design set."></iconify-icon></a></p>
-<p>Developer Educator @ Posit<br>
-Focus on Quarto</p>
+<p>Developer Educator @ Posit <br> Focus on Quarto</p>
 </div><div class="column">
-<p>Mine</p>
+<p><strong>Mine</strong> <a href="https://www.linkedin.com/in/minec/"><iconify-icon role="img" inline="" icon="fa7-brands:linkedin" aria-label="Icon linkedin from fa7-brands Iconify.design set." title="Icon linkedin from fa7-brands Iconify.design set."></iconify-icon></a> <a href="https://github.com/mine-cetinkaya-rundel"><iconify-icon role="img" inline="" icon="fa7-brands:github" aria-label="Icon github from fa7-brands Iconify.design set." title="Icon github from fa7-brands Iconify.design set."></iconify-icon></a> <a href="https://bsky.app/profile/minecr.bsky.social"><iconify-icon role="img" inline="" icon="fa7-brands:bluesky" aria-label="Icon bluesky from fa7-brands Iconify.design set." title="Icon bluesky from fa7-brands Iconify.design set."></iconify-icon></a></p>
+<p>Professor @ Duke University <br> Developer Educator @ Posit <br> Focus on Quarto, Tidyverse, and Positron</p>
 </div></div>
 </section>
 <section id="teaching-assistants" class="slide level2">
@@ -307,14 +306,16 @@ Focus on Quarto</p>
 </div></div>
 </section>
 <section id="your-turn-introductions" class="slide level2">
-<h2>Your Turn: Introductions</h2>
+<h2>Your turn: Introductions</h2>
+<div class="your-turn">
 <p>Introduce yourself to your neighbor(s):</p>
 <ul>
 <li>Name</li>
 <li>Affiliation</li>
 <li>What you use Quarto for</li>
 </ul>
-<div id="timer_b6d09310d1e257c2bf1bbb4da47ffb89f29f5385" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+</div>
+<div id="timer_3d076bbd9441bb64b7ff0a40a90d43225b0c5fc5" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -327,8 +328,8 @@ Focus on Quarto</p>
 <h2>How to get help?</h2>
 <ul>
 <li><p>Raise your <em>color</em> post-it note</p>
-<p>🟧 “I’m stuck and need help!”</p>
-<p>🟦 “I’ve finished, and ready to move on.”</p></li>
+<p><iconify-icon role="img" inline="" icon="streamline-sharp:new-sticky-note-solid" style="color:#ff65a3;" aria-label="Icon new-sticky-note-solid from streamline-sharp Iconify.design set." title="Icon new-sticky-note-solid from streamline-sharp Iconify.design set." width="60" height="60"></iconify-icon> “I’m stuck and need help!”</p>
+<p><iconify-icon role="img" inline="" icon="streamline-sharp:new-sticky-note-solid" style="color:#46c45a;" aria-label="Icon new-sticky-note-solid from streamline-sharp Iconify.design set." title="Icon new-sticky-note-solid from streamline-sharp Iconify.design set." width="60" height="60"></iconify-icon> “I’ve finished, and ready to move on.”</p></li>
 <li><p>Ask in Discord</p></li>
 <li><p>Talk to us during breaks or your-turns</p></li>
 </ul>
@@ -345,7 +346,7 @@ Focus on Quarto</p>
 </ul></li>
 </ol>
 </section>
-<section id="section" class="slide level2">
+<section id="section" class="slide level2 center">
 <h2></h2>
 <div class="marker r-fit-text">
 <p>Let’s jump in!</p>
@@ -358,6 +359,7 @@ Focus on Quarto</p>
 </section>
 <section id="your-turn-install-and-explore-an-extension" class="slide level2 smaller">
 <h2><span class="r-fit-text">Your turn: Install and explore an extension</span></h2>
+<div class="your-turn">
 <ol type="1">
 <li><p>Add the <code>quarto-revealjs-clean</code> extension to the project in <code>01-basics/</code>, by running:</p>
 <div class="code-with-filename">
@@ -372,10 +374,11 @@ Focus on Quarto</p>
 <li><p>Preview <code>slides.qmd</code>. Then, edit to use the <code>clean-revealjs</code> format, and preview.</p></li>
 </ol>
 <p>Done? Browse <a href="https://m.canouil.dev/quarto-extensions" class="uri">https://m.canouil.dev/quarto-extensions</a> for other extensions and explore their source.</p>
+</div>
 <div class="footer">
 <p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Exercise code repo</a>: <code>01-basics/</code></p>
 </div>
-<div id="timer_b6d09310d1e257c2bf1bbb4da47ffb89f29f5385" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_3d076bbd9441bb64b7ff0a40a90d43225b0c5fc5" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -467,12 +470,14 @@ Focus on Quarto</p>
 </section>
 <section id="your-turn-create-a-custom-format" class="slide level2">
 <h2>Your turn: Create a custom format</h2>
+<div class="your-turn">
 <p>Still in <code>01-basics/</code>:</p>
 <ol type="1">
 <li><p>Edit <code>_extension.yml</code> to add a custom <code>html</code> format that sets 2-3 of your favorite HTML options.</p></li>
 <li><p>Edit <code>slides.qmd</code> to use your custom format, and preview.</p></li>
 </ol>
-<div id="timer_b6d09310d1e257c2bf1bbb4da47ffb89f29f5385" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+</div>
+<div id="timer_3d076bbd9441bb64b7ff0a40a90d43225b0c5fc5" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -642,7 +647,7 @@ Focus on Quarto</p>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p><a href="http://pos.it/quarto-extend-conf25" class="uri">http://pos.it/quarto-extend-conf25</a></p>
+<p><a href="http://pos.it/quarto-extend-conf25">pos.it/quarto-extend-conf25</a></p>
 </div>
 </div></div>
 
