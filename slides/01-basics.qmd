@@ -1,7 +1,6 @@
 ---
 title: Extensions Basics
 format: revealjs
-footer: <http://pos.it/quarto-extend-conf25>
 ---
 
 # Logistics
@@ -49,11 +48,30 @@ Full schedule at: [pos.it/quarto-extend-conf25](https://pos.it/quarto-extend-con
 
 ::: {.columns}
 ::: {.column}
-Charlotte
+**Charlotte**
+
+::: small
+Professor, Duke University <br>
+Developer Educator, Posit, PBC <br>
+:::
+
+{{< iconify ri github-fill >}} [cwickham](https://github.com/cwickham) <br>
+{{< iconify ri linkedin-fill >}} [charlotte-wickham](https://www.linkedin.com/in/charlotte-wickham-793a011a/)
 :::
 ::: {.column}
-Mine
+**Mine**
+
+::: small
+Professor, Duke University <br>
+Developer Educator, Posit, PBC <br>
 :::
+
+{{< iconify ri github-fill >}} [mine-cetinkaya-rundel](https://github.com/mine-cetinkaya-rundel) <br>
+{{< iconify ri linkedin-fill >}} [minec](https://www.linkedin.com/in/minec/) <br>
+{{< iconify ri bluesky-fill >}} [@minecr.bsky.social](https://bsky.app/profile/minecr.bsky.social)
+
+:::
+
 ::: 
 
 ## Teaching Assistants
@@ -67,13 +85,15 @@ Elliot
 :::
 ::: 
 
-## Your Turn: Introductions
+## Your turn: Introductions
 
+::: your-turn
 Introduce yourself to your neighbor(s):
 
 * Name
 * Affiliation
 * What you use Quarto for
+:::
 
 {{< countdown 4:00 >}}
 
@@ -93,9 +113,9 @@ Introduce yourself to your neighbor(s):
 
 -   Raise your *color* post-it note
 
-    🟧 "I'm stuck and need help!"
+    {{< iconify streamline-sharp new-sticky-note-solid width=60 height=60 style="color:#ff65a3;" >}} "I'm stuck and need help!"
 
-    🟦 "I've finished, and ready to move on."
+    {{< iconify streamline-sharp new-sticky-note-solid width=60 height=60 style="color:#46c45a;" >}} "I've finished, and ready to move on."
 
 -   Ask in Discord
 
@@ -114,7 +134,7 @@ Within documents, across documents, across projects, and across people
     * Filters and shortcodes. **After lunch**
 :::
 
-## 
+## {.center}
 
 ::: {.marker .r-fit-text}
 Let's jump in! 
@@ -124,6 +144,7 @@ Let's jump in!
 
 ## [Your turn: Install and explore an extension]{.r-fit-text} {.smaller}
 
+::: your-turn
 1. Add the `quarto-revealjs-clean` extension to the project in `01-basics/your-turns/1-install-and-explore/`, by running:
 
     ```{.bash filename="Terminal"}
@@ -138,6 +159,7 @@ Let's jump in!
 4. Preview `slides.qmd`. Then, edit to use the `clean-revealjs` format, and preview.
 
 Done? Browse <https://m.canouil.dev/quarto-extensions> for other extensions and explore their source.
+:::
 
 {{< countdown 10:00 >}}
 
@@ -246,11 +268,13 @@ contributes:
 
 ## Your turn: Create a custom format 
 
+::: your-turn
 Still in `01-basics/your-turns/1-install-and-explore/`
 
 1. Edit `_extension.yml` to add a custom `html` format that sets 2-3 of your favorite HTML options.
 
 3. Edit `slides.qmd` to use your custom format, and preview.
+:::
 
 {{< countdown 8:00 >}}
 

@@ -1,2 +1,6 @@
-css: slides.css
+theme: slides.scss
+subtitle: Extending Quarto
 code-line-numbers: false
+footer: "[pos.it/quarto-extend-conf25](http://pos.it/quarto-extend-conf25)"
+title-slide-attributes:
+      data-background-color: "#9cbbbd"

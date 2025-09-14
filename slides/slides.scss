@@ -1,4 +1,13 @@
+/*-- scss:defaults --*/
+
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker');
+
+$font-family-sans-serif: "Atkinson Hyperlegible", sans-serif;
+$presentation-title-slide-text-align: "left";
+$presentation-heading-color: #283c4d;
+$link-color: #283c4d;
+
+/*-- scss:rules --*/
 
 /* Use .wrap on code cells to avoid scrollbars */
 .reveal pre.sourceCode.wrap code {
@@ -30,4 +39,16 @@
   font-size: 100px; 
   display: inline-block;
   transform: rotate(20deg);
+}
+
+.small {
+  font-size: 0.75em;
+}
+
+.reveal .slide .your-turn {
+  border-left: 3px solid #283c4d;
+  padding-left: 0.5em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  background: #9cbbbd50;
 }
