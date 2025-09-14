@@ -12,7 +12,7 @@ By the end of this module, you will be able to:
 
 * Write a simple Pandoc filter for an `Inline` element
 
-* Locate documentation for LUA modules provided by Pandoc and Quarto
+* Locate documentation for Lua modules provided by Pandoc and Quarto
 
 * Use spans or divs to target specific content for a filter
 
@@ -25,3 +25,6 @@ By the end of this module, you will be able to:
 ## Links
 
 * Positron/VS Code Lua extension: [OpenVSX](https://open-vsx.org/extension/sumneko/lua) or [MS Marketplace](https://marketplace.visualstudio.com/items?itemName=sumneko.lua)
+
+* [Pandoc Lua types Quick Reference](/quick-reference.qmd)
+

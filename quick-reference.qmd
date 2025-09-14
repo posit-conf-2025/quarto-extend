@@ -1,0 +1,146 @@
+---
+title: "Pandoc Types Quick Reference"
+format: html
+toc: true
+toc-expand: true
+toc-location: right-body
+tbl-colwidths: [20, 50, 30]
+---
+
+## General Notes
+
+* Most common elements are listed here, but not all. 
+
+* Quarto has some custom node types too: [Callout](https://quarto.org/docs/prerelease/1.3/custom-ast-nodes/callout.html), [Tabset](https://quarto.org/docs/prerelease/1.3/custom-ast-nodes/tabset.html), [ConditionalBlock](https://quarto.org/docs/prerelease/1.3/custom-ast-nodes/conditional-block.html), [FloatRefTarget](https://quarto.org/docs/prerelease/1.4/lua_changes.html#the-floatreftarget-ast-node)
+
+* The syntax `[, arg]` indicates an optional argument
+
+* All types have a `t`/`tag` field to access the type as a string (e.g. `pandoc.Space().t` returns `Space`)
+
+* Any type with the `attr` field also has shortcuts for: `identifier`, `classes`, and `attributes`
+
+* `attr` is an [`Attr` object](https://pandoc.org/lua-filters.html#type-attr). Create one with `pandoc.Attr()`:
+
+    ```{.lua}
+    pandoc.Attr(
+      "my-id",                       --identifier
+      {"class-one", "class-two"},    --classes
+      {key="value", key2="value2"}   --attributes
+    )
+    ```
+
+## Document Structure 
+
+| Type | Constructor | Fields |
+|------------------|-----------|--------|
+| [Pandoc](https://pandoc.org/lua-filters.html#type-pandoc) | [`pandoc.Pandoc(blocks, meta)`](https://pandoc.org/lua-filters.html#pandoc.Pandoc) | `blocks`, `meta` |
+| [Meta](https://pandoc.org/lua-filters.html#type-meta) | [`pandoc.Meta(table)`](https://pandoc.org/lua-filters.html#pandoc.Meta) | key-value pairs of document metadata |
+
+## Block Elements
+
+### Paragraphs and Headings 
+
+`content` is an `Inlines` object (a list of `Inline` elements)
+
+| Type | Constructor  | Fields |
+|------------------|-----------|--------|
+| [Para](https://pandoc.org/lua-filters.html#type-para) |[`pandoc.Para(content)`](https://pandoc.org/lua-filters.html#pandoc.Para) `<br>`{=html} `content`: `Inlines` | `content`  |
+| [Plain](https://pandoc.org/lua-filters.html#type-plain) | [`pandoc.Plain(content)`](https://pandoc.org/lua-filters.html#pandoc.Plain)  `<br>`{=html} `content`: `Inlines`  | `content`  |
+| [Header](https://pandoc.org/lua-filters.html#type-header) | [`pandoc.Header (level, content[, attr]))`](https://pandoc.org/lua-filters.html#pandoc.Header) `<br>`{=html} `content`: `Inlines`  `<br>`{=html}` level`: integer| `level`, `content`, `attr` |
+
+### Lists
+
+`content` is a list of `Blocks`, or for DefinitionList something complicated.
+
+| Type | Constructor  | Fields |
+|------------------|-----------|--------|
+| [BulletList](https://pandoc.org/lua-filters.html#type-bulletlist) | [`pandoc.BulletList(items)`](https://pandoc.org/lua-filters.html#pandoc.BulletList) `<br>`{=html} `items`: `{Blocks, ... }`| `content` |
+| [OrderedList](https://pandoc.org/lua-filters.html#type-orderedlist) | [`pandoc.OrderedList(items[, listAttributes])`](https://pandoc.org/lua-filters.html#pandoc.OrderedList) `<br>`{=html} `items`: `{Blocks, ... }` | `content`, `listAttributes`, `start`, `style`, `delimiter` |
+| [DefinitionList](https://pandoc.org/lua-filters.html#type-definitionlist) | [`pandoc.DefinitionList(content)`](https://pandoc.org/lua-filters.html#pandoc.DefinitionList) `<br>`{=html} `content`: `{{Inlines, {Blocks, ...}}, ...}`  | `content` (list of definition pairs) |
+
+
+### Code and raw blocks
+
+`text` is a simple Lua string (not a `Str`)
+
+| Type | Constructor  | Fields |
+|------------------|-----------|--------|
+| [CodeBlock](https://pandoc.org/lua-filters.html#type-codeblock) | [`pandoc.CodeBlock(text[, attr])`](https://pandoc.org/lua-filters.html#pandoc.CodeBlock) `<br>`{=html} `text`: string| `text`, `attr` |
+| [RawBlock](https://pandoc.org/lua-filters.html#type-rawblock) | [`pandoc.RawBlock(format, text)`](https://pandoc.org/lua-filters.html#pandoc.RawBlock) `<br>`{=html} `text`: string | `format`, `text` |
+
+### Divs, BlockQuotes, Figures
+
+`content` is a `Blocks` object (a list of `Block` elements)
+
+| Type | Constructor  | Fields |
+|------------------|-----------|--------|
+| [Div](https://pandoc.org/lua-filters.html#type-div) | [`pandoc.Div(content[, attr])`](https://pandoc.org/lua-filters.html#pandoc.Div) `<br>`{=html} `content`: `Blocks` | `content`, `attr` |
+| [BlockQuote](https://pandoc.org/lua-filters.html#type-blockquote) | [`pandoc.BlockQuote(content)`](https://pandoc.org/lua-filters.html#pandoc.BlockQuote) `<br>`{=html} `content`: `Blocks` | `content` |
+| [Figure](https://pandoc.org/lua-filters.html#type-figure) | [`pandoc.Figure(content[, caption[, attr]])`](https://pandoc.org/lua-filters.html#pandoc.Figure) `<br>`{=html} `content`: `Blocks` | `content`, `caption`, `attr` | 
+
+### Other
+
+| Type | Constructor  | Fields |
+|------------------|-----------|--------|
+| [Table](https://pandoc.org/lua-filters.html#type-table) | [`pandoc.Table(caption, colspecs, head, bodies, foot[, attr])`](https://pandoc.org/lua-filters.html#pandoc.Table) | `caption`, `colspecs`, `head`, `bodies`, `foot`, `attr` |
+| [LineBlock](https://pandoc.org/lua-filters.html#type-lineblock) | [`pandoc.LineBlock(content)`](https://pandoc.org/lua-filters.html#pandoc.LineBlock) `<br>`{=html} `content`: `{Inlines, ...}` | `content`  |
+
+## Inline Elements
+
+### Whitespace
+
+Takes no arguments, has no fields.
+
+| Type             | Constructor |
+|------------------|-------------|
+| [Space](https://pandoc.org/lua-filters.html#type-space) | [`pandoc.Space()`](https://pandoc.org/lua-filters.html#pandoc.Space) | 
+| [SoftBreak](https://pandoc.org/lua-filters.html#type-softbreak) | [`pandoc.SoftBreak()`](https://pandoc.org/lua-filters.html#pandoc.SoftBreak) |
+| [LineBreak](https://pandoc.org/lua-filters.html#type-linebreak) | [`pandoc.LineBreak()`](https://pandoc.org/lua-filters.html#pandoc.LineBreak) |
+
+: {tbl-colwidths="[25, 75]"}
+
+### Basic Elements
+
+`text` is a simple Lua string (not a `Str`)
+
+| Type             | Constructor | Fields |
+|------------------|-------------|--------|
+| [Str](https://pandoc.org/lua-filters.html#type-str) | [`pandoc.Str(text)`](https://pandoc.org/lua-filters.html#pandoc.Str) | `text` |
+| [Code](https://pandoc.org/lua-filters.html#type-code) | [`pandoc.Code(code[, attr])`](https://pandoc.org/lua-filters.html#pandoc.Code) | `text`, `attr` |
+| [Math](https://pandoc.org/lua-filters.html#type-math) | [`pandoc.Math(mathtype, text)`](https://pandoc.org/lua-filters.html#pandoc.Math) `<br>`{=html} `mathtype`: `'InlineMath'` or `'DisplayMath'` | `mathtype`, `text` |
+| [RawInline](https://pandoc.org/lua-filters.html#type-rawinline) | [`pandoc.RawInline(format, text)`](https://pandoc.org/lua-filters.html#pandoc.RawInline) `<br>`{=html} `format`: `'html'`, `'latex'` etc. | `format`, `text` |
+
+
+### Text Formatting 
+
+`content` is an `Inlines` object (a list of `Inline` elements).
+
+| Type             | Constructor | Fields |
+|------------------|-------------|--------|
+| [Emph](https://pandoc.org/lua-filters.html#type-emph) | [`pandoc.Emph(content)`](https://pandoc.org/lua-filters.html#pandoc.Emph) | `content`  |
+| [SmallCaps](https://pandoc.org/lua-filters.html#type-smallcaps) | [`pandoc.SmallCaps(content)`](https://pandoc.org/lua-filters.html#pandoc.SmallCaps) | `content`  |
+| [Strikeout](https://pandoc.org/lua-filters.html#type-strikeout) | [`pandoc.Strikeout(content)`](https://pandoc.org/lua-filters.html#pandoc.Strikeout) | `content`  |
+| [Strong](https://pandoc.org/lua-filters.html#type-strong) | [`pandoc.Strong(content)`](https://pandoc.org/lua-filters.html#pandoc.Strong) | `content`  |
+| [Subscript](https://pandoc.org/lua-filters.html#type-subscript) | [`pandoc.Subscript(content)`](https://pandoc.org/lua-filters.html#pandoc.Subscript) | `content`  |
+| [Superscript](https://pandoc.org/lua-filters.html#type-superscript) | [`pandoc.Superscript(content)`](https://pandoc.org/lua-filters.html#pandoc.Superscript) | `content`  |
+| [Underline](https://pandoc.org/lua-filters.html#type-underline) | [`pandoc.Underline(content)`](https://pandoc.org/lua-filters.html#pandoc.Underline) | `content`  |
+| [Quoted](https://pandoc.org/lua-filters.html#type-quoted) | [`pandoc.Quoted(quotetype, content)`](https://pandoc.org/lua-filters.html#pandoc.Quoted) `<br>`{=html} `quotetype`: `'SingleQuote'` or `'DoubleQuote'` | `quotetype`, `content` |
+
+### Other
+
+`content` and `title` are `Inlines` unless otherwise noted.
+
+`src`, `target` are simple Lua strings.
+
+`attr` is an [`Attr` object](https://pandoc.org/lua-filters.html#type-attr).
+
+| Type             | Constructor | Fields |
+|------------------|-------------|--------|
+| [Span](https://pandoc.org/lua-filters.html#type-span) | [`pandoc.Span(content[, attr])`](https://pandoc.org/lua-filters.html#pandoc.Span) | `content`, `attr` |
+| [Image](https://pandoc.org/lua-filters.html#type-image) | [`pandoc.Image(caption, src[, title[, attr]])`](https://pandoc.org/lua-filters.html#pandoc.Image) | `caption`, `src`, `title`, `attr` |
+| [Link](https://pandoc.org/lua-filters.html#type-link) | [`pandoc.Link(content, target[, title[, attr]])`](https://pandoc.org/lua-filters.html#pandoc.Link)| `content`, `target`, `title`, `attr` |
+| | | |
+| [Cite](https://pandoc.org/lua-filters.html#type-cite) | [`pandoc.Cite(content, citations)`](https://pandoc.org/lua-filters.html#pandoc.Cite) | `content`, `citations` |
+| [Note](https://pandoc.org/lua-filters.html#type-note) | [`pandoc.Note(content)`](https://pandoc.org/lua-filters.html#pandoc.Note) `<br>`{=html} `content`: `Blocks` | `content`|
+
+

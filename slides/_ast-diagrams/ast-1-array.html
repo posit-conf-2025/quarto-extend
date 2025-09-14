@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
   <title>Pandoc AST Block Diagram</title>
   <style>
   /* Pandoc AST Block Diagram Styles */
@@ -46,7 +46,7 @@ body {
   font-weight: 600;
   color: #666;
   font-size: 0.9em;
-  text-transform: uppercase;
+  font-family: "Inconsolata", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -61,7 +61,6 @@ body {
   cursor: pointer;
   transition: transform 0.2s ease;
   position: relative;
-  top: -0.1em;
 }
 
 /* Folded state */
@@ -84,41 +83,16 @@ body {
   border-left: none;
 }
 
-/* Specific Block Types */
-.block-header {
-  background-color: #f3f7fd;
-  border-color: #c5d7f2;
-}
-
-.block-para {
-  background-color: #f9f9f9;
-}
-
-.block-bullet-list {
-  background-color: #f5f9f5;
-  border-color: #d1e7d1;
-}
-
-.block-div {
-  background-color: #fff8f5;
-  border-color: #f5d3bf;
-}
-
-.block-code {
-  background-color: #f5f5f7;
-  border-color: #cfd2e0;
-}
-
-.block-metadata {
-  background-color: #f2f9fd;
-  border-color: #bde0f3;
+.block {
+  background-color: #f8f8f8;
+  border-color: #ddd;
 }
 
 /* Metadata styling */
 .metadata-entry {
   margin: 8px 0;
   padding: 8px;
-  border-left: 3px solid #ddf;
+  border-left: 3px solid #ddd;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 4px;
 }
@@ -136,41 +110,36 @@ body {
 }
 
 .meta-map {
-  background-color: #f0f8ff;
-  border: 1px solid #e0f0ff;
+  border: 1px solid #ddd;
 }
 
 .meta-list {
-  background-color: #f8f8ff;
-  border: 1px solid #e8e8ff;
+  border: 1px solid #ddd;
 }
 
 .meta-blocks {
-  background-color: #fff8f8;
-  border: 1px solid #ffe8e8;
+  border: 1px solid #ddd;
 }
 
 .meta-inlines {
-  background-color: #f8fff8;
-  border: 1px solid #e8ffe8;
+  border: 1px solid #ddd;
 }
 
 .meta-bool {
-  background-color: #fffff8;
-  border: 1px solid #ffffe8;
+  border: 1px solid #ddd;
 }
 
 .meta-string {
   background-color: #fff8ff;
-  border: 1px solid #ffe8ff;
+  border: 1px solid #ddd;
 }
 
 .meta-type {
+  font-family: "Inconsolata", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   font-size: 0.85em;
   color: #777;
   margin-bottom: 5px;
   font-weight: 600;
-  text-transform: uppercase;
 }
 
 .meta-map-entry {
@@ -219,14 +188,13 @@ pre {
   background-color: #f5f5f5;
   padding: 10px;
   border-radius: 3px;
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-family: "Inconsolata", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   font-size: 0.9em;
   overflow-x: auto;
 }
 
 code {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-  background-color: #f5f5f5;
+  font-family: "Inconsolata", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   padding: 2px 4px;
   border-radius: 3px;
   font-size: 0.9em;
@@ -240,7 +208,7 @@ code {
 /* Unknown Elements */
 .block-type-unknown, .inline-unknown {
   background-color: #fcf8e3;
-  border-color: #faebcc;
+  border-color: #ddd;
   color: #8a6d3b;
 }
 
@@ -256,10 +224,10 @@ code {
 }
 
 .inline-type {
+  font-family: "Inconsolata", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   font-weight: 600;
   color: #666;
-  font-size: 0.6em;
-  text-transform: uppercase;
+  font-size: 0.8em;
   display: inline;
   align-items: center;
   cursor: pointer;
@@ -305,81 +273,95 @@ div.folded .inline-type.inline-type-no-content-folded-only {
 }
 
 .inline-content {
-  display: inline;
+  display: inline-block;
 }
 
 /* Link styles with pseudo-elements */
 .inline-url, .inline-title {
   padding-left: 15px;
-  border-left: 3px solid #eee;
   margin-bottom: 6px;
+  display: inline-block;
 }
 
 .inline-url::before {
   content: "URL: ";
-  font-weight: 600;
   color: #666;
   margin-right: 4px;
 }
 
 .inline-title::before {
+  font-size: 0.75em;
+  position: relative;
+  top: -0.125em;
   content: "Title: ";
   font-weight: 600;
   color: #666;
 }
 
-.inline-text-content::before {
-  content: "Text: ";
-  font-weight: 600;
+.inline-alt-text::before {
+  font-size: 0.75em;
+  position: relative;
+  top: -0.125em;
+  content: "Alt: ";
   color: #666;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+
+.inline-text-content::before {
+  font-size: 0.75em;
+  position: relative;
+  top: -0.125em;
+  content: "Text: ";
+  color: #666;
+  margin-right: 4px;
 }
 
 /* Special link styling */
 .inline-url a {
   display: inline-block;
-  padding: 4px 8px;
   margin-left: 4px;
-  background-color: #f0f7ff;
-  border: 1px solid #d0e0f7;
-  border-radius: 3px;
   word-break: break-all;
-  max-width: calc(100% - 50px);
 }
 
 /* Simple inline element styling */
 .inline-emph {
-  background-color: #f7f9f4;
-  border-color: #dbe7c9;
+  background-color: #cde;
+  border-color: #ddd;
 }
 
 .inline-strong {
-  background-color: #f9f4f4;
-  border-color: #e7c9c9;
+  background-color: #ecc;
+  border-color: #ddd;
 }
 
 .inline-smallcaps {
   background-color: #f4f9f9;
-  border-color: #c9e7e7;
+  border-color: #ddd;
 }
 
 .inline-strikeout {
   background-color: #f9f8f4;
-  border-color: #e7e2c9;
+  border-color: #ddd;
 }
 
 .inline-subscript {
   background-color: #f4f4f9;
-  border-color: #c9c9e7;
+  border-color: #ddd;
 }
 
 .inline-superscript {
   background-color: #f9f4f9;
-  border-color: #e7c9e7;
+  border-color: #ddd;
 }
 
 .inline-underline {
   background-color: #f4f9f4;
-  border-color: #c9e7c9;
+  border-color: #ddd;
+}
+
+.inline-str {
+  padding-right: 5px;
 }
 
 a {
@@ -489,22 +471,38 @@ h2 {
 }
 
 .language-markdown {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-  font-size: 0.9em;
+  font-family: "Inconsolata", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.75em;
+  top: -0.125em;
+  position: relative;
 }
 
 /* Node attribute styling */
 .node-id, .node-classes, .node-attrs {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-family: "Inconsolata", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   font-size: 0.85em;
   border-radius: 3px;
   display: inline-block;
-  margin-left: 5px;
-  margin-right: 5px;
-  padding: 0 4px;
-  text-transform: none;
+  margin: 0;
+  padding: 0;
   color: #666;
-  background-color: #f7f7f7;
+}
+
+div.meta-map-key, div.meta-map-value, div.metadata-key, div.metadata-value {
+  display: inline-block;
+}
+
+div.metadata-key {
+  min-width: 60px;
+}
+
+div.block.block-metadata div.block-content {
+  padding-left: 0;
+  border-left: none;
+}
+
+div.meta-list div.meta-type, div.meta-map div.meta-type {
+  margin-left: 5px;
 }
   </style>
   <script>
@@ -584,10 +582,46 @@ h2 {
   <div class="pandoc-block-diagram">
 <div class="block block-para">
   <div class="block-type">
-    Paragraph
+    Para
     <button class="toggle-button" aria-label="Toggle content">▼</button>
   </div>
-  <div class="block-content">I <strong>really</strong> like bold and <em>really</em> like italics, and <em>really <strong>really</strong></em> can’t decide which to use.</div>
+  <div class="block-content">I <div class="inline inline-strong">
+  <div class="inline-type">
+    Strong
+    <button class="toggle-button" aria-label="Toggle content">▼</button>
+  </div>
+  <div class="inline-content">really</div>
+</div> <div class="inline inline-strong">
+  <div class="inline-type">
+    Strong
+    <button class="toggle-button" aria-label="Toggle content">▼</button>
+  </div>
+  <div class="inline-content">really</div>
+</div> like bold and <div class="inline inline-emph">
+  <div class="inline-type">
+    Emph
+    <button class="toggle-button" aria-label="Toggle content">▼</button>
+  </div>
+  <div class="inline-content">really</div>
+</div> like italics, and <div class="inline inline-emph">
+  <div class="inline-type">
+    Emph
+    <button class="toggle-button" aria-label="Toggle content">▼</button>
+  </div>
+  <div class="inline-content">really <div class="inline inline-strong">
+  <div class="inline-type">
+    Strong
+    <button class="toggle-button" aria-label="Toggle content">▼</button>
+  </div>
+  <div class="inline-content">really</div>
+</div><div class="inline inline-strong">
+  <div class="inline-type">
+    Strong
+    <button class="toggle-button" aria-label="Toggle content">▼</button>
+  </div>
+  <div class="inline-content">really</div>
+</div></div>
+</div> can’t decide which to use.</div>
 </div>
 <div class="block block-div" class="shout">
   <div class="block-type">
@@ -596,17 +630,29 @@ h2 {
   </div>
   <div class="block-content"><div class="block block-para">
   <div class="block-type">
-    Paragraph
+    Para
     <button class="toggle-button" aria-label="Toggle content">▼</button>
   </div>
-  <div class="block-content">And sometimes I <strong>really</strong> need to shout!</div>
+  <div class="block-content">And sometimes I <div class="inline inline-strong">
+  <div class="inline-type">
+    Strong
+    <button class="toggle-button" aria-label="Toggle content">▼</button>
+  </div>
+  <div class="inline-content">really</div>
+</div> need to shout!</div>
 </div>
 <div class="block block-para">
   <div class="block-type">
-    Paragraph
+    Para
     <button class="toggle-button" aria-label="Toggle content">▼</button>
   </div>
-  <div class="block-content">It’s like I want to <code class="">toupper()</code> everything!</div>
+  <div class="block-content">It’s like I want to <div class="inline inline-code">
+  <div class="inline-type">
+    Code
+    <button class="toggle-button" aria-label="Toggle content">▼</button>
+  </div>
+  <div class="inline-content">toupper()</div>
+</div> everything!</div>
 </div>
 </div>
 </div>

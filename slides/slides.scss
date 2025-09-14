@@ -19,6 +19,15 @@ $link-color: #283c4d;
   padding-left: 9px;
 }
 
+/* Catch images that are the only element in a column */
+div.column > p:only-child:has(img),  div.column > p:only-child > img {
+  margin: 0;
+}
+
+.reveal h2 span.small {
+  font-size: 0.8em;
+}
+
 .ast-diagram {
   width: 100%; 
   height: 600px;

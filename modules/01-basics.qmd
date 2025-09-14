@@ -1,5 +1,5 @@
 ---
-title: Extensions Basics
+title: Extension Basics
 ---
 
 {{< include _slides.md >}}

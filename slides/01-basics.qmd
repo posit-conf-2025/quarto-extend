@@ -1,5 +1,5 @@
 ---
-title: Extensions Basics
+title: Extension Basics
 format: revealjs
 ---
 
@@ -7,7 +7,7 @@ format: revealjs
 
 ## Extending Quarto: Welcome! {.center}
 
-**Wifi**:  **Password**:
+**Wifi**: Posit Conf 2025 **Password**: conf2025
 
 ::: {.columns}
 ::: {.column width="75%"}
@@ -48,27 +48,18 @@ Full schedule at: [pos.it/quarto-extend-conf25](https://pos.it/quarto-extend-con
 
 ::: {.columns}
 ::: {.column}
-**Charlotte**
 
-::: small
-Professor, Duke University <br>
-Developer Educator, Posit, PBC <br>
-:::
+**Charlotte**  [{{< iconify fa7-brands:linkedin >}}](https://www.linkedin.com/in/cvwickham/) [{{< iconify fa7-brands:github >}}](https://github.com/cwickham) 
 
-{{< iconify ri github-fill >}} [cwickham](https://github.com/cwickham) <br>
-{{< iconify ri linkedin-fill >}} [charlotte-wickham](https://www.linkedin.com/in/charlotte-wickham-793a011a/)
+Developer Educator @ Posit  <br>
+Focus on Quarto
 :::
 ::: {.column}
-**Mine**
+**Mine**  [{{< iconify fa7-brands:linkedin >}}](https://www.linkedin.com/in/minec/) [{{< iconify fa7-brands:github >}}](https://github.com/mine-cetinkaya-rundel) [{{< iconify fa7-brands:bluesky >}}](https://bsky.app/profile/minecr.bsky.social) 
 
-::: small
-Professor, Duke University <br>
-Developer Educator, Posit, PBC <br>
-:::
-
-{{< iconify ri github-fill >}} [mine-cetinkaya-rundel](https://github.com/mine-cetinkaya-rundel) <br>
-{{< iconify ri linkedin-fill >}} [minec](https://www.linkedin.com/in/minec/) <br>
-{{< iconify ri bluesky-fill >}} [@minecr.bsky.social](https://bsky.app/profile/minecr.bsky.social)
+Professor @ Duke University <br>
+Developer Educator @ Posit <br> 
+Focus on Quarto, Tidyverse, and Positron
 
 :::
 
@@ -145,10 +136,10 @@ Let's jump in!
 ## [Your turn: Install and explore an extension]{.r-fit-text} {.smaller}
 
 ::: your-turn
-1. Add the `quarto-revealjs-clean` extension to the project in `01-basics/your-turns/1-install-and-explore/`, by running:
+1. Add the `quarto-revealjs-clean` extension to the project in `01-basics/`, by running:
 
     ```{.bash filename="Terminal"}
-    cd 01-basics/your-turns/1-install-and-explore/
+    cd 01-basics
     quarto add grantmcdermott/quarto-revealjs-clean@v1.3
     ```
 
@@ -159,6 +150,10 @@ Let's jump in!
 4. Preview `slides.qmd`. Then, edit to use the `clean-revealjs` format, and preview.
 
 Done? Browse <https://m.canouil.dev/quarto-extensions> for other extensions and explore their source.
+:::
+
+::: footer
+[Exercise code repo](https://github.com/posit-conf-2025/quarto-extend-exercises): `01-basics/`
 :::
 
 {{< countdown 10:00 >}}
@@ -269,7 +264,7 @@ contributes:
 ## Your turn: Create a custom format 
 
 ::: your-turn
-Still in `01-basics/your-turns/1-install-and-explore/`
+Still in `01-basics/`:
 
 1. Edit `_extension.yml` to add a custom `html` format that sets 2-3 of your favorite HTML options.
 
@@ -277,6 +272,11 @@ Still in `01-basics/your-turns/1-install-and-explore/`
 :::
 
 {{< countdown 8:00 >}}
+
+
+::: footer
+[Exercise code repo](https://github.com/posit-conf-2025/quarto-extend-exercises): `01-basics/`
+:::
 
 ## Get boilerplate with `quarto create extension`
 
@@ -289,7 +289,7 @@ quarto create extension
 
 # Extending Quarto
 
-## What happens when render?
+## What happens when you render?
 
 ![](images/quarto-render-process.jpg){fig-alt="Diagram showing a `.qmd` file entering a box labelled Quarto, it flows through `knitr` to a `.html.md` file, then through Pandoc, exiting the box as a `.html` file along with a folder with the name `_files.`."}
 

@@ -19,3 +19,11 @@ typography:
   base: Atkinson Hyperlegible
   link: 
     decoration: underline
+
+defaults:
+  bootstrap:
+    rules: |
+      h2 {
+          border: none;
+        }
+

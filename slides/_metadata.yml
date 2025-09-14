@@ -1,6 +1,9 @@
 theme: slides.scss
-subtitle: Extending Quarto
 code-line-numbers: false
+subtitle: "Extending Quarto workshop @ `posit::conf(2025)`"
 footer: "[pos.it/quarto-extend-conf25](http://pos.it/quarto-extend-conf25)"
 title-slide-attributes:
       data-background-color: "#9cbbbd"
+authors:
+  - Charlotte Wickham
+  - Mine Çetinkaya-Rundel
