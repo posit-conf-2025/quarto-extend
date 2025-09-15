@@ -1,0 +1,10 @@
+---
+title: Partials
+format: revealjs
+---
+
+# Partials
+
+
+
+# Questions?
