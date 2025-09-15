@@ -4,6 +4,39 @@ format: revealjs
 code-block-height: 1200px
 ---
 
+## A case study: Course notes
+
+Notes that we want as slides (`format: revealjs`) and a document (`format: html`).
+
+::: {.columns}
+::: {.column}
+::: {.r-stack}
+::: {}
+Title slide in every slide deck controlled by metadata
+
+![](images/title-slide-coursenotes.png){.box}
+:::
+::: {.rotated-text .marker .fragment data-fragment-index="3"}
+Partial
+:::
+:::
+:::
+
+
+::: {.column}
+::: {.r-stack}
+::: {}
+Special slide combines boilerplate with content.
+
+![](images/course-notes-slide.png){.box}
+:::
+::: {.rotated-text .marker .fragment data-fragment-index="4"}
+Filter
+:::
+:::
+:::
+::: 
+
 # Exercise 1
 
 ## Your Turn: Add a filter {.smaller}
