@@ -383,6 +383,18 @@ end
 
 ## Solution {visibility="hidden"}
 
+```{.lua filename="remove-all.lua"}
+Emph = function(el)
+  return el.content
+end
+
+Strong = function(el)
+  return el.content
+end
+```
+
+## Solution {visibility="hidden"}
+
 ```{.lua filename="replace-double-quotes.lua"}
 Quoted = function(el)
   if el.quotetype == "DoubleQuote" then
@@ -471,6 +483,9 @@ See a useful pattern in the next section.
 
 ## Live Code: Targeting specific content 
 
+
+::: {.columns}
+::: {.column}
 ```{.markdown .wrap filename="target-span.qmd"}
 ---
 title: "Filter Basics"
@@ -482,14 +497,16 @@ I **really** like bold and *really* like italics, and *really **really*** can't 
 
 [And sometimes I **really** need to shout]{.shout}
 ```
-
-![](images/ast-target-span.png){}
-
+:::
+::: {.column .fragment}
+```{=html}
+<iframe src="_ast-diagrams/target-span-ast.html" style="height:300px;" class = "ast-diagram"></iframe>
+```
+:::
+::: 
 
 ::: example-folder
-
 [Example](https://github.com/posit-conf-2025/quarto-extend-exercises): `03-filters/examples/3-target-text`
-
 ::: 
 
 ## Live Code: Smallcaps all spans with class `shout`
