@@ -442,6 +442,39 @@
     ]
   },
   {
+    "objectID": "modules/02-partials.html",
+    "href": "modules/02-partials.html",
+    "title": "Partials",
+    "section": "",
+    "text": "Open slides in fullscreen",
+    "crumbs": [
+      "Modules",
+      "Partials"
+    ]
+  },
+  {
+    "objectID": "modules/02-partials.html#learning-objectives",
+    "href": "modules/02-partials.html#learning-objectives",
+    "title": "Partials",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nExplain the role of template partials in Quarto documents and how they differ from full template overrides.\nLocate and reference partial files in an existing Quarto template.\nCustomize a template partial to change the appearance or content of specific sections without affecting the entire template.",
+    "crumbs": [
+      "Modules",
+      "Partials"
+    ]
+  },
+  {
+    "objectID": "modules/02-partials.html#links",
+    "href": "modules/02-partials.html#links",
+    "title": "Partials",
+    "section": "Links",
+    "text": "Links\n\nTemplate partials",
+    "crumbs": [
+      "Modules",
+      "Partials"
+    ]
+  },
+  {
     "objectID": "modules/04-case-study.html",
     "href": "modules/04-case-study.html",
     "title": "Case Study",

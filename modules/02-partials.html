@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Filters and Shortcodes – Extending Quarto</title>
+<title>Partials – Extending Quarto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +29,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../modules/04-case-study.html" rel="next">
-<link href="../modules/02-partials.html" rel="prev">
+<link href="../modules/03-filters.html" rel="next">
+<link href="../modules/01-basics.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Filters and Shortcodes – Extending Quarto">
+<meta property="og:title" content="Partials – Extending Quarto">
 <meta property="og:description" content="A one day workshop at posit::conf(2025) on creating custom extensions, including new formats, templates, and filters.">
 <meta property="og:site_name" content="Extending Quarto">
 </head>
@@ -89,7 +89,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/01-basics.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/03-filters.html">Filters and Shortcodes</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/01-basics.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/02-partials.html">Partials</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -148,13 +148,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/02-partials.html" class="sidebar-item-text sidebar-link">
+  <a href="../modules/02-partials.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Partials</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/03-filters.html" class="sidebar-item-text sidebar-link active">
+  <a href="../modules/03-filters.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Filters and Shortcodes</span></a>
   </div>
 </li>
@@ -175,9 +175,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/01-basics.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/03-filters.html">Filters and Shortcodes</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/01-basics.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/02-partials.html">Partials</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Filters and Shortcodes</h1>
+<h1 class="title">Partials</h1>
 </div>
 
 
@@ -194,26 +194,21 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><a href="../slides/03-filters.html">Open slides in fullscreen</a></p>
-<iframe class="slide-deck" src="../slides/03-filters.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+<p><a href="../slides/02-partials.html">Open slides in fullscreen</a></p>
+<iframe class="slide-deck" src="../slides/02-partials.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
 <p>By the end of this module, you will be able to:</p>
 <ul>
-<li><p>Describe how Pandoc filters modify the Abstract Syntax Tree (AST)</p></li>
-<li><p>Write a simple Pandoc filter for an <code>Inline</code> element</p></li>
-<li><p>Locate documentation for Lua modules provided by Pandoc and Quarto</p></li>
-<li><p>Use spans or divs to target specific content for a filter</p></li>
-<li><p>Specify an order to apply filters</p></li>
-<li><p>Describe how shortcodes modify the AST</p></li>
-<li><p>Package a filter as a Quarto extension</p></li>
+<li><p>Explain the role of template partials in Quarto documents and how they differ from full template overrides.</p></li>
+<li><p>Locate and reference partial files in an existing Quarto template.</p></li>
+<li><p>Customize a template partial to change the appearance or content of specific sections without affecting the entire template.</p></li>
 </ul>
 </section>
 <section id="links" class="level2">
 <h2 class="anchored" data-anchor-id="links">Links</h2>
 <ul>
-<li><p>Positron/VS Code Lua extension: <a href="https://open-vsx.org/extension/sumneko/lua">OpenVSX</a> or <a href="https://marketplace.visualstudio.com/items?itemName=sumneko.lua">MS Marketplace</a></p></li>
-<li><p><a href="../quick-reference.html">Pandoc Lua types Quick Reference</a></p></li>
+<li><a href="https://quarto.org/docs/journals/templates.html#template-partials">Template partials</a></li>
 </ul>
 
 
@@ -622,13 +617,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../modules/02-partials.html" class="pagination-link" aria-label="Partials">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Partials</span>
+      <a href="../modules/01-basics.html" class="pagination-link" aria-label="Extension Basics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Extension Basics</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../modules/04-case-study.html" class="pagination-link" aria-label="Case Study">
-        <span class="nav-page-text">Case Study</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../modules/03-filters.html" class="pagination-link" aria-label="Filters and Shortcodes">
+        <span class="nav-page-text">Filters and Shortcodes</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
