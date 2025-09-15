@@ -1,0 +1,19 @@
+---
+title: Partials
+---
+
+{{< include _slides.md >}}
+
+## Learning Objectives
+
+By the end of this module, you will be able to:
+
+* Explain the role of template partials in Quarto documents and how they differ from full template overrides.
+
+* Locate and reference partial files in an existing Quarto template.
+
+* Customize a template partial to change the appearance or content of specific sections without affecting the entire template.
+
+## Links
+
+* [Template partials](https://quarto.org/docs/journals/templates.html#template-partials)
