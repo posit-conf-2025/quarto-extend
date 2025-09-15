@@ -15,7 +15,7 @@ Please check the [Setup Instructions](setup.qmd) for recommended steps to take b
 | :------------ | :--------------- |
 | 09:00 - 10:30 | [Extension Basics](modules/01-basics.qmd)      |
 | 10:30 - 11:00 | *Coffee break*   |
-| 11:00 - 12:30 | Session 2        |
+| 11:00 - 12:30 | [Partials](modules/02-partials.qmd)        |
 | 12:30 - 13:30 | *Lunch break*    |
 | 13:30 - 15:00 | [Filters and Shortcodes](modules/03-filters.qmd)       |
 | 15:00 - 15:30 | *Coffee break*   |
