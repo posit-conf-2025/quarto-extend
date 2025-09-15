@@ -96,7 +96,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-29b746503a5aafa7f55eeb087d1bd30c.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-6b9e0212b55ce0d61cf93902f91879f3.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -188,6 +188,8 @@
       margin-right: 0; 
     }
   </style>
+  <!-- Countdown Global CSS -->
+  <style text="text/css">:root {--countdown-color-background: #283c4d;--countdown-color-text: #ffffff;}</style>
 <meta property="og:title" content="Filters and Shortcodes – Extending Quarto">
 <meta property="og:description" content="Extending Quarto workshop @ posit::conf(2025)">
 <meta property="og:site_name" content="Extending Quarto">
@@ -205,14 +207,20 @@
 <div class="quarto-title-author-name">
 Charlotte Wickham 
 </div>
+ 
 </div>
+ &amp; &nbsp;
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
 Mine Çetinkaya-Rundel 
 </div>
+ 
 </div>
 </div>
 
+  <div class="slide-url">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"></path><path fill="currentColor" d="m17.303 9.524l3.182 3.182a5.5 5.5 0 1 1-7.778 7.778l-1.06-1.06a1.5 1.5 0 1 1 2.12-2.122l1.062 1.061a2.5 2.5 0 0 0 3.535-3.536l-3.182-3.182a2.5 2.5 0 0 0-2.681-.56q-.242.096-.454.196l-.464.217c-.62.28-1.097.4-1.704-.206c-.872-.872-.646-1.677.417-2.41a5.5 5.5 0 0 1 7.007.642m-6.01-6.01l1.06 1.06a1.5 1.5 0 0 1-2.12 2.122l-1.061-1.06A2.5 2.5 0 1 0 5.636 9.17l3.182 3.182a2.5 2.5 0 0 0 2.681.56q.242-.096.454-.196l.464-.217c.62-.28 1.098-.4 1.704.206c.872.872.646 1.677-.417 2.41a5.5 5.5 0 0 1-7.007-.642l-3.182-3.182a5.5 5.5 0 1 1 7.778-7.778Z"></path></g></svg> <a href="http://pos.it/quarto-extend-conf25">pos.it/quarto-extend-conf25</a>
+  </div>
 </section>
 <section>
 <section id="what-are-filters" class="title-slide slide level1 center">
@@ -221,12 +229,12 @@ Mine Çetinkaya-Rundel
 </section>
 <section id="what-are-filters-1" class="slide level2">
 <h2>What are filters?</h2>
-<img data-src="images/pandoc-step.jpg" class="r-stretch">
+<p><img data-src="images/pandoc-step.jpg" style="width:75.0%"></p>
 <p>Filters manipulate the AST between the parsing and the writing phase. First, understand the AST.</p>
-<div class="footer">
+
+<aside><div>
 <p><a href="https://pandoc.org/lua-filters.html" class="uri">https://pandoc.org/lua-filters.html</a></p>
-</div>
-</section>
+</div></aside></section>
 <section id="ast-a-document-is-composed-of-blocks" class="slide level2">
 <h2><span class="small">AST: A document is composed of <code>Blocks</code></span></h2>
 <div class="columns">
@@ -427,8 +435,9 @@ Mine Çetinkaya-Rundel
 <p>A filter function is called on every instance of a particular type of node.</p>
 <p>The input is the node itself, the output replaces the node.</p>
 </section>
-<section id="your-turn" class="slide level2 smaller">
-<h2>Your Turn</h2>
+<section id="your-turn-ast" class="slide level2 smaller">
+<h2>Your turn: AST</h2>
+<div class="your-turn">
 <p>Take a look at the AST diagram on the next slide.</p>
 <ul>
 <li><p>What are some other types of <code>Block</code> nodes?</p></li>
@@ -443,15 +452,16 @@ Mine Çetinkaya-Rundel
 <li>the text <code>quarto</code> in the code block</li>
 </ul></li>
 </ul>
-<div id="timer_3d076bbd9441bb64b7ff0a40a90d43225b0c5fc5" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+</div>
+<div id="timer_fb87fd98d6a417a36c415c4b8165387d1a486658" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
  </div>
  <code class="countdown-time"><span class="countdown-digits minutes">06</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
  </div>
-<div class="footer">
-<p><code>03-filters/your-turns/1-explore-ast</code></p>
+<div class="exercise-folder">
+<p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Exercise</a>: <code>03-filters/your-turns/1-explore-ast</code></p>
 </div>
 </section>
 <section id="ast" class="slide level2">
@@ -508,8 +518,8 @@ Mine Çetinkaya-Rundel
 </div>
 </div></div>
 <p><span class="fragment">A filter function that returns <code>nil</code>, leaves the node unchanged.</span></p>
-<div class="footer">
-<p><code>03-filters/examples/1-writing-filters</code></p>
+<div class="example-folder">
+<p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Example</a>: <code>03-filters/examples/1-writing-filters</code></p>
 </div>
 </section>
 <section id="live-code-print-debugging" class="slide level2">
@@ -559,26 +569,28 @@ Mine Çetinkaya-Rundel
 <p>See <a href="../quick-reference.html#text-formatting">Pandoc Lua types Quick Reference</a></p>
 <iframe src="../quick-reference.html#text-formatting" class="ast-diagram"></iframe>
 </section>
-<section id="your-turn-1" class="slide level2">
-<h2>Your Turn</h2>
+<section id="your-turn-write-a-filter" class="slide level2 smaller">
+<h2>Your turn: Write a filter</h2>
+<div class="your-turn">
 <ol type="1">
 <li><p>Write a filter, <code>replace-emph.lua</code>, that turns all italic text to underlined text.</p></li>
 <li><p>Add the <code>Strong</code> filter function from <code>replace-strong.lua</code> to <code>replace-emph.lua</code>. What happens?</p></li>
 </ol>
-<p><strong>Other challenges</strong>:</p>
+<p><strong>Other challenges:</strong></p>
 <ul>
 <li><p>Write a filter that removes all bold and italic formatting, leaving just the text.</p></li>
 <li><p>Write a filter that converts all double quotes to single quotes.</p></li>
 </ul>
-<div id="timer_3d076bbd9441bb64b7ff0a40a90d43225b0c5fc5" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+</div>
+<div id="timer_fb87fd98d6a417a36c415c4b8165387d1a486658" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
  </div>
  <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
  </div>
-<div class="footer">
-<p><code>03-filters/your-turns/2-write-a-filter</code></p>
+<div class="exercise-folder">
+<p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Exercise</a>: <code>03-filters/your-turns/2-write-a-filter</code></p>
 </div>
 </section>
 
@@ -616,8 +628,8 @@ Mine Çetinkaya-Rundel
 <p>I <strong>really</strong> <strong>really</strong> like bold and <em>really</em> like italics, and <em>really <strong>really</strong> <strong>really</strong></em> can’t decide which to use.</p>
 </blockquote>
 </div></div>
-<div class="footer">
-<p>03-filters/examples/2-return-types</p>
+<div class="example-folder">
+<p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Example</a>: <code>03-filters/examples/2-return-types</code></p>
 </div>
 </section>
 <section id="an-empty-list" class="slide level2">
@@ -637,8 +649,8 @@ Mine Çetinkaya-Rundel
 <p>I <strong>really</strong> like bold and like italics, and can’t decide which to use.</p>
 </blockquote>
 </div></div>
-<div class="footer">
-<p>03-filters/examples/2-return-types</p>
+<div class="example-folder">
+<p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Example</a>: <code>03-filters/examples/2-return-types</code></p>
 </div>
 </section>
 <section id="common-mistake-an-array-of-inlines" class="slide level2">
@@ -672,8 +684,8 @@ Mine Çetinkaya-Rundel
 <span id="cb15-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">And sometimes I **really** need to shout</span><span class="co">]</span>{.shout}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
-<img data-src="images/ast-target-span.png" class="r-stretch"><div class="footer">
-<p>Example: <code>03-filters/examples/3-target-text</code></p>
+<img data-src="images/ast-target-span.png" class="r-stretch"><div class="example-folder">
+<p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Example</a>: <code>03-filters/examples/3-target-text</code></p>
 </div>
 </section>
 <section id="live-code-smallcaps-all-spans-with-class-shout" class="slide level2">
@@ -696,8 +708,8 @@ Mine Çetinkaya-Rundel
 <li><p><code>includes()</code> is a <a href="https://pandoc.org/lua-filters.html#methods-2">method on Pandoc lists</a>.</p></li>
 </ul>
 </div></div>
-<div class="footer">
-<p>Example: <code>03-filters/examples/3-target-text</code></p>
+<div class="example-folder">
+<p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Example</a>: <code>03-filters/examples/3-target-text</code></p>
 </div>
 </section>
 <section id="live-code-constructing-content" class="slide level2">
@@ -731,6 +743,7 @@ Mine Çetinkaya-Rundel
 </div></aside></section>
 <section id="your-turn-simon-says" class="slide level2 smaller">
 <h2>Your turn: <a href="https://en.wikipedia.org/wiki/Simon_Says">Simon says</a></h2>
+<div class="your-turn">
 <p>Complete <code>says.lua</code>, a filter that:</p>
 <ul>
 <li>targets <code>Span</code> elements with class <code>says</code>, and</li>
@@ -755,15 +768,16 @@ Mine Çetinkaya-Rundel
 </div>
 </div></div>
 <p><strong>Challenge:</strong> Instead of <code>Simon</code>, let the user specify the name as an attribute, e.g.&nbsp;<code>[Write a filter]{.says name="Charlotte"}</code></p>
-<div id="timer_3d076bbd9441bb64b7ff0a40a90d43225b0c5fc5" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+</div>
+<div id="timer_fb87fd98d6a417a36c415c4b8165387d1a486658" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
  </div>
  <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
  </div>
-<div class="footer">
-<p><code>03-filters/your-turns/3-simon-says</code></p>
+<div class="exercise-folder">
+<p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Exercise</a>: <code>03-filters/your-turns/3-simon-says</code></p>
 </div>
 </section>
 </section>
@@ -809,11 +823,11 @@ Mine Çetinkaya-Rundel
 <span id="cb22-8"><a></a><span class="kw">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
-<div class="footer">
-<p>Example: <code>03-filters/examples/4-filters-in-practice/1-target-content-in-div</code></p>
+<div class="example-folder">
+<p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Example</a>: <code>03-filters/examples/4-filters-in-practice/1-target-content-in-div</code></p>
 </div>
 </section>
-<section id="use-walk-to-apply-filter-functions-to-children" class="slide level2">
+<section id="use-walk-to-apply-filter-functions-to-children" class="slide level2 smaller">
 <h2><span class="small">Use <code>walk</code> to apply filter functions to children</span></h2>
 <div class="columns">
 <div class="column" style="width:40%;">
@@ -853,11 +867,13 @@ Mine Çetinkaya-Rundel
 <span id="cb24-11"><a></a><span class="kw">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
-<p><a href="https://pandoc.org/lua-filters.html#type-pandoc:walk" class="uri">https://pandoc.org/lua-filters.html#type-pandoc:walk</a></p>
-<div class="footer">
-<p>Example: <code>03-filters/examples/4-filters-in-practice/2-walk-children-nodes</code></p>
+<div class="example-folder">
+<p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Example</a>: <code>03-filters/examples/4-filters-in-practice/2-walk-children-nodes</code></p>
 </div>
-</section>
+
+<aside><div>
+<p><a href="https://pandoc.org/lua-filters.html#type-pandoc:walk" class="uri">https://pandoc.org/lua-filters.html#type-pandoc:walk</a></p>
+</div></aside></section>
 <section id="construct-format-specific-output" class="slide level2">
 <h2>Construct format specific output</h2>
 <div class="columns">
@@ -900,11 +916,11 @@ Mine Çetinkaya-Rundel
 <span id="cb26-12"><a></a><span class="kw">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
-<div class="footer">
-<p>Example: <code>03-filters/examples/4-filters-in-practice/3-format-specific-output</code></p>
+<div class="example-folder">
+<p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Example</a>: <code>03-filters/examples/4-filters-in-practice/3-format-specific-output</code></p>
 </div>
 </section>
-<section id="filter-function-on-meta-to-examine-metadata" class="slide level2">
+<section id="filter-function-on-meta-to-examine-metadata" class="slide level2 smaller">
 <h2><span class="small">Filter function on <code>Meta</code> to examine metadata</span></h2>
 <div class="columns">
 <div class="column">
@@ -937,8 +953,8 @@ Mine Çetinkaya-Rundel
 <span id="cb28-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
-<div class="footer">
-<p>Example: <code>03-filters/examples/4-filters-in-practice/4-meta-filter</code></p>
+<div class="example-folder">
+<p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Example</a>: <code>03-filters/examples/4-filters-in-practice/4-meta-filter</code></p>
 </div>
 </section>
 <section id="controlling-the-order-of-filter-functions" class="slide level2">
@@ -967,8 +983,8 @@ Mine Çetinkaya-Rundel
 <span id="cb29-13"><a></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
-<div class="footer">
-<p>Example: <code>03-filters/examples/4-filters-in-practice/5-filter-sets</code></p>
+<div class="example-folder">
+<p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Example</a>: <code>03-filters/examples/4-filters-in-practice/5-filter-sets</code></p>
 </div>
 </section>
 <section id="controlling-when-a-filter-runs" class="slide level2">
@@ -990,16 +1006,16 @@ Mine Çetinkaya-Rundel
 </div>
 <p>Also <code>pre-ast</code>, <code>post-ast</code>, <code>pre-render</code>, <code>post-render</code></p>
 </div></div>
-<div class="footer">
+
+<aside><div>
 <p>Filter sequence in source: <a href="https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/filters/main.lua" class="uri">https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/filters/main.lua</a></p>
-</div>
-</section></section>
+</div></aside></section></section>
 <section>
 <section id="wrapping-up" class="title-slide slide level1 center">
 <h1>Wrapping Up</h1>
 
 </section>
-<section id="filter-extensions" class="slide level2">
+<section id="filter-extensions" class="slide level2 smaller">
 <h2>Filter extensions</h2>
 <p><code>quarto create extension filter</code> creates boilerplate. Drop your <code>.lua</code> files in.</p>
 <div class="columns">
@@ -1039,10 +1055,10 @@ Mine Çetinkaya-Rundel
 <span id="cb33-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">  - shout</span></span>
 <span id="cb33-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="footer">
+
+<aside><div>
 <p><a href="https://quarto.org/docs/extensions/filters.html#filter-extensions" class="uri">https://quarto.org/docs/extensions/filters.html#filter-extensions</a></p>
-</div>
-</section>
+</div></aside></section>
 <section id="filters-in-custom-format-extensions" class="slide level2">
 <h2>Filters in custom format extensions</h2>
 <div class="columns">
@@ -1103,10 +1119,10 @@ Mine Çetinkaya-Rundel
 </div>
 </div></div>
 <p>Can take arguments: <code>args</code>, <code>kwargs</code>, <code>meta</code>, <code>raw_args</code>, <code>context</code></p>
-<div class="footer">
+
+<aside><div>
 <p><a href="https://quarto.org/docs/extensions/shortcodes.html" class="uri">https://quarto.org/docs/extensions/shortcodes.html</a></p>
-</div>
-</section>
+</div></aside></section>
 <section id="learning-lua" class="slide level2">
 <h2>Learning Lua</h2>
 <p><a href="https://quarto.org/docs/extensions/lua.html#learning-lua" class="uri">https://quarto.org/docs/extensions/lua.html#learning-lua</a></p>
@@ -1522,6 +1538,21 @@ Mine Çetinkaya-Rundel
         }
       });
       </script>
+    <!-- https://github.com/quarto-dev/quarto-cli/    discussion6262#discussioncomment-6472906 -->
+    <script type="text/javascript">
+      Reveal.on( 'ready', event => {
+        // remove footer when prez start on first slide
+        if (event.indexh === 0) {
+          document.querySelector("div.footer").style.display = "none";
+        }
+      })
+      Reveal.addEventListener('slidechanged', (event) => {
+        // Aslo remove footer when prez start go back to first slide
+        if (event.indexh === 0) {
+          document.querySelector("div.footer").style.display = "none";
+        }
+      });
+    </script>
     
 
 </body></html>

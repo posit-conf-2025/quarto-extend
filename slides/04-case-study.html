@@ -96,7 +96,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-cac54f69737d30e272346c5ccfb184a9.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-5945a4385367618be1bacf53ac7e155a.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -188,6 +188,8 @@
       margin-right: 0; 
     }
   </style>
+  <!-- Countdown Global CSS -->
+  <style text="text/css">:root {--countdown-color-background: #283c4d;--countdown-color-text: #ffffff;}</style>
 <meta property="og:title" content="Case study – Extending Quarto">
 <meta property="og:description" content="Extending Quarto workshop @ posit::conf(2025)">
 <meta property="og:site_name" content="Extending Quarto">
@@ -205,14 +207,20 @@
 <div class="quarto-title-author-name">
 Charlotte Wickham 
 </div>
+ 
 </div>
+ &amp; &nbsp;
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
 Mine Çetinkaya-Rundel 
 </div>
+ 
 </div>
 </div>
 
+  <div class="slide-url">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"></path><path fill="currentColor" d="m17.303 9.524l3.182 3.182a5.5 5.5 0 1 1-7.778 7.778l-1.06-1.06a1.5 1.5 0 1 1 2.12-2.122l1.062 1.061a2.5 2.5 0 0 0 3.535-3.536l-3.182-3.182a2.5 2.5 0 0 0-2.681-.56q-.242.096-.454.196l-.464.217c-.62.28-1.097.4-1.704-.206c-.872-.872-.646-1.677.417-2.41a5.5 5.5 0 0 1 7.007.642m-6.01-6.01l1.06 1.06a1.5 1.5 0 0 1-2.12 2.122l-1.061-1.06A2.5 2.5 0 1 0 5.636 9.17l3.182 3.182a2.5 2.5 0 0 0 2.681.56q.242-.096.454-.196l.464-.217c.62-.28 1.098-.4 1.704.206c.872.872.646 1.677-.417 2.41a5.5 5.5 0 0 1-7.007-.642l-3.182-3.182a5.5 5.5 0 1 1 7.778-7.778Z"></path></g></svg> <a href="http://pos.it/quarto-extend-conf25">pos.it/quarto-extend-conf25</a>
+  </div>
 </section>
 <section>
 <section id="exercise-1" class="title-slide slide level1 center">
@@ -221,6 +229,7 @@ Mine Çetinkaya-Rundel
 </section>
 <section id="your-turn-add-a-filter" class="slide level2 smaller">
 <h2>Your Turn: Add a filter</h2>
+<div class="your-turn">
 <div class="columns">
 <div class="column">
 <p>Write the <code>participate.lua</code> filter to combine the content of the question in the div with class <code>.participate</code> with boilerplate text:</p>
@@ -234,22 +243,25 @@ Mine Çetinkaya-Rundel
 <li>Recall the useful pattern: create an empty <code>pandoc.Blocks()</code>, <code>insert</code> <code>Block</code>s, <code>extend</code> with <code>Blocks</code>.</li>
 <li>You can pass <code>pandoc.Str()</code> a string with spaces.</li>
 </ul>
-<div id="timer_f9c1030e67e0db26420d4304cdb37b13f56bd350" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+</div>
+<div class="exercise-folder">
+<p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Exercise</a>: <code>04-case-study/your-turns/1-add-filter</code></p>
+</div>
+<div id="timer_1a7b56f7e6d6955c790211c6c8bef379ab395543" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
  </div>
  <code class="countdown-time"><span class="countdown-digits minutes">08</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
  </div>
-<div class="footer">
-<p><code>04-case-study/your-turns/1-add-filter</code></p>
-</div>
 </section>
 <section id="your-turn-predict-the-output" class="slide level2 smaller">
-<h2>Your Turn: Predict the output</h2>
+<h2>Your turn: Predict the output</h2>
+<div class="your-turn">
 <p>Take a look at the version of <code>participate.lua</code> on the next slide.</p>
 <p>With your neighbor, predict what the “Participate” slide will look like.</p>
-<div id="timer_f9c1030e67e0db26420d4304cdb37b13f56bd350" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+</div>
+<div id="timer_1a7b56f7e6d6955c790211c6c8bef379ab395543" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -259,7 +271,8 @@ Mine Çetinkaya-Rundel
 </section>
 <section id="participate.lua" class="slide level2 scrollable">
 <h2><code>participate.lua</code></h2>
-<p><a href="../slides/participate.html" target="_blank">Full Screen</a></p>
+<div class="your-turn">
+<p><a href="participate.lua" target="_blank">Full Screen</a></p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>participate.lua</strong></pre>
@@ -300,6 +313,7 @@ Mine Çetinkaya-Rundel
 <span id="cb2-34"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="va">result</span></span>
 <span id="cb2-35"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</div>
 </section>
 
 </section>
@@ -308,20 +322,22 @@ Mine Çetinkaya-Rundel
 <h1>Exercise 2</h1>
 
 </section>
-<section id="now-add-a-partial" class="slide level2">
-<h2>Now add a partial!</h2>
+<section id="your-turn-now-add-a-partial" class="slide level2">
+<h2>Your turn: Now add a partial!</h2>
+<div class="your-turn">
 <p>Add a partial that updated your title slide.</p>
 <ul>
 <li><p>This could be <em>the</em> partial from Module 2</p></li>
 <li><p>It could be a new partial you develop during the time allotted</p></li>
 </ul>
+</div>
 </section></section>
 <section>
 <section id="wrap-up" class="title-slide slide level1 center">
 <h1>Wrap up</h1>
 
 </section>
-<section id="includes-vs.-partials" class="slide level2">
+<section id="includes-vs.-partials" class="slide level2 smaller">
 <h2>Includes vs.&nbsp;partials</h2>
 <ul>
 <li><p><code>{{&lt; include &gt;}}</code>s are a convenient way to reuse content across documents</p>
@@ -743,6 +759,21 @@ Mine Çetinkaya-Rundel
         }
       });
       </script>
+    <!-- https://github.com/quarto-dev/quarto-cli/    discussion6262#discussioncomment-6472906 -->
+    <script type="text/javascript">
+      Reveal.on( 'ready', event => {
+        // remove footer when prez start on first slide
+        if (event.indexh === 0) {
+          document.querySelector("div.footer").style.display = "none";
+        }
+      })
+      Reveal.addEventListener('slidechanged', (event) => {
+        // Aslo remove footer when prez start go back to first slide
+        if (event.indexh === 0) {
+          document.querySelector("div.footer").style.display = "none";
+        }
+      });
+    </script>
     
 
 </body></html>
