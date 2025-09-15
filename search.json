@@ -273,6 +273,13 @@
     "text": "AST diagrams are WIP\n\n\nThe AST diagrams you’ve seen are produced using Pandoc’s version of markdown.\nQuarto specific features won’t appear in the AST diagrams as you might expect. E.g. cross-references, executable code blocks (ones with {), shortcodes, callouts, etc..\nUse quarto.log.output() to examine the AST as it is when your filter is run.\nThis will improve!"
   },
   {
+    "objectID": "slides/04-case-study.html#a-case-study-course-notes",
+    "href": "slides/04-case-study.html#a-case-study-course-notes",
+    "title": "Case study",
+    "section": "A case study: Course notes",
+    "text": "A case study: Course notes\nNotes that we want as slides (format: revealjs) and a document (format: html).\n\n\n\n\nTitle slide in every slide deck controlled by metadata\n\n\n\nPartial\n\n\n\n\n\nSpecial slide combines boilerplate with content.\n\n\n\nFilter"
+  },
+  {
     "objectID": "slides/04-case-study.html#your-turn-add-a-filter",
     "href": "slides/04-case-study.html#your-turn-add-a-filter",
     "title": "Case study",
