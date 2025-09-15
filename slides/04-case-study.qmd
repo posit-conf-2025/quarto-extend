@@ -52,11 +52,13 @@ With your neighbor, predict what the "Participate" slide will look like.
 
 ## `participate.lua` {.scrollable}
 
-[Full Screen](participate.qmd){target="_blank"}
+::: your-turn
+[Full Screen](participate.lua){target="_blank"}
 
 ```{.lua filename="participate.lua"}
 {{< include participate.lua >}}
 ```
+:::
 
 ## `participate.lua` {visibility="hidden"}
 
