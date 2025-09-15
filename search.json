@@ -329,176 +329,11 @@
     "text": "Invitation for questions\nhow do I solve X with?"
   },
   {
-    "objectID": "quick-reference.html",
-    "href": "quick-reference.html",
-    "title": "Pandoc Types Quick Reference",
+    "objectID": "resources/participate.html",
+    "href": "resources/participate.html",
+    "title": "participate.lua",
     "section": "",
-    "text": "General Notes\n  Document Structure\n  Block Elements\n  \n  Paragraphs and Headings\n  Lists\n  Code and raw blocks\n  Divs, BlockQuotes, Figures\n  Other\n  \n  Inline Elements\n  \n  Whitespace\n  Basic Elements\n  Text Formatting\n  Other"
-  },
-  {
-    "objectID": "quick-reference.html#general-notes",
-    "href": "quick-reference.html#general-notes",
-    "title": "Pandoc Types Quick Reference",
-    "section": "General Notes",
-    "text": "General Notes\n\nMost common elements are listed here, but not all.\nQuarto has some custom node types too: Callout, Tabset, ConditionalBlock, FloatRefTarget\nThe syntax [, arg] indicates an optional argument\nAll types have a t/tag field to access the type as a string (e.g. pandoc.Space().t returns Space)\nAny type with the attr field also has shortcuts for: identifier, classes, and attributes\nattr is an Attr object. Create one with pandoc.Attr():\npandoc.Attr(\n  \"my-id\",                       --identifier\n  {\"class-one\", \"class-two\"},    --classes\n  {key=\"value\", key2=\"value2\"}   --attributes\n)"
-  },
-  {
-    "objectID": "quick-reference.html#document-structure",
-    "href": "quick-reference.html#document-structure",
-    "title": "Pandoc Types Quick Reference",
-    "section": "Document Structure",
-    "text": "Document Structure\n\n\n\n\n\n\n\n\nType\nConstructor\nFields\n\n\n\n\nPandoc\npandoc.Pandoc(blocks, meta)\nblocks, meta\n\n\nMeta\npandoc.Meta(table)\nkey-value pairs of document metadata"
-  },
-  {
-    "objectID": "quick-reference.html#block-elements",
-    "href": "quick-reference.html#block-elements",
-    "title": "Pandoc Types Quick Reference",
-    "section": "Block Elements",
-    "text": "Block Elements\n\nParagraphs and Headings\ncontent is an Inlines object (a list of Inline elements)\n\n\n\n\n\n\n\n\nType\nConstructor\nFields\n\n\n\n\nPara\npandoc.Para(content)  content: Inlines\ncontent\n\n\nPlain\npandoc.Plain(content)  content: Inlines\ncontent\n\n\nHeader\npandoc.Header (level, content[, attr]))  content: Inlines level: integer\nlevel, content, attr\n\n\n\n\n\nLists\ncontent is a list of Blocks, or for DefinitionList something complicated.\n\n\n\n\n\n\n\n\nType\nConstructor\nFields\n\n\n\n\nBulletList\npandoc.BulletList(items)  items: {Blocks, ... }\ncontent\n\n\nOrderedList\npandoc.OrderedList(items[, listAttributes])  items: {Blocks, ... }\ncontent, listAttributes, start, style, delimiter\n\n\nDefinitionList\npandoc.DefinitionList(content)  content: {Inlines, {Blocks, ...}, ...}\ncontent (list of definition pairs)\n\n\n\n\n\nCode and raw blocks\ntext is a simple Lua string (not a Str)\n\n\n\n\n\n\n\n\nType\nConstructor\nFields\n\n\n\n\nCodeBlock\npandoc.CodeBlock(text[, attr])  text: string\ntext, attr\n\n\nRawBlock\npandoc.RawBlock(format, text)  text: string\nformat, text\n\n\n\n\n\nDivs, BlockQuotes, Figures\ncontent is a Blocks object (a list of Block elements)\n\n\n\n\n\n\n\n\nType\nConstructor\nFields\n\n\n\n\nDiv\npandoc.Div(content[, attr])  content: Blocks\ncontent, attr\n\n\nBlockQuote\npandoc.BlockQuote(content)  content: Blocks\ncontent\n\n\nFigure\npandoc.Figure(content[, caption[, attr]])  content: Blocks\ncontent, caption, attr\n\n\n\n\n\nOther\n\n\n\n\n\n\n\n\nType\nConstructor\nFields\n\n\n\n\nTable\npandoc.Table(caption, colspecs, head, bodies, foot[, attr])\ncaption, colspecs, head, bodies, foot, attr\n\n\nLineBlock\npandoc.LineBlock(content)  content: {Inlines, ...}\ncontent"
-  },
-  {
-    "objectID": "quick-reference.html#inline-elements",
-    "href": "quick-reference.html#inline-elements",
-    "title": "Pandoc Types Quick Reference",
-    "section": "Inline Elements",
-    "text": "Inline Elements\n\nWhitespace\nTakes no arguments, has no fields.\n\n\n\n\n\n\n\nType\nConstructor\n\n\n\n\nSpace\npandoc.Space()\n\n\nSoftBreak\npandoc.SoftBreak()\n\n\nLineBreak\npandoc.LineBreak()\n\n\n\n\n\nBasic Elements\ntext is a simple Lua string (not a Str)\n\n\n\n\n\n\n\n\nType\nConstructor\nFields\n\n\n\n\nStr\npandoc.Str(text)\ntext\n\n\nCode\npandoc.Code(code[, attr])\ntext, attr\n\n\nMath\npandoc.Math(mathtype, text)  mathtype: 'InlineMath' or 'DisplayMath'\nmathtype, text\n\n\nRawInline\npandoc.RawInline(format, text)  format: 'html', 'latex' etc.\nformat, text\n\n\n\n\n\nText Formatting\ncontent is an Inlines object (a list of Inline elements).\n\n\n\n\n\n\n\n\nType\nConstructor\nFields\n\n\n\n\nEmph\npandoc.Emph(content)\ncontent\n\n\nSmallCaps\npandoc.SmallCaps(content)\ncontent\n\n\nStrikeout\npandoc.Strikeout(content)\ncontent\n\n\nStrong\npandoc.Strong(content)\ncontent\n\n\nSubscript\npandoc.Subscript(content)\ncontent\n\n\nSuperscript\npandoc.Superscript(content)\ncontent\n\n\nUnderline\npandoc.Underline(content)\ncontent\n\n\nQuoted\npandoc.Quoted(quotetype, content)  quotetype: 'SingleQuote' or 'DoubleQuote'\nquotetype, content\n\n\n\n\n\nOther\ncontent and title are Inlines unless otherwise noted.\nsrc, target are simple Lua strings.\nattr is an Attr object.\n\n\n\n\n\n\n\n\nType\nConstructor\nFields\n\n\n\n\nSpan\npandoc.Span(content[, attr])\ncontent, attr\n\n\nImage\npandoc.Image(caption, src[, title[, attr]])\ncaption, src, title, attr\n\n\nLink\npandoc.Link(content, target[, title[, attr]])\ncontent, target, title, attr\n\n\n\n\n\n\n\nCite\npandoc.Cite(content, citations)\ncontent, citations\n\n\nNote\npandoc.Note(content)  content: Blocks\ncontent"
-  },
-  {
-    "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
-    "href": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
-    "title": "Attribution-ShareAlike 4.0 International",
-    "section": "Creative Commons Attribution-ShareAlike 4.0 International Public License",
-    "text": "Creative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\n\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\n\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\nA. reproduce and Share the Licensed Material, in whole or in part; and\nB. produce, reproduce, and Share Adapted Material.\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)(4) never produces Adapted Material.\nDownstream recipients.\nA. Offer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\nB. __Additional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\nC. No downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\nA. retain the following if it is supplied by the Licensor with the Licensed Material:\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\nB. indicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nC. indicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\n\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material, including for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\n\n\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUnless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.\nTo the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\n\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\n\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.t stated herein are separate from and independent of the terms and conditions of this Public License.\n\n\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org"
-  },
-  {
-    "objectID": "modules/03-filters.html",
-    "href": "modules/03-filters.html",
-    "title": "Filters and Shortcodes",
-    "section": "",
-    "text": "Open slides in fullscreen",
-    "crumbs": [
-      "Modules",
-      "Filters and Shortcodes"
-    ]
-  },
-  {
-    "objectID": "modules/03-filters.html#learning-objectives",
-    "href": "modules/03-filters.html#learning-objectives",
-    "title": "Filters and Shortcodes",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nDescribe how Pandoc filters modify the Abstract Syntax Tree (AST)\nWrite a simple Pandoc filter for an Inline element\nLocate documentation for Lua modules provided by Pandoc and Quarto\nUse spans or divs to target specific content for a filter\nSpecify an order to apply filters\nDescribe how shortcodes modify the AST\nPackage a filter as a Quarto extension",
-    "crumbs": [
-      "Modules",
-      "Filters and Shortcodes"
-    ]
-  },
-  {
-    "objectID": "modules/03-filters.html#links",
-    "href": "modules/03-filters.html#links",
-    "title": "Filters and Shortcodes",
-    "section": "Links",
-    "text": "Links\n\nPositron/VS Code Lua extension: OpenVSX or MS Marketplace\nPandoc Lua types Quick Reference",
-    "crumbs": [
-      "Modules",
-      "Filters and Shortcodes"
-    ]
-  },
-  {
-    "objectID": "modules/04-case-study.html",
-    "href": "modules/04-case-study.html",
-    "title": "Case Study",
-    "section": "",
-    "text": "Open slides in fullscreen",
-    "crumbs": [
-      "Modules",
-      "Case Study"
-    ]
-  },
-  {
-    "objectID": "modules/02-partials.html",
-    "href": "modules/02-partials.html",
-    "title": "Partials",
-    "section": "",
-    "text": "Open slides in fullscreen",
-    "crumbs": [
-      "Modules",
-      "Partials"
-    ]
-  },
-  {
-    "objectID": "modules/02-partials.html#learning-objectives",
-    "href": "modules/02-partials.html#learning-objectives",
-    "title": "Partials",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nExplain the role of template partials in Quarto documents and how they differ from full template overrides.\nLocate and reference partial files in an existing Quarto template.\nCustomize a template partial to change the appearance or content of specific sections without affecting the entire template.",
-    "crumbs": [
-      "Modules",
-      "Partials"
-    ]
-  },
-  {
-    "objectID": "modules/02-partials.html#links",
-    "href": "modules/02-partials.html#links",
-    "title": "Partials",
-    "section": "Links",
-    "text": "Links\n\nTemplate partials",
-    "crumbs": [
-      "Modules",
-      "Partials"
-    ]
-  },
-  {
-    "objectID": "modules/01-basics.html",
-    "href": "modules/01-basics.html",
-    "title": "Extension Basics",
-    "section": "",
-    "text": "Open slides in fullscreen",
-    "crumbs": [
-      "Modules",
-      "Extension Basics"
-    ]
-  },
-  {
-    "objectID": "modules/01-basics.html#learning-objectives",
-    "href": "modules/01-basics.html#learning-objectives",
-    "title": "Extension Basics",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nDiscover and install extensions\nCompare and contrast the structure of the raw source and installed source for a Quarto extension\nDescribe the types of extensions you can build\nCreate an custom format extension that sets format metadata",
-    "crumbs": [
-      "Modules",
-      "Extension Basics"
-    ]
-  },
-  {
-    "objectID": "modules/01-basics.html#links",
-    "href": "modules/01-basics.html#links",
-    "title": "Extension Basics",
-    "section": "Links",
-    "text": "Links\n\nGet exercises: https://github.com/posit-conf-2025/quarto-extend-exercises",
-    "crumbs": [
-      "Modules",
-      "Extension Basics"
-    ]
-  },
-  {
-    "objectID": "setup.html",
-    "href": "setup.html",
-    "title": "Setup",
-    "section": "",
-    "text": "Quarto 1.8\nWe’ll rely on some of the latest features of Quarto, so please ensure you have v1.8 installed. Download at: https://quarto.org/docs/download/prerelease/\nPositron, VS Code or RStudio\nWe’ll be live-coding in Positron, but we recognize that you probably already have an IDE you like to use with Quarto. If that IDE is one of Positron, VS Code or RStudio, stick with it. For Positron and VS Code ensure you have the Quarto (OpenVSX or MS Marketplace) and Lua (OpenVSX or MS Marketplace) extensions.\nIf you use another IDE, be prepared to preview Quarto documents (.qmd), use the integrated terminal, and open and edit .tex, .html, and .lua files. You might consider installing Positron as a backup in case you have trouble following along from your IDE.",
-    "crumbs": [
-      "Setup"
-    ]
-  },
-  {
-    "objectID": "setup.html#software-requirements",
-    "href": "setup.html#software-requirements",
-    "title": "Setup",
-    "section": "",
-    "text": "Quarto 1.8\nWe’ll rely on some of the latest features of Quarto, so please ensure you have v1.8 installed. Download at: https://quarto.org/docs/download/prerelease/\nPositron, VS Code or RStudio\nWe’ll be live-coding in Positron, but we recognize that you probably already have an IDE you like to use with Quarto. If that IDE is one of Positron, VS Code or RStudio, stick with it. For Positron and VS Code ensure you have the Quarto (OpenVSX or MS Marketplace) and Lua (OpenVSX or MS Marketplace) extensions.\nIf you use another IDE, be prepared to preview Quarto documents (.qmd), use the integrated terminal, and open and edit .tex, .html, and .lua files. You might consider installing Positron as a backup in case you have trouble following along from your IDE.",
-    "crumbs": [
-      "Setup"
-    ]
+    "text": "participate.lua\n\nlocal function column(width)\n  return pandoc.Attr(\"\", {'column'}, {width=width})\nend \n\nDiv = function(el)\n  if not el.classes:includes(\"participate\") then\n    return nil\n  end\n\n  local content = pandoc.Div(el.content, pandoc.Attr(\"\", {'question'}, {}))\n\n  if not quarto.format.isHtmlSlideOutput() then\n    return content\n  end\n\n  local boilerplate = pandoc.Para(pandoc.Inlines({\n    pandoc.Image(\n      \"\",\n      \"Discord-Logo-Black.png\", \n      nil, \n      pandoc.Attr(\"\", {}, {alt=\"Discord Logo\"})\n    ),\n    pandoc.Str(\"Answer in our \"),\n    pandoc.Link(\n      pandoc.Str(\"Discord\"), \n      pandoc.utils.stringify(quarto.metadata.get(\"discord\")))\n  }))\n  \n  local inner_columns = pandoc.Blocks({\n    pandoc.Div(content, column('75%')), \n    pandoc.Div(boilerplate, column('25%'))\n  })\n  local result = pandoc.Div(inner_columns, pandoc.Attr(\"\", {\"columns\"}, {}))\n  return result\nend"
   },
   {
     "objectID": "index.html",
@@ -559,6 +394,178 @@
     "crumbs": [
       "Home"
     ]
+  },
+  {
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "Setup",
+    "section": "",
+    "text": "Quarto 1.8\nWe’ll rely on some of the latest features of Quarto, so please ensure you have v1.8 installed. Download at: https://quarto.org/docs/download/prerelease/\nPositron, VS Code or RStudio\nWe’ll be live-coding in Positron, but we recognize that you probably already have an IDE you like to use with Quarto. If that IDE is one of Positron, VS Code or RStudio, stick with it. For Positron and VS Code ensure you have the Quarto (OpenVSX or MS Marketplace) and Lua (OpenVSX or MS Marketplace) extensions.\nIf you use another IDE, be prepared to preview Quarto documents (.qmd), use the integrated terminal, and open and edit .tex, .html, and .lua files. You might consider installing Positron as a backup in case you have trouble following along from your IDE.",
+    "crumbs": [
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#software-requirements",
+    "href": "setup.html#software-requirements",
+    "title": "Setup",
+    "section": "",
+    "text": "Quarto 1.8\nWe’ll rely on some of the latest features of Quarto, so please ensure you have v1.8 installed. Download at: https://quarto.org/docs/download/prerelease/\nPositron, VS Code or RStudio\nWe’ll be live-coding in Positron, but we recognize that you probably already have an IDE you like to use with Quarto. If that IDE is one of Positron, VS Code or RStudio, stick with it. For Positron and VS Code ensure you have the Quarto (OpenVSX or MS Marketplace) and Lua (OpenVSX or MS Marketplace) extensions.\nIf you use another IDE, be prepared to preview Quarto documents (.qmd), use the integrated terminal, and open and edit .tex, .html, and .lua files. You might consider installing Positron as a backup in case you have trouble following along from your IDE.",
+    "crumbs": [
+      "Setup"
+    ]
+  },
+  {
+    "objectID": "modules/01-basics.html",
+    "href": "modules/01-basics.html",
+    "title": "Extension Basics",
+    "section": "",
+    "text": "Open slides in fullscreen",
+    "crumbs": [
+      "Modules",
+      "Extension Basics"
+    ]
+  },
+  {
+    "objectID": "modules/01-basics.html#learning-objectives",
+    "href": "modules/01-basics.html#learning-objectives",
+    "title": "Extension Basics",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nDiscover and install extensions\nCompare and contrast the structure of the raw source and installed source for a Quarto extension\nDescribe the types of extensions you can build\nCreate an custom format extension that sets format metadata",
+    "crumbs": [
+      "Modules",
+      "Extension Basics"
+    ]
+  },
+  {
+    "objectID": "modules/01-basics.html#links",
+    "href": "modules/01-basics.html#links",
+    "title": "Extension Basics",
+    "section": "Links",
+    "text": "Links\n\nGet exercises: https://github.com/posit-conf-2025/quarto-extend-exercises",
+    "crumbs": [
+      "Modules",
+      "Extension Basics"
+    ]
+  },
+  {
+    "objectID": "modules/02-partials.html",
+    "href": "modules/02-partials.html",
+    "title": "Partials",
+    "section": "",
+    "text": "Open slides in fullscreen",
+    "crumbs": [
+      "Modules",
+      "Partials"
+    ]
+  },
+  {
+    "objectID": "modules/02-partials.html#learning-objectives",
+    "href": "modules/02-partials.html#learning-objectives",
+    "title": "Partials",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nExplain the role of template partials in Quarto documents and how they differ from full template overrides.\nLocate and reference partial files in an existing Quarto template.\nCustomize a template partial to change the appearance or content of specific sections without affecting the entire template.",
+    "crumbs": [
+      "Modules",
+      "Partials"
+    ]
+  },
+  {
+    "objectID": "modules/02-partials.html#links",
+    "href": "modules/02-partials.html#links",
+    "title": "Partials",
+    "section": "Links",
+    "text": "Links\n\nTemplate partials",
+    "crumbs": [
+      "Modules",
+      "Partials"
+    ]
+  },
+  {
+    "objectID": "modules/04-case-study.html",
+    "href": "modules/04-case-study.html",
+    "title": "Case Study",
+    "section": "",
+    "text": "Open slides in fullscreen",
+    "crumbs": [
+      "Modules",
+      "Case Study"
+    ]
+  },
+  {
+    "objectID": "modules/03-filters.html",
+    "href": "modules/03-filters.html",
+    "title": "Filters and Shortcodes",
+    "section": "",
+    "text": "Open slides in fullscreen",
+    "crumbs": [
+      "Modules",
+      "Filters and Shortcodes"
+    ]
+  },
+  {
+    "objectID": "modules/03-filters.html#learning-objectives",
+    "href": "modules/03-filters.html#learning-objectives",
+    "title": "Filters and Shortcodes",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this module, you will be able to:\n\nDescribe how Pandoc filters modify the Abstract Syntax Tree (AST)\nWrite a simple Pandoc filter for an Inline element\nLocate documentation for Lua modules provided by Pandoc and Quarto\nUse spans or divs to target specific content for a filter\nSpecify an order to apply filters\nDescribe how shortcodes modify the AST\nPackage a filter as a Quarto extension",
+    "crumbs": [
+      "Modules",
+      "Filters and Shortcodes"
+    ]
+  },
+  {
+    "objectID": "modules/03-filters.html#links",
+    "href": "modules/03-filters.html#links",
+    "title": "Filters and Shortcodes",
+    "section": "Links",
+    "text": "Links\n\nPositron/VS Code Lua extension: OpenVSX or MS Marketplace\nPandoc Lua types Quick Reference",
+    "crumbs": [
+      "Modules",
+      "Filters and Shortcodes"
+    ]
+  },
+  {
+    "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
+    "href": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
+    "title": "Attribution-ShareAlike 4.0 International",
+    "section": "Creative Commons Attribution-ShareAlike 4.0 International Public License",
+    "text": "Creative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\n\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\n\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\nA. reproduce and Share the Licensed Material, in whole or in part; and\nB. produce, reproduce, and Share Adapted Material.\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)(4) never produces Adapted Material.\nDownstream recipients.\nA. Offer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\nB. __Additional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\nC. No downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\nA. retain the following if it is supplied by the Licensor with the Licensed Material:\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\nB. indicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nC. indicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\n\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material, including for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\n\n\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUnless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.\nTo the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\n\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\n\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.t stated herein are separate from and independent of the terms and conditions of this Public License.\n\n\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org"
+  },
+  {
+    "objectID": "quick-reference.html",
+    "href": "quick-reference.html",
+    "title": "Pandoc Types Quick Reference",
+    "section": "",
+    "text": "General Notes\n  Document Structure\n  Block Elements\n  \n  Paragraphs and Headings\n  Lists\n  Code and raw blocks\n  Divs, BlockQuotes, Figures\n  Other\n  \n  Inline Elements\n  \n  Whitespace\n  Basic Elements\n  Text Formatting\n  Other"
+  },
+  {
+    "objectID": "quick-reference.html#general-notes",
+    "href": "quick-reference.html#general-notes",
+    "title": "Pandoc Types Quick Reference",
+    "section": "General Notes",
+    "text": "General Notes\n\nMost common elements are listed here, but not all.\nQuarto has some custom node types too: Callout, Tabset, ConditionalBlock, FloatRefTarget\nThe syntax [, arg] indicates an optional argument\nAll types have a t/tag field to access the type as a string (e.g. pandoc.Space().t returns Space)\nAny type with the attr field also has shortcuts for: identifier, classes, and attributes\nattr is an Attr object. Create one with pandoc.Attr():\npandoc.Attr(\n  \"my-id\",                       --identifier\n  {\"class-one\", \"class-two\"},    --classes\n  {key=\"value\", key2=\"value2\"}   --attributes\n)"
+  },
+  {
+    "objectID": "quick-reference.html#document-structure",
+    "href": "quick-reference.html#document-structure",
+    "title": "Pandoc Types Quick Reference",
+    "section": "Document Structure",
+    "text": "Document Structure\n\n\n\n\n\n\n\n\nType\nConstructor\nFields\n\n\n\n\nPandoc\npandoc.Pandoc(blocks, meta)\nblocks, meta\n\n\nMeta\npandoc.Meta(table)\nkey-value pairs of document metadata"
+  },
+  {
+    "objectID": "quick-reference.html#block-elements",
+    "href": "quick-reference.html#block-elements",
+    "title": "Pandoc Types Quick Reference",
+    "section": "Block Elements",
+    "text": "Block Elements\n\nParagraphs and Headings\ncontent is an Inlines object (a list of Inline elements)\n\n\n\n\n\n\n\n\nType\nConstructor\nFields\n\n\n\n\nPara\npandoc.Para(content)  content: Inlines\ncontent\n\n\nPlain\npandoc.Plain(content)  content: Inlines\ncontent\n\n\nHeader\npandoc.Header (level, content[, attr]))  content: Inlines level: integer\nlevel, content, attr\n\n\n\n\n\nLists\ncontent is a list of Blocks, or for DefinitionList something complicated.\n\n\n\n\n\n\n\n\nType\nConstructor\nFields\n\n\n\n\nBulletList\npandoc.BulletList(items)  items: {Blocks, ... }\ncontent\n\n\nOrderedList\npandoc.OrderedList(items[, listAttributes])  items: {Blocks, ... }\ncontent, listAttributes, start, style, delimiter\n\n\nDefinitionList\npandoc.DefinitionList(content)  content: {Inlines, {Blocks, ...}, ...}\ncontent (list of definition pairs)\n\n\n\n\n\nCode and raw blocks\ntext is a simple Lua string (not a Str)\n\n\n\n\n\n\n\n\nType\nConstructor\nFields\n\n\n\n\nCodeBlock\npandoc.CodeBlock(text[, attr])  text: string\ntext, attr\n\n\nRawBlock\npandoc.RawBlock(format, text)  text: string\nformat, text\n\n\n\n\n\nDivs, BlockQuotes, Figures\ncontent is a Blocks object (a list of Block elements)\n\n\n\n\n\n\n\n\nType\nConstructor\nFields\n\n\n\n\nDiv\npandoc.Div(content[, attr])  content: Blocks\ncontent, attr\n\n\nBlockQuote\npandoc.BlockQuote(content)  content: Blocks\ncontent\n\n\nFigure\npandoc.Figure(content[, caption[, attr]])  content: Blocks\ncontent, caption, attr\n\n\n\n\n\nOther\n\n\n\n\n\n\n\n\nType\nConstructor\nFields\n\n\n\n\nTable\npandoc.Table(caption, colspecs, head, bodies, foot[, attr])\ncaption, colspecs, head, bodies, foot, attr\n\n\nLineBlock\npandoc.LineBlock(content)  content: {Inlines, ...}\ncontent"
+  },
+  {
+    "objectID": "quick-reference.html#inline-elements",
+    "href": "quick-reference.html#inline-elements",
+    "title": "Pandoc Types Quick Reference",
+    "section": "Inline Elements",
+    "text": "Inline Elements\n\nWhitespace\nTakes no arguments, has no fields.\n\n\n\n\n\n\n\nType\nConstructor\n\n\n\n\nSpace\npandoc.Space()\n\n\nSoftBreak\npandoc.SoftBreak()\n\n\nLineBreak\npandoc.LineBreak()\n\n\n\n\n\nBasic Elements\ntext is a simple Lua string (not a Str)\n\n\n\n\n\n\n\n\nType\nConstructor\nFields\n\n\n\n\nStr\npandoc.Str(text)\ntext\n\n\nCode\npandoc.Code(code[, attr])\ntext, attr\n\n\nMath\npandoc.Math(mathtype, text)  mathtype: 'InlineMath' or 'DisplayMath'\nmathtype, text\n\n\nRawInline\npandoc.RawInline(format, text)  format: 'html', 'latex' etc.\nformat, text\n\n\n\n\n\nText Formatting\ncontent is an Inlines object (a list of Inline elements).\n\n\n\n\n\n\n\n\nType\nConstructor\nFields\n\n\n\n\nEmph\npandoc.Emph(content)\ncontent\n\n\nSmallCaps\npandoc.SmallCaps(content)\ncontent\n\n\nStrikeout\npandoc.Strikeout(content)\ncontent\n\n\nStrong\npandoc.Strong(content)\ncontent\n\n\nSubscript\npandoc.Subscript(content)\ncontent\n\n\nSuperscript\npandoc.Superscript(content)\ncontent\n\n\nUnderline\npandoc.Underline(content)\ncontent\n\n\nQuoted\npandoc.Quoted(quotetype, content)  quotetype: 'SingleQuote' or 'DoubleQuote'\nquotetype, content\n\n\n\n\n\nOther\ncontent and title are Inlines unless otherwise noted.\nsrc, target are simple Lua strings.\nattr is an Attr object.\n\n\n\n\n\n\n\n\nType\nConstructor\nFields\n\n\n\n\nSpan\npandoc.Span(content[, attr])\ncontent, attr\n\n\nImage\npandoc.Image(caption, src[, title[, attr]])\ncaption, src, title, attr\n\n\nLink\npandoc.Link(content, target[, title[, attr]])\ncontent, target, title, attr\n\n\n\n\n\n\n\nCite\npandoc.Cite(content, citations)\ncontent, citations\n\n\nNote\npandoc.Note(content)  content: Blocks\ncontent"
   },
   {
     "objectID": "slides/01-basics.html#extending-quarto-welcome",
@@ -719,6 +726,6 @@
     "href": "slides/01-basics.html#a-case-study-course-notes",
     "title": "Extension Basics",
     "section": "A case study: Course notes",
-    "text": "A case study: Course notes\nNotes that we want as slides (format: revealjs) and a document (format: html).\n\n\n\n\nTitle slide in every slide deck controlled by metadata\nTODO: screenshot of title slide\n\n\nPartial\n\n\n\n\n\nSpecial participation slides combine boilerplate with custom content.\nTODO: screenshot of participation slide\n\n\nFilter"
+    "text": "A case study: Course notes\nNotes that we want as slides (format: revealjs) and a document (format: html).\n\n\n\n\nTitle slide in every slide deck controlled by metadata\n\n\n\nPartial\n\n\n\n\n\nSpecial slide combines boilerplate with content.\n\n\n\nFilter"
   }
 ]
