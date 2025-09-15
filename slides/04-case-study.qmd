@@ -53,10 +53,10 @@ With your neighbor, predict what the "Participate" slide will look like.
 ## `participate.lua` {.scrollable}
 
 ::: your-turn
-[Full Screen](participate.lua){target="_blank"}
+[Full Screen](/resources/participate.qmd){target="_blank"}
 
 ```{.lua filename="participate.lua"}
-{{< include participate.lua >}}
+{{< include /resources/participate.lua >}}
 ```
 :::
 
