@@ -155,7 +155,9 @@ Done? Browse <https://m.canouil.dev/quarto-extensions> for other extensions and 
 :::
 
 ::: exercise-folder
-[Exercise code repo](https://github.com/posit-conf-2025/quarto-extend-exercises): `01-basics/`
+
+[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `01-basics/`
+
 :::
 
 {{< countdown 10:00 >}}
@@ -273,12 +275,13 @@ Still in `01-basics/`:
 3. Edit `slides.qmd` to use your custom format, and preview.
 :::
 
-{{< countdown 8:00 >}}
-
-
 ::: exercise-folder
-[Exercise code repo](https://github.com/posit-conf-2025/quarto-extend-exercises): `01-basics/`
+
+[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `01-basics/`
+
 :::
+
+{{< countdown 8:00 >}}
 
 ## Get boilerplate with `quarto create extension`
 
