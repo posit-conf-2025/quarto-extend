@@ -7,12 +7,14 @@ format: revealjs
 
 ## What are filters?
 
-![](images/pandoc-step.jpg){.r-stretch}
+![](images/pandoc-step.jpg){width=75%}
 
 Filters manipulate the AST between the parsing and the writing phase. First, understand the AST.
 
-::: footer
+::: aside
+
 <https://pandoc.org/lua-filters.html>
+
 :::
 
 ## [AST: A document is composed of `Blocks`]{.small}
@@ -195,8 +197,9 @@ A filter function is called on every instance of a particular type of node.
 
 The input is the node itself, the output replaces the node.
 
-## Your Turn {.smaller}
+## Your turn: AST {.smaller}
 
+::: your-turn
 Take a look at the AST diagram on the next slide. 
 
 *   What are some other types of `Block` nodes?
@@ -212,11 +215,14 @@ Take a look at the AST diagram on the next slide.
     * The text `Lua` in the link text 
     * The text `lua-filters` in the link URL
     * the text `quarto` in the code block
+:::
 
 {{< countdown "6:00" >}}
 
-::: footer
-`03-filters/your-turns/1-explore-ast`
+::: exercise-folder
+
+[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `03-filters/your-turns/1-explore-ast`
+
 :::
 
 ## AST
@@ -291,8 +297,10 @@ filters:
 
 [A filter function that returns `nil`, leaves the node unchanged.]{.fragment}
 
-::: {.footer}
-`03-filters/examples/1-writing-filters`
+::: example-folder
+
+[Example](https://github.com/posit-conf-2025/quarto-extend-exercises): `03-filters/examples/1-writing-filters`
+
 :::
 
 ## Live Code: "Print" debugging 
@@ -342,22 +350,27 @@ See [Pandoc Lua types Quick Reference](/quick-reference.qmd#text-formatting)
 <iframe src="/quick-reference.html#text-formatting" class="ast-diagram"></iframe>
 ```
 
-## Your Turn
+## Your turn: Write a filter {.smaller}
+
+::: your-turn
 
 1. Write a filter, `replace-emph.lua`, that turns all italic text to underlined text.
 
 2. Add the `Strong` filter function from `replace-strong.lua` to `replace-emph.lua`. What happens?
 
-**Other challenges**: 
+**Other challenges:**
 
 * Write a filter that removes all bold and italic formatting, leaving just the text.
 
 * Write a filter that converts all double quotes to single quotes.
+:::
 
 {{< countdown "10:00" >}}
 
-::: footer
-`03-filters/your-turns/2-write-a-filter`
+::: exercise-folder
+
+[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `03-filters/your-turns/2-write-a-filter`
+
 :::
 
 ## Solution {visibility="hidden"}
@@ -367,7 +380,6 @@ Emph = function(el)
   return pandoc.Underline(el.content)
 end
 ```  
-
 
 ## Solution {visibility="hidden"}
 
@@ -411,8 +423,10 @@ end
 :::
 :::
 
-::: footer
-03-filters/examples/2-return-types
+::: example-folder
+
+[Example](https://github.com/posit-conf-2025/quarto-extend-exercises): `03-filters/examples/2-return-types`
+
 ::: 
 
 ## An empty list 
@@ -430,8 +444,10 @@ end
 :::
 ::: 
 
-::: footer
-03-filters/examples/2-return-types
+::: example-folder
+
+[Example](https://github.com/posit-conf-2025/quarto-extend-exercises): `03-filters/examples/2-return-types`
+
 ::: 
 
 ## [Common mistake: an array of `Inlines`]{.small}
@@ -470,8 +486,10 @@ I **really** like bold and *really* like italics, and *really **really*** can't 
 ![](images/ast-target-span.png){}
 
 
-::: footer
-Example: `03-filters/examples/3-target-text`
+::: example-folder
+
+[Example](https://github.com/posit-conf-2025/quarto-extend-exercises): `03-filters/examples/3-target-text`
+
 ::: 
 
 ## Live Code: Smallcaps all spans with class `shout`
@@ -495,8 +513,10 @@ end
 :::
 ::: 
 
-::: footer
-Example: `03-filters/examples/3-target-text`
+::: example-folder
+
+[Example](https://github.com/posit-conf-2025/quarto-extend-exercises): `03-filters/examples/3-target-text`
+
 ::: 
 
 ## Live Code: Constructing content
@@ -526,10 +546,14 @@ A useful pattern:
 
 
 ::: aside 
+
 Works with `Block`/`Blocks` too.
+
 :::
 
 ## Your turn: [Simon says](https://en.wikipedia.org/wiki/Simon_Says) {.smaller}
+
+::: your-turn
 
 Complete `says.lua`, a filter that:
 
@@ -552,11 +576,14 @@ Simon says "Write a filter"
 :::
 
 **Challenge:** Instead of `Simon`, let the user specify the name as an attribute, e.g. `[Write a filter]{.says name="Charlotte"}`
+:::
 
 {{< countdown "10:00" >}}
 
-::: footer
-`03-filters/your-turns/3-simon-says`
+::: exercise-folder
+
+[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `03-filters/your-turns/3-simon-says`
+
 :::
 
 ## Solution {visibility="hidden"}
@@ -612,13 +639,13 @@ end
 ::: 
 
 
-::: footer
+::: example-folder
 
-Example: `03-filters/examples/4-filters-in-practice/1-target-content-in-div`
+[Example](https://github.com/posit-conf-2025/quarto-extend-exercises): `03-filters/examples/4-filters-in-practice/1-target-content-in-div`
 
 :::
 
-## [Use `walk` to apply filter functions to children]{.small}
+## [Use `walk` to apply filter functions to children]{.small} {.smaller}
 
 ::: {.columns}
 ::: {.column width="40%"}
@@ -655,13 +682,18 @@ end
 :::
 ::: 
 
-<https://pandoc.org/lua-filters.html#type-pandoc:walk>
+::: example-folder
 
-::: footer
-
-Example: `03-filters/examples/4-filters-in-practice/2-walk-children-nodes`
+[Example](https://github.com/posit-conf-2025/quarto-extend-exercises): `03-filters/examples/4-filters-in-practice/2-walk-children-nodes`
 
 :::
+
+::: aside
+
+<https://pandoc.org/lua-filters.html#type-pandoc:walk>
+
+:::
+
 
 ## Construct format specific output
 
@@ -703,13 +735,13 @@ end
 ::: 
 
 
-::: footer
+::: example-folder
 
-Example: `03-filters/examples/4-filters-in-practice/3-format-specific-output`
+[Example](https://github.com/posit-conf-2025/quarto-extend-exercises): `03-filters/examples/4-filters-in-practice/3-format-specific-output`
 
 :::
 
-## [Filter function on `Meta` to examine metadata]{.small}
+## [Filter function on `Meta` to examine metadata]{.small} {.smaller}
 
 ::: {.columns}
 ::: {.column }
@@ -740,9 +772,9 @@ end
 ::: 
 
 
-::: footer
+::: example-folder
 
-Example: `03-filters/examples/4-filters-in-practice/4-meta-filter`
+[Example](https://github.com/posit-conf-2025/quarto-extend-exercises): `03-filters/examples/4-filters-in-practice/4-meta-filter`
 
 :::
 
@@ -776,9 +808,9 @@ return {
 ::: 
 
 
-::: footer
+::: example-folder
 
-Example: `03-filters/examples/4-filters-in-practice/5-filter-sets`
+[Example](https://github.com/posit-conf-2025/quarto-extend-exercises): `03-filters/examples/4-filters-in-practice/5-filter-sets`
 
 :::
 
@@ -805,14 +837,16 @@ Also `pre-ast`, `post-ast`, `pre-render`, `post-render`
 :::
 ::: 
 
-::: footer
+::: aside
+
 Filter sequence in source: 
 <https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/filters/main.lua>
+
 :::
 
 # Wrapping Up
 
-## Filter extensions
+## Filter extensions {.smaller}
 
 `quarto create extension filter` creates boilerplate. Drop your `.lua` files in. 
 
@@ -851,8 +885,10 @@ filters:
 ```
 
 
-::: footer
+::: aside
+
 <https://quarto.org/docs/extensions/filters.html#filter-extensions>
+
 :::
 
 ## Filters in custom format extensions
@@ -912,8 +948,10 @@ end
 
 Can take arguments: `args`, `kwargs`, `meta`, `raw_args`, `context`
 
-::: footer
+::: aside
+
 <https://quarto.org/docs/extensions/shortcodes.html>
+
 :::
 
 ## Learning Lua
