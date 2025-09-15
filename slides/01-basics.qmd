@@ -52,14 +52,16 @@ Full schedule at: [pos.it/quarto-extend-conf25](https://pos.it/quarto-extend-con
 **Charlotte**  [{{< iconify fa7-brands:linkedin >}}](https://www.linkedin.com/in/cvwickham/) [{{< iconify fa7-brands:github >}}](https://github.com/cwickham) 
 
 Developer Educator @ Posit  <br>
-Focus on Quarto
+_Focus on Quarto_
+
 :::
 ::: {.column}
+
 **Mine**  [{{< iconify fa7-brands:linkedin >}}](https://www.linkedin.com/in/minec/) [{{< iconify fa7-brands:github >}}](https://github.com/mine-cetinkaya-rundel) [{{< iconify fa7-brands:bluesky >}}](https://bsky.app/profile/minecr.bsky.social) 
 
 Professor @ Duke University <br>
 Developer Educator @ Posit <br> 
-Focus on Quarto, Tidyverse, and Positron
+_Focus on Quarto, Tidyverse, and Positron_
 
 :::
 
@@ -136,7 +138,7 @@ Let's jump in!
 ## [Your turn: Install and explore an extension]{.r-fit-text} {.smaller}
 
 ::: your-turn
-1. Add the `quarto-revealjs-clean` extension to the project in `01-basics/`, by running:
+1. Add the `quarto-revealjs-clean` extension to the project in `01-basics/` by running:
 
     ```{.bash filename="Terminal"}
     cd 01-basics
@@ -152,7 +154,7 @@ Let's jump in!
 Done? Browse <https://m.canouil.dev/quarto-extensions> for other extensions and explore their source.
 :::
 
-::: footer
+::: exercise-folder
 [Exercise code repo](https://github.com/posit-conf-2025/quarto-extend-exercises): `01-basics/`
 :::
 
@@ -274,7 +276,7 @@ Still in `01-basics/`:
 {{< countdown 8:00 >}}
 
 
-::: footer
+::: exercise-folder
 [Exercise code repo](https://github.com/posit-conf-2025/quarto-extend-exercises): `01-basics/`
 :::
 
