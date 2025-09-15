@@ -25,9 +25,11 @@ format: revealjs
 :::
 ::: 
 
-## Housekeeping
+## Housekeeping {.smaller}
 
--   Gender-neutral bathrooms: LL2 - Next to Chicago A
+-   Gender-neutral bathrooms:
+    - LL1 (Under escalators, to the right of the Learning Center)
+    - LL2 (Next Chicago A)
 -   Meditation/prayer room: LL2 - Chicago A 
 -   Mother's/lactation room: LL2 - Chicago B
 -   Red lanyards = No photos
