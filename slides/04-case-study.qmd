@@ -8,6 +8,8 @@ code-block-height: 1200px
 
 ## Your Turn: Add a filter {.smaller}
 
+::: your-turn
+
 ::: {.columns}
 ::: {.column}
 Write the `participate.lua` filter to combine the content of the question in the div with class `.participate` with boilerplate text: 
@@ -28,18 +30,23 @@ Hints:
 
 * Recall the useful pattern: create an empty `pandoc.Blocks()`, `insert` `Block`s, `extend` with `Blocks`.
 * You can pass `pandoc.Str()` a string with spaces. 
+:::
+
+::: exercise-folder
+
+[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `04-case-study/your-turns/1-add-filter`
+
+:::
 
 {{< countdown 8:00 >}}
 
-::: footer
-`04-case-study/your-turns/1-add-filter`
-:::
+## Your turn: Predict the output {.smaller}
 
-## Your Turn: Predict the output {.smaller}
-
+::: your-turn
 Take a look at the version of `participate.lua` on the next slide.
 
 With your neighbor, predict what the "Participate" slide will look like.
+:::
 
 {{< countdown 5:00 >}}
 
@@ -65,32 +72,31 @@ With your neighbor, predict what the "Participate" slide will look like.
 
 # Exercise 2
 
-## Now add a partial!
+## Your turn: Now add a partial!
 
+::: your-turn
 Add a partial that updated your title slide.
 
 - This could be _the_ partial from Module 2
 
 - It could be a new partial you develop during the time allotted
+:::
 
 # Wrap up
 
-## Includes vs. partials
+## Includes vs. partials {.smaller}
 
 - `{{{< include >}}}`s are a convenient way to reuse content across documents
-
   - The _same_ content
   - Basically copy-paste
 
 - `partial`s are a way to create reusable components
-
   - The _same_ structure, but different content
   - Copy-paste with substitutions from meta-data fields
 
 - Shortcode is like copy-paste with substitutions in the body of your document
 
 - `filter`s are a way to modify content
-
   - The _same_ structure, but different content
   - Operating on the document content
 
