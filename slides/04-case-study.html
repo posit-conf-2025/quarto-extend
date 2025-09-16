@@ -274,7 +274,7 @@ Mine Çetinkaya-Rundel
 <div class="exercise-folder">
 <p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Exercise</a>: <code>04-case-study/your-turns/1-add-filter</code></p>
 </div>
-<div id="timer_162033e021b634e47ad5fdb5d8da4d335279fffc" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_1c5ef760d6e46a51e6c91cea7234967003f84e54" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -293,7 +293,7 @@ Mine Çetinkaya-Rundel
 <p>Take a look at the version of <code>participate.lua</code> on the next slide.</p>
 <p>With your neighbor, predict what the “Participate” slide will look like.</p>
 </div>
-<div id="timer_162033e021b634e47ad5fdb5d8da4d335279fffc" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_1c5ef760d6e46a51e6c91cea7234967003f84e54" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -386,17 +386,15 @@ Mine Çetinkaya-Rundel
 <li class="fragment">The <em>same</em> content</li>
 <li class="fragment">Basically copy-paste</li>
 </ul></li>
-<li class="fragment"><code>template-partial</code>s are a way to create reusable components
+<li class="fragment"><code>template-partial</code>s are a way to create reusable components with meta-data
 <ul>
 <li class="fragment">The <em>same</em> structure, but different content</li>
-<li class="fragment">Copy-paste with substitutions from meta-data fields</li>
 <li class="fragment"><code>format</code> specific</li>
 </ul></li>
-<li class="fragment"><code>filter</code>s are a way to modify content
+<li class="fragment"><code>filter</code>s are a way to modify document content
 <ul>
 <li class="fragment">The <em>same</em> structure, but different content</li>
-<li class="fragment">Operate on the document content</li>
-<li class="fragment">Not <code>format</code> specific, work with the document AST</li>
+<li class="fragment">Not <code>format</code> specific (they operate on the document AST), but can function differently for different formats</li>
 </ul></li>
 <li class="fragment"><code>_extensions</code> are combinations of <code>partial</code>s and <code>filter</code>s, and possibly other things, that are designed for portability and reusability</li>
 </ul>

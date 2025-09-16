@@ -354,7 +354,7 @@
     "href": "slides/04-case-study.html#reusable-components",
     "title": "Case study",
     "section": "Reusable components",
-    "text": "Reusable components\n\n{{&lt; include &gt;}}s are a convenient way to reuse content across documents\n\nThe same content\nBasically copy-paste\n\ntemplate-partials are a way to create reusable components\n\nThe same structure, but different content\nCopy-paste with substitutions from meta-data fields\nformat specific\n\nfilters are a way to modify content\n\nThe same structure, but different content\nOperate on the document content\nNot format specific, work with the document AST\n\n_extensions are combinations of partials and filters, and possibly other things, that are designed for portability and reusability"
+    "text": "Reusable components\n\n{{&lt; include &gt;}}s are a convenient way to reuse content across documents\n\nThe same content\nBasically copy-paste\n\ntemplate-partials are a way to create reusable components with meta-data\n\nThe same structure, but different content\nformat specific\n\nfilters are a way to modify document content\n\nThe same structure, but different content\nNot format specific (they operate on the document AST), but can function differently for different formats\n\n_extensions are combinations of partials and filters, and possibly other things, that are designed for portability and reusability"
   },
   {
     "objectID": "slides/04-case-study.html#workshop-survey",
