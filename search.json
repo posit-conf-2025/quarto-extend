@@ -333,7 +333,7 @@
     "href": "slides/04-case-study.html#your-turn-predict-the-output",
     "title": "Case study",
     "section": "Your turn: Predict the output",
-    "text": "Your turn: Predict the output\n\nTake a look at the version of participate.lua on the next slide.\nWith your neighbor, predict what the “Participate” slide will look like.\n\n\n  \n    −\n    +\n \n 05:00"
+    "text": "Your turn: Predict the output\n\nTake a look at the version of participate.lua on the next slide.\nWith your neighbor, predict what the “Participate” slide will look like.\n\n\nExercise: 04-case-study/your-turns/2-predict-output\n\n\n  \n    −\n    +\n \n 05:00"
   },
   {
     "objectID": "slides/04-case-study.html#participate.lua",
@@ -347,21 +347,21 @@
     "href": "slides/04-case-study.html#your-turn-now-add-a-partial",
     "title": "Case study",
     "section": "Your turn: Now add a partial!",
-    "text": "Your turn: Now add a partial!\n\nTake what you developed so far in this module and add your title-slide.html partial and slides.scss theme from earlier."
+    "text": "Your turn: Now add a partial!\n\nTake what you developed so far in this module and add your title-slide.html partial and slides.scss theme from earlier.\n\n\nExercise: 04-case-study/your-turns/3-add-partial"
   },
   {
     "objectID": "slides/04-case-study.html#bring-it-all-together",
     "href": "slides/04-case-study.html#bring-it-all-together",
     "title": "Case study",
     "section": "Bring it all together",
-    "text": "Bring it all together\n\nExample: 04-case-study/example"
+    "text": "Bring it all together\n\nExample: 04-case-study/example\n\n\nexample\n|- Discord-Logo-Black.png\n|- example.qmd\n|- participate.lua\n|- question.css\n|- slides.scss\n|- title-slide.html"
   },
   {
     "objectID": "slides/04-case-study.html#bring-it-all-together-1",
     "href": "slides/04-case-study.html#bring-it-all-together-1",
     "title": "Case study",
     "section": "Bring it all together…",
-    "text": "Bring it all together…\nas an extension!\n\nExample: 04-case-study/coursenotes"
+    "text": "Bring it all together…\nas an extension!\n\nExample: 04-case-study/coursenotes\n\n\ncoursenotes\n|- _extensions\n   |- coursenotes\n      |- _extension.yml\n      |- Discord-Logo-Black.png\n      |- participate.lua\n      |- question.css\n      |- slides.scss\n      |- title-slide.html\n|- template.qmd"
   },
   {
     "objectID": "slides/04-case-study.html#reusable-components",
