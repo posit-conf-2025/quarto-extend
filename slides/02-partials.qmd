@@ -171,6 +171,263 @@ They exist!
 
 # Zhuzh up your `title-slide` 💅
 
+## Example 1: A title slide...
 
+with plenty of meta data
+
+::: small
+
+``` {.yaml code-line-numbers="|19|1-2|3-16|4-10|11-16|17|18"}
+title: The Best Title Ever
+subtitle: and a mediocre subtitle
+author:
+  - name: Mine Çetinkaya-Rundel
+    url: https://mine-cr.com
+    orcid: 0000-0001-6452-2420
+    email: mine@posit.co
+    affiliations:
+      - name: Duke University
+      - name: Posit, PBC
+  - name: Charlotte Wickham
+    url: https://cwick.co.nz
+    orcid: 0000-0002-6365-5499
+    email: charlotte@posit.co
+    affiliation:
+      - name: Posit, PBC
+date: 2025-09-16
+footer: "[pos.it/quarto-extend-conf25](https://pos.it/quarto-extend-conf25)"
+format: revealjs
+```
+:::
+
+::: example-folder
+
+[Example](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-filters/examples/1-start-here`
+
+:::
+
+## [Your turn 1: Default `title-slide` partial]{.small}
+
+::: your-turn
+
+- Find the default `title-slide.html` partial in the Quarto GitHub repo, copy it to your exercise folder, and include it as a `template-partial` in your YAML.
+
+- Render your slides and observe the difference, or lack thereof!
+
+:::
+
+::: exercise-folder
+
+[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-filters/exercises/1-default-title-slide`
+
+:::
+
+## [Example 2: Modify date & author email]{.small}
+
+::: {.columns}
+::: {.column}
+
+- Move date to under the subtitle and format it as a 3rd level heading `h3`.
+
+- Add an envelope icon next to the email address; e.g., one from <https://icon-sets.iconify.design/line-md/?icon-filter=email>.
+
+:::
+::: {.column}
+
+![](images/partials/examples/2-modify-date-author-email.png)
+
+:::
+::: 
+
+::: example-folder
+
+[Example](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-filters/examples/2-modify-date-author-email`
+
+:::
+
+## Your turn 2: Modify ORCID
+
+::: {.columns}
+::: {.column width="50%"}
+
+::: your-turn
+
+Modify how the ORCID logo shown to match the color scheme of the title slide; use this one instead: <https://icon-sets.iconify.design/simple-icons/?icon-filter=orcid>.
+
+:::
+
+:::
+
+::: {.column width="50%"}
+
+![](images/partials/your-turn/2-modify-orcid.png)
+
+:::
+::: 
+
+::: exercise-folder
+
+[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-filters/your-turn/2-modify-orcid`
+
+:::
+
+## Your turn 3: Modify affiliations
+
+::: {.columns}
+::: {.column width="40%"}
+
+::: your-turn
+
+Display multiple affiliations on the same line, separated by `+`.
+
+:::
+
+:::
+
+::: {.column width="60%"}
+
+![](images/partials/your-turn/3-modify-affiliations.png)
+
+:::
+::: 
+
+::: exercise-folder
+
+[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-filters/your-turn/3-modify-affiliations`
+
+:::
+
+## Your turn 4: Modify author URL
+
+::: {.columns}
+::: {.column width="50%"}
+
+::: your-turn
+
+Display author `url` on the title slide, next to a home icon, e.g., <https://icon-sets.iconify.design/line-md/?icon-filter=home>.
+
+:::
+
+:::
+
+::: {.column width="50%"}
+
+![](images/partials/your-turn/4-modify-author-url.png)
+
+:::
+::: 
+
+::: exercise-folder
+
+[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-filters/your-turn/4-modify-author-url`
+
+:::
+
+## Example 3: Add venue
+
+::: {.columns}
+::: {.column width="40%"}
+
+Add a new field, `venue`, to the YAML and place it under the date.
+
+:::
+
+::: {.column width="60%"}
+
+![](images/partials/examples/3-add-venue.png)
+
+:::
+::: 
+
+::: exercise-folder
+
+[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-filters/examples/3-add-venue`
+
+:::
+
+## Your turn 5: Add GitHub usernames
+
+::: {.columns}
+::: {.column width="60%"}
+
+::: your-turn
+
+- Add GitHub usernames to the document YAML with a field called `github` under `author`.
+
+- Update `title-slide.html` to place GitHub usernames along with the GitHub logo under affiliations.
+
+:::
+
+:::
+
+::: {.column width="40%"}
+
+![](images/partials/your-turn/5-add-github.png)
+
+:::
+::: 
+
+::: exercise-folder
+
+[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-filters/your-turn/5-add-github`
+
+:::
+
+## Your turn 6: Style
+
+::: {.columns}
+::: {.column width="60%" .small}
+
+::: your-turn
+
+Make the title slide match the screenshot in below. Specifically:
+
+- Make the title small caps.
+- Use handwriting font for the subtitle.
+- Adjust font sizes of various fields: date, affiliation, author URL, GitHub username, and email are smaller.
+- Adjust font colors: subtitle and affiliations are gray.
+
+:::
+
+:::
+
+::: {.column width="40%"}
+
+![](images/partials/your-turn/6-style.png)
+
+:::
+::: 
+
+::: exercise-folder
+
+[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-filters/your-turn/6-style`
+
+:::
+
+## [Example 4: Move footer + add horiz. line]{.small}
+
+::: {.columns}
+::: {.column width="60%" .small}
+
+- Remove the link to slides from footer (using `include-after-body`) and use that field in the partial to be displayed below the venue.
+
+- Display content from `footer` under venue with a link icon, e.g., <https://icon-sets.iconify.design/line-md/?icon-filter=link>.
+
+- Add a horizontal line below the slide URL.
+
+:::
+
+::: {.column width="40%"}
+
+![](images/partials/examples/4-hr-footer.png)
+
+:::
+::: 
+
+::: exercise-folder
+
+[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-filters/examples/4-hr-footer`
+
+:::
 
 # Questions?
