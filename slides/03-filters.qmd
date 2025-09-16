@@ -233,7 +233,7 @@ Take a look at the AST diagram on the next slide.
 <iframe src="_ast-diagrams/your-turn-1-ast.html" class = "ast-diagram"></iframe>
 ```
 
-## Solution {visibility="hidden"}
+## Solution 
 
 * Other `Block` nodes: `Header`, `BulletList`, `CodeBlock`, `Meta` is special. 
 
@@ -373,7 +373,7 @@ See [Pandoc Lua types Quick Reference](/quick-reference.qmd#text-formatting)
 
 :::
 
-## Solution {visibility="hidden"}
+## Solution 
 
 ```{.lua filename="replace-emph.lua"}
 Emph = function(el)
@@ -381,7 +381,7 @@ Emph = function(el)
 end
 ```  
 
-## Solution {visibility="hidden"}
+## Solution 
 
 ```{.lua filename="remove-all.lua"}
 Emph = function(el)
@@ -393,7 +393,7 @@ Strong = function(el)
 end
 ```
 
-## Solution {visibility="hidden"}
+## Solution 
 
 ```{.lua filename="replace-double-quotes.lua"}
 Quoted = function(el)
@@ -452,7 +452,7 @@ end
 ```
 :::
 ::: {.column}
-> I **really** like bold and like italics, and can't decide which to use.
+> I like bold and *really* like italics, and *really* can't decide which to use.
 :::
 ::: 
 
