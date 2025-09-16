@@ -603,7 +603,7 @@ Simon says "Write a filter"
 
 :::
 
-## Solution {visibility="hidden"}
+## Solution
 
 ```{.lua filename="says.lua"}
 Span = function(el)
@@ -613,6 +613,22 @@ Span = function(el)
     result:insert(pandoc.Quoted('DoubleQuote', el.content))
     return result
   end
+end
+```
+
+## Solution
+
+```{.lua filename="says.lua"}
+Span = function(el)
+  if not el.classes:includes("says") then    
+    return nil
+  end
+  local name = el.attributes.name or "Simon"
+  local results = pandoc.Inlines({})
+  results:insert(pandoc.Str(name))
+  results:insert(pandoc.Str(" says "))
+  results:insert(pandoc.Quoted('DoubleQuote', el.content))
+  return results
 end
 ```
 
