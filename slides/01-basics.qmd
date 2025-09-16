@@ -164,7 +164,7 @@ Done? Browse <https://m.canouil.dev/quarto-extensions> for other extensions and 
 
 {{< countdown 10:00 >}}
 
-## Your turn: Solutions {visibility="hidden"}
+## Your turn: Solutions 
 
 Installed: `_extensions/grantmcdermott/clean/_extension.yml`  
 Source: [`https://github.com/grantmcdermott/quarto-revealjs-clean/_extensions/clean/_extension.yml`](https://github.com/grantmcdermott/quarto-revealjs-clean/blob/v1.3/_extensions/clean/_extension.yml)
@@ -176,10 +176,6 @@ Other files alongside `_extensions/` are not copied with `quarto add`, but would
 ```{.bash filename="Terminal"}
 quarto use template grantmcdermott/quarto-revealjs-clean@v1.3
 ```
-
-::: aside
-`quarto-revealjs-clean` is the most popular custom format extension on <https://m.canouil.dev/quarto-extensions/>
-::: 
 
 ## What is a Quarto extension?
 
