@@ -76,7 +76,10 @@ _Focus on Quarto, Tidyverse, and Positron_
 Carlos
 :::
 ::: {.column}
-Elliot
+Elliot [{{< iconify fa7-brands:github >}}](https://github.com/vezwork) 
+
+Software Developer @ Posit
+Focus on the Visual Editor
 :::
 ::: 
 
