@@ -649,7 +649,7 @@
     "href": "slides/02-partials.html#your-turn-1-default-title-slide-partial",
     "title": "Partials",
     "section": "Your turn 1: Default title-slide partial",
-    "text": "Your turn 1: Default title-slide partial\n\n\nFind the default title-slide.html partial in the Quarto GitHub repo, copy it to your exercise folder, and include it as a template-partial in your YAML.\nRender your slides and observe the difference, or lack thereof!\n\n\n\nExercise: 02-filters/exercises/1-default-title-slide"
+    "text": "Your turn 1: Default title-slide partial\n\n\nFind the default title-slide.html partial in the Quarto GitHub repo, copy it to your exercise folder, and include it as a template-partial in your YAML.\nRender your slides and observe the difference, or lack thereof!\n\n\n\nExercise: 02-filters/exercises/1-default-title-slide\n\n\n  \n    −\n    +\n \n 03:00"
   },
   {
     "objectID": "slides/02-partials.html#example-2-modify-date-author-email",
@@ -663,21 +663,21 @@
     "href": "slides/02-partials.html#your-turn-2-modify-orcid",
     "title": "Partials",
     "section": "Your turn 2: Modify ORCID",
-    "text": "Your turn 2: Modify ORCID\n\n\n\nModify how the ORCID logo shown to match the color scheme of the title slide; use this one instead: https://icon-sets.iconify.design/simple-icons/?icon-filter=orcid.\n\n\n\n\n\nExercise: 02-filters/your-turn/2-modify-orcid"
+    "text": "Your turn 2: Modify ORCID\n\n\n\nModify how the ORCID logo shown to match the color scheme of the title slide; use this one instead: https://icon-sets.iconify.design/simple-icons/?icon-filter=orcid.\n\n\n\n\n\nExercise: 02-filters/your-turn/2-modify-orcid\n\n\n  \n    −\n    +\n \n 05:00"
   },
   {
     "objectID": "slides/02-partials.html#your-turn-3-modify-affiliations",
     "href": "slides/02-partials.html#your-turn-3-modify-affiliations",
     "title": "Partials",
     "section": "Your turn 3: Modify affiliations",
-    "text": "Your turn 3: Modify affiliations\n\n\n\nDisplay multiple affiliations on the same line, separated by +.\n\n\n\n\n\nExercise: 02-filters/your-turn/3-modify-affiliations"
+    "text": "Your turn 3: Modify affiliations\n\n\n\nDisplay multiple affiliations on the same line, separated by +.\n\n\n\n\n\nExercise: 02-filters/your-turn/3-modify-affiliations\n\n\n  \n    −\n    +\n \n 03:00"
   },
   {
     "objectID": "slides/02-partials.html#your-turn-4-modify-author-url",
     "href": "slides/02-partials.html#your-turn-4-modify-author-url",
     "title": "Partials",
     "section": "Your turn 4: Modify author URL",
-    "text": "Your turn 4: Modify author URL\n\n\n\nDisplay author url on the title slide, next to a home icon, e.g., https://icon-sets.iconify.design/line-md/?icon-filter=home.\n\n\n\n\n\nExercise: 02-filters/your-turn/4-modify-author-url"
+    "text": "Your turn 4: Modify author URL\n\n\n\nDisplay author url on the title slide, next to a home icon, e.g., https://icon-sets.iconify.design/line-md/?icon-filter=home.\n\n\n\n\n\nExercise: 02-filters/your-turn/4-modify-author-url\n\n\n  \n    −\n    +\n \n 07:00"
   },
   {
     "objectID": "slides/02-partials.html#example-3-add-venue",
@@ -691,14 +691,14 @@
     "href": "slides/02-partials.html#your-turn-5-add-github-usernames",
     "title": "Partials",
     "section": "Your turn 5: Add GitHub usernames",
-    "text": "Your turn 5: Add GitHub usernames\n\n\n\n\nAdd GitHub usernames to the document YAML with a field called github under author.\nUpdate title-slide.html to place GitHub usernames along with the GitHub logo under affiliations.\n\n\n\n\n\n\nExercise: 02-filters/your-turn/5-add-github"
+    "text": "Your turn 5: Add GitHub usernames\n\n\n\n\nAdd GitHub usernames to the document YAML with a field called github under author.\nUpdate title-slide.html to place GitHub usernames along with the GitHub logo under affiliations.\n\n\n\n\n\n\nExercise: 02-filters/your-turn/5-add-github\n\n\n  \n    −\n    +\n \n 07:00"
   },
   {
     "objectID": "slides/02-partials.html#your-turn-6-style",
     "href": "slides/02-partials.html#your-turn-6-style",
     "title": "Partials",
     "section": "Your turn 6: Style",
-    "text": "Your turn 6: Style\n\n\n\nMake the title slide match the screenshot in below. Specifically:\n\nMake the title small caps.\nUse handwriting font for the subtitle.\nAdjust font sizes of various fields: date, affiliation, author URL, GitHub username, and email are smaller.\nAdjust font colors: subtitle and affiliations are gray.\n\n\n\n\n\n\nExercise: 02-filters/your-turn/6-style"
+    "text": "Your turn 6: Style\n\n\n\nMake the title slide match the screenshot in below. Specifically:\n\nMake the title small caps.\nUse handwriting font for the subtitle.\nAdjust font sizes of various fields: date, affiliation, author URL, GitHub username, and email are smaller.\nAdjust font colors: subtitle and affiliations are gray.\n\n\n\n\n\n\nExercise: 02-filters/your-turn/6-style\n\n\n  \n    −\n    +\n \n 07:00"
   },
   {
     "objectID": "slides/02-partials.html#example-4-move-footer-add-horiz.-line",
