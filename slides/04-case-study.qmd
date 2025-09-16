@@ -83,6 +83,12 @@ Take a look at the version of `participate.lua` on the next slide.
 With your neighbor, predict what the "Participate" slide will look like.
 :::
 
+::: exercise-folder
+
+[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `04-case-study/your-turns/2-predict-output`
+
+:::
+
 {{< countdown 5:00 >}}
 
 ## `participate.lua` {.scrollable}
@@ -115,6 +121,12 @@ With your neighbor, predict what the "Participate" slide will look like.
 Take what you developed so far in this module and add your `title-slide.html` partial and `slides.scss` theme from earlier.
 :::
 
+::: exercise-folder
+
+[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `04-case-study/your-turns/3-add-partial`
+
+:::
+
 # Wrap-up
 
 ## Bring it all together
@@ -125,6 +137,18 @@ Take what you developed so far in this module and add your `title-slide.html` pa
 
 :::
 
+<br>
+
+``` {.bash}
+example
+|- Discord-Logo-Black.png
+|- example.qmd
+|- participate.lua
+|- question.css
+|- slides.scss
+|- title-slide.html
+```
+
 ## Bring it all together... 
 
 as an extension!
@@ -134,6 +158,21 @@ as an extension!
 [Example](https://github.com/posit-conf-2025/quarto-extend-exercises): `04-case-study/coursenotes`
 
 :::
+
+<br>
+
+``` {.bash}
+coursenotes
+|- _extensions
+   |- coursenotes
+      |- _extension.yml
+      |- Discord-Logo-Black.png
+      |- participate.lua
+      |- question.css
+      |- slides.scss
+      |- title-slide.html
+|- template.qmd
+```
 
 ## Reusable components {.smaller}
 
