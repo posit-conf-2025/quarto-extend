@@ -295,7 +295,7 @@ format: revealjs
 
 ::: exercise-folder
 
-[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-partials/exercises/1-default-title-slide`
+[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-partials/your-turns/1-default-title-slide`
 
 :::
 
