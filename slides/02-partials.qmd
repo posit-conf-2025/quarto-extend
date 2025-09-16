@@ -92,7 +92,7 @@ When using a partial for modifying the title in LaTeX, Quarto will use the built
 
 **Partial:**
 
-``` {.latex filename="title.text"}
+``` {.latex filename="title.tex"}
 \title{$title$}
 \author{$for(author)$$author$$sep$ \and $endfor$}
 \date{$date$}
@@ -279,7 +279,7 @@ format: revealjs
 
 ::: example-folder
 
-[Example](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-filters/examples/1-start-here`
+[Example](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-partials/examples/1-start-here`
 
 :::
 
@@ -295,7 +295,7 @@ format: revealjs
 
 ::: exercise-folder
 
-[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-filters/exercises/1-default-title-slide`
+[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-partials/exercises/1-default-title-slide`
 
 :::
 
@@ -320,7 +320,7 @@ format: revealjs
 
 ::: example-folder
 
-[Example](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-filters/examples/2-modify-date-author-email`
+[Example](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-partials/examples/2-modify-date-author-email`
 
 :::
 
@@ -346,7 +346,7 @@ Modify how the ORCID logo shown to match the color scheme of the title slide; us
 
 ::: exercise-folder
 
-[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-filters/your-turn/2-modify-orcid`
+[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-partials/your-turn/2-modify-orcid`
 
 :::
 
@@ -374,7 +374,7 @@ Display multiple affiliations on the same line, separated by `+`.
 
 ::: exercise-folder
 
-[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-filters/your-turn/3-modify-affiliations`
+[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-partials/your-turn/3-modify-affiliations`
 
 :::
 
@@ -402,7 +402,7 @@ Display author `url` on the title slide, next to a home icon, e.g., <https://ico
 
 ::: exercise-folder
 
-[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-filters/your-turn/4-modify-author-url`
+[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-partials/your-turn/4-modify-author-url`
 
 :::
 
@@ -426,7 +426,7 @@ Add a new field, `venue`, to the YAML and place it under the date.
 
 ::: exercise-folder
 
-[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-filters/examples/3-add-venue`
+[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-partials/examples/3-add-venue`
 
 :::
 
@@ -454,7 +454,7 @@ Add a new field, `venue`, to the YAML and place it under the date.
 
 ::: exercise-folder
 
-[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-filters/your-turn/5-add-github`
+[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-partials/your-turn/5-add-github`
 
 :::
 
@@ -487,7 +487,7 @@ Make the title slide match the screenshot in below. Specifically:
 
 ::: exercise-folder
 
-[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-filters/your-turn/6-style`
+[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-partials/your-turn/6-style`
 
 :::
 
@@ -515,7 +515,7 @@ Make the title slide match the screenshot in below. Specifically:
 
 ::: exercise-folder
 
-[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-filters/examples/4-hr-footer`
+[Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-partials/examples/4-hr-footer`
 
 :::
 
