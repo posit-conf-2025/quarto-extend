@@ -172,7 +172,7 @@
     "href": "slides/03-filters.html#live-code-targeting-specific-content",
     "title": "Filters and Shortcodes",
     "section": "Live Code: Targeting specific content",
-    "text": "Live Code: Targeting specific content\n\n\ntarget-span.qmd\n\n---\ntitle: \"Filter Basics\"\nfilters:\n  - shout.lua\n---\n\nI **really** like bold and *really* like italics, and *really **really*** can't decide which to use.\n\n[And sometimes I **really** need to shout]{.shout}\n\n\n\nExample: 03-filters/examples/3-target-text"
+    "text": "Live Code: Targeting specific content\n\n\n\n\ntarget-span.qmd\n\n---\ntitle: \"Filter Basics\"\nfilters:\n  - shout.lua\n---\n\nI **really** like bold and *really* like italics, and *really **really*** can't decide which to use.\n\n[And sometimes I **really** need to shout]{.shout}\n\n\n\n\n\nExample: 03-filters/examples/3-target-text"
   },
   {
     "objectID": "slides/03-filters.html#live-code-smallcaps-all-spans-with-class-shout",
