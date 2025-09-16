@@ -1,6 +1,7 @@
 /*-- scss:defaults --*/
 
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker');
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
 
 $font-family-sans-serif: "Atkinson Hyperlegible", sans-serif;
 $presentation-title-slide-text-align: "left";
@@ -67,8 +68,16 @@ div.column > p:only-child:has(img),  div.column > p:only-child > img {
   transform: rotate(20deg);
 }
 
+.handwriting {
+  font-family: "Gochi Hand", cursive;
+}
+
 .small {
   font-size: 0.75em;
+}
+
+.large {
+  font-size: 1.5em;
 }
 
 .reveal .slide .your-turn {

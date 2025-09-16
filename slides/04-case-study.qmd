@@ -37,9 +37,9 @@ Filter
 :::
 ::: 
 
-# Exercise 1
+# Your turn 1
 
-## Your Turn: Add a filter {.smaller}
+## Your turn: Add a filter {.smaller}
 
 ::: your-turn
 
@@ -73,6 +73,8 @@ Hints:
 
 {{< countdown 8:00 >}}
 
+# Your turn 2
+
 ## Your turn: Predict the output {.smaller}
 
 ::: your-turn
@@ -105,49 +107,72 @@ With your neighbor, predict what the "Participate" slide will look like.
 * Link URL pulled from metadata
 * Creates a two column layout
 
-# Exercise 2
+# Your turn 3
 
 ## Your turn: Now add a partial!
 
 ::: your-turn
-Add a partial that updated your title slide.
-
-- This could be _the_ partial from Module 2
-
-- It could be a new partial you develop during the time allotted
+Take what you developed so far in this module and add your `title-slide.html` partial and `slides.scss` theme from earlier.
 :::
 
-# Wrap up
+# Wrap-up
 
-## Includes vs. partials {.smaller}
+## Bring it all together
+
+::: example-folder
+
+[Example](https://github.com/posit-conf-2025/quarto-extend-exercises): `04-case-study/example`
+
+:::
+
+## Bring it all together... 
+
+as an extension!
+
+::: example-folder
+
+[Example](https://github.com/posit-conf-2025/quarto-extend-exercises): `04-case-study/coursenotes`
+
+:::
+
+## Reusable components {.smaller}
+
+::: incremental
 
 - `{{{< include >}}}`s are a convenient way to reuse content across documents
   - The _same_ content
   - Basically copy-paste
 
-- `partial`s are a way to create reusable components
+- `template-partial`s are a way to create reusable components
   - The _same_ structure, but different content
   - Copy-paste with substitutions from meta-data fields
 
-- Shortcode is like copy-paste with substitutions in the body of your document
+- Shortcodes are like copy-paste with substitutions in the body of your document
 
 - `filter`s are a way to modify content
   - The _same_ structure, but different content
   - Operating on the document content
 
-- Any combinations of `partial`s and `filter`s, and possibly other things, that are designed for reusability
+- `_extensions` are combinations of `partial`s and `filter`s, and possibly other things, that are designed for portability and reusability
 
-## Filters vs. extensions
+:::
 
-- One off use
+## Workshop survey
 
-- Reusable, for multiple people or multiple projects
+Before we move on to Q&A, please take a note of the workshop survey:
 
-## 
+<br>
 
-[TO DO: Say anything about filters for changing document content?]
+::: large
 
-## Invitation for questions
+{{< iconify ri survey-line >}} [pos.it/conf-workshop-survey](http://pos.it/conf-workshop-survey)
 
-how do I solve X with?
+:::
 
+## Questions?
+
+Any questions, but especially of the kind:
+
+- How can I solve `_`[my problem]{.handwriting}`_` with a filter, partial, etc.?
+
+- Do I need a filter or partial or something else for solving `_`[my problem]{.handwriting}`_`?
