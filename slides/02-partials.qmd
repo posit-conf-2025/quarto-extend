@@ -222,6 +222,8 @@ format: revealjs
 
 :::
 
+{{< countdown minutes=3 >}}
+
 ## [Example 2: Modify date & author email]{.small}
 
 ::: {.columns}
@@ -271,6 +273,8 @@ Modify how the ORCID logo shown to match the color scheme of the title slide; us
 
 :::
 
+{{< countdown minutes=5 >}}
+
 ## Your turn 3: Modify affiliations
 
 ::: {.columns}
@@ -297,6 +301,8 @@ Display multiple affiliations on the same line, separated by `+`.
 
 :::
 
+{{< countdown minutes=3 >}}
+
 ## Your turn 4: Modify author URL
 
 ::: {.columns}
@@ -322,6 +328,8 @@ Display author `url` on the title slide, next to a home icon, e.g., <https://ico
 [Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-filters/your-turn/4-modify-author-url`
 
 :::
+
+{{< countdown minutes=7 >}}
 
 ## Example 3: Add venue
 
@@ -373,6 +381,8 @@ Add a new field, `venue`, to the YAML and place it under the date.
 
 :::
 
+{{< countdown minutes=7 >}}
+
 ## Your turn 6: Style
 
 ::: {.columns}
@@ -403,6 +413,8 @@ Make the title slide match the screenshot in below. Specifically:
 [Exercise](https://github.com/posit-conf-2025/quarto-extend-exercises): `02-filters/your-turn/6-style`
 
 :::
+
+{{< countdown minutes=7 >}}
 
 ## [Example 4: Move footer + add horiz. line]{.small}
 
