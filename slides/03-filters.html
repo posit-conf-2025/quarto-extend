@@ -453,7 +453,7 @@ Mine Çetinkaya-Rundel
 </ul></li>
 </ul>
 </div>
-<div id="timer_8fcb2a05fcbb2edb4492d7ff7f56892036e78d6d" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_dad188ea09a9da688e18cce2e70eee7d7640644d" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -469,7 +469,22 @@ Mine Çetinkaya-Rundel
 <p><a href="_ast-diagrams/your-turn-1-ast.html" target="_blank">View Full Screen</a></p>
 <iframe src="_ast-diagrams/your-turn-1-ast.html" class="ast-diagram"></iframe>
 </section>
-
+<section id="solution" class="slide level2">
+<h2>Solution</h2>
+<ul>
+<li><p>Other <code>Block</code> nodes: <code>Header</code>, <code>BulletList</code>, <code>CodeBlock</code>, <code>Meta</code> is special.</p></li>
+<li><p>Other <code>Inline</code> nodes: <code>Link</code>, <code>Image</code>, <code>Code</code></p></li>
+<li><p>A filter function for <code>Para</code> would be called four times.</p></li>
+<li><p>Affected by a <code>Str</code> filter function?</p>
+<ul>
+<li>The text <code>Filter</code> in the title <strong>Yes</strong></li>
+<li>The text <code>Introduction</code> in the heading. <strong>Yes</strong></li>
+<li>The text <code>Lua</code> in the link text. <strong>Yes</strong></li>
+<li>The test <code>lua-filters</code> in the link URL. <strong>No</strong></li>
+<li>The text <code>quarto</code> in the code block. <strong>No</strong></li>
+</ul></li>
+</ul>
+</section>
 <section id="problems-solved-with-filters" class="slide level2">
 <h2>Problems solved with filters</h2>
 <ul>
@@ -582,7 +597,7 @@ Mine Çetinkaya-Rundel
 <li><p>Write a filter that converts all double quotes to single quotes.</p></li>
 </ul>
 </div>
-<div id="timer_8fcb2a05fcbb2edb4492d7ff7f56892036e78d6d" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_dad188ea09a9da688e18cce2e70eee7d7640644d" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -593,9 +608,45 @@ Mine Çetinkaya-Rundel
 <p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Exercise</a>: <code>03-filters/your-turns/2-write-a-filter</code></p>
 </div>
 </section>
-
-
-
+<section id="solution-1" class="slide level2">
+<h2>Solution</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>replace-emph.lua</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-filename="replace-emph.lua"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">Emph</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="va">pandoc</span><span class="op">.</span>Underline<span class="op">(</span><span class="va">el</span><span class="op">.</span><span class="va">content</span><span class="op">)</span></span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="solution-2" class="slide level2">
+<h2>Solution</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>remove-all.lua</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10" data-filename="remove-all.lua"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">Emph</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
+<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="va">el</span><span class="op">.</span><span class="va">content</span></span>
+<span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb10-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">Strong</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
+<span id="cb10-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="va">el</span><span class="op">.</span><span class="va">content</span></span>
+<span id="cb10-7"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="solution-3" class="slide level2">
+<h2>Solution</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>replace-double-quotes.lua</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11" data-filename="replace-double-quotes.lua"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">Quoted</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="va">el</span><span class="op">.</span><span class="va">quotetype</span> <span class="op">==</span> <span class="st">"DoubleQuote"</span> <span class="cf">then</span></span>
+<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">pandoc</span><span class="op">.</span>Quoted<span class="op">(</span><span class="st">"SingleQuote"</span><span class="op">,</span> <span class="va">el</span><span class="op">.</span><span class="va">content</span><span class="op">)</span></span>
+<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
+<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
 <section id="valid-return-values" class="slide level2">
 <h2>Valid return values</h2>
 <p>A filter on an <code>Inline</code> must return either:</p>
@@ -647,7 +698,7 @@ Mine Çetinkaya-Rundel
 </div>
 </div><div class="column">
 <blockquote>
-<p>I <strong>really</strong> like bold and like italics, and can’t decide which to use.</p>
+<p>I like bold and <em>really</em> like italics, and <em>really</em> can’t decide which to use.</p>
 </blockquote>
 </div></div>
 <div class="example-folder">
@@ -774,7 +825,7 @@ Mine Çetinkaya-Rundel
 </div></div>
 <p><strong>Challenge:</strong> Instead of <code>Simon</code>, let the user specify the name as an attribute, e.g.&nbsp;<code>[Write a filter]{.says name="Charlotte"}</code></p>
 </div>
-<div id="timer_8fcb2a05fcbb2edb4492d7ff7f56892036e78d6d" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+<div id="timer_dad188ea09a9da688e18cce2e70eee7d7640644d" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>

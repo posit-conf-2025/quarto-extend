@@ -91,6 +91,13 @@
     "text": "AST\nView Full Screen"
   },
   {
+    "objectID": "slides/03-filters.html#solution",
+    "href": "slides/03-filters.html#solution",
+    "title": "Filters and Shortcodes",
+    "section": "Solution",
+    "text": "Solution\n\nOther Block nodes: Header, BulletList, CodeBlock, Meta is special.\nOther Inline nodes: Link, Image, Code\nA filter function for Para would be called four times.\nAffected by a Str filter function?\n\nThe text Filter in the title Yes\nThe text Introduction in the heading. Yes\nThe text Lua in the link text. Yes\nThe test lua-filters in the link URL. No\nThe text quarto in the code block. No"
+  },
+  {
     "objectID": "slides/03-filters.html#problems-solved-with-filters",
     "href": "slides/03-filters.html#problems-solved-with-filters",
     "title": "Filters and Shortcodes",
@@ -140,6 +147,27 @@
     "text": "Your turn: Write a filter\n\n\nWrite a filter, replace-emph.lua, that turns all italic text to underlined text.\nAdd the Strong filter function from replace-strong.lua to replace-emph.lua. What happens?\n\nOther challenges:\n\nWrite a filter that removes all bold and italic formatting, leaving just the text.\nWrite a filter that converts all double quotes to single quotes.\n\n\n\n  \n    −\n    +\n \n 10:00\n \n\nExercise: 03-filters/your-turns/2-write-a-filter"
   },
   {
+    "objectID": "slides/03-filters.html#solution-1",
+    "href": "slides/03-filters.html#solution-1",
+    "title": "Filters and Shortcodes",
+    "section": "Solution",
+    "text": "Solution\n\n\nreplace-emph.lua\n\nEmph = function(el)\n  return pandoc.Underline(el.content)\nend"
+  },
+  {
+    "objectID": "slides/03-filters.html#solution-2",
+    "href": "slides/03-filters.html#solution-2",
+    "title": "Filters and Shortcodes",
+    "section": "Solution",
+    "text": "Solution\n\n\nremove-all.lua\n\nEmph = function(el)\n  return el.content\nend\n\nStrong = function(el)\n  return el.content\nend"
+  },
+  {
+    "objectID": "slides/03-filters.html#solution-3",
+    "href": "slides/03-filters.html#solution-3",
+    "title": "Filters and Shortcodes",
+    "section": "Solution",
+    "text": "Solution\n\n\nreplace-double-quotes.lua\n\nQuoted = function(el)\n  if el.quotetype == \"DoubleQuote\" then\n    return pandoc.Quoted(\"SingleQuote\", el.content)\n  end\nend"
+  },
+  {
     "objectID": "slides/03-filters.html#valid-return-values",
     "href": "slides/03-filters.html#valid-return-values",
     "title": "Filters and Shortcodes",
@@ -158,7 +186,7 @@
     "href": "slides/03-filters.html#an-empty-list",
     "title": "Filters and Shortcodes",
     "section": "An empty list",
-    "text": "An empty list\n\n\n\n\nremove-strong.lua\n\nStrong = function(el)\n  return {}\nend\n\n\n\nI really like bold and like italics, and can’t decide which to use.\n\n\n\nExample: 03-filters/examples/2-return-types"
+    "text": "An empty list\n\n\n\n\nremove-strong.lua\n\nStrong = function(el)\n  return {}\nend\n\n\n\nI like bold and really like italics, and really can’t decide which to use.\n\n\n\nExample: 03-filters/examples/2-return-types"
   },
   {
     "objectID": "slides/03-filters.html#common-mistake-an-array-of-inlines",
