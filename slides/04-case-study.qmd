@@ -146,12 +146,12 @@ as an extension!
 - `template-partial`s are a way to create reusable components
   - The _same_ structure, but different content
   - Copy-paste with substitutions from meta-data fields
-
-- Shortcodes are like copy-paste with substitutions in the body of your document
+  - `format` specific
 
 - `filter`s are a way to modify content
   - The _same_ structure, but different content
-  - Operating on the document content
+  - Operate on the document content
+  - Not `format` specific, work with the document AST
 
 - `_extensions` are combinations of `partial`s and `filter`s, and possibly other things, that are designed for portability and reusability
 
