@@ -283,8 +283,8 @@
     "objectID": "slides/04-case-study.html#your-turn-add-a-filter",
     "href": "slides/04-case-study.html#your-turn-add-a-filter",
     "title": "Case study",
-    "section": "Your Turn: Add a filter",
-    "text": "Your Turn: Add a filter\n\n\n\nWrite the participate.lua filter to combine the content of the question in the div with class .participate with boilerplate text:\nAnswer in our Discord!\n\nYour slide should look like this:\n\n\nHints:\n\nRecall the useful pattern: create an empty pandoc.Blocks(), insert Blocks, extend with Blocks.\nYou can pass pandoc.Str() a string with spaces.\n\n\n\nExercise: 04-case-study/your-turns/1-add-filter\n\n\n  \n    −\n    +\n \n 08:00"
+    "section": "Your turn: Add a filter",
+    "text": "Your turn: Add a filter\n\n\n\nWrite the participate.lua filter to combine the content of the question in the div with class .participate with boilerplate text:\nAnswer in our Discord!\n\nYour slide should look like this:\n\n\nHints:\n\nRecall the useful pattern: create an empty pandoc.Blocks(), insert Blocks, extend with Blocks.\nYou can pass pandoc.Str() a string with spaces.\n\n\n\nExercise: 04-case-study/your-turns/1-add-filter\n\n\n  \n    −\n    +\n \n 08:00"
   },
   {
     "objectID": "slides/04-case-study.html#your-turn-predict-the-output",
@@ -305,35 +305,42 @@
     "href": "slides/04-case-study.html#your-turn-now-add-a-partial",
     "title": "Case study",
     "section": "Your turn: Now add a partial!",
-    "text": "Your turn: Now add a partial!\n\nAdd a partial that updated your title slide.\n\nThis could be the partial from Module 2\nIt could be a new partial you develop during the time allotted"
+    "text": "Your turn: Now add a partial!\n\nTake what you developed so far in this module and add your title-slide.html partial and slides.scss theme from earlier."
   },
   {
-    "objectID": "slides/04-case-study.html#includes-vs.-partials",
-    "href": "slides/04-case-study.html#includes-vs.-partials",
+    "objectID": "slides/04-case-study.html#bring-it-all-together",
+    "href": "slides/04-case-study.html#bring-it-all-together",
     "title": "Case study",
-    "section": "Includes vs. partials",
-    "text": "Includes vs. partials\n\n{{&lt; include &gt;}}s are a convenient way to reuse content across documents\n\nThe same content\nBasically copy-paste\n\npartials are a way to create reusable components\n\nThe same structure, but different content\nCopy-paste with substitutions from meta-data fields\n\nShortcode is like copy-paste with substitutions in the body of your document\nfilters are a way to modify content\n\nThe same structure, but different content\nOperating on the document content\n\nAny combinations of partials and filters, and possibly other things, that are designed for reusability"
+    "section": "Bring it all together",
+    "text": "Bring it all together\n\nExample: 04-case-study/example"
   },
   {
-    "objectID": "slides/04-case-study.html#filters-vs.-extensions",
-    "href": "slides/04-case-study.html#filters-vs.-extensions",
+    "objectID": "slides/04-case-study.html#bring-it-all-together-1",
+    "href": "slides/04-case-study.html#bring-it-all-together-1",
     "title": "Case study",
-    "section": "Filters vs. extensions",
-    "text": "Filters vs. extensions\n\nOne off use\nReusable, for multiple people or multiple projects"
+    "section": "Bring it all together…",
+    "text": "Bring it all together…\nas an extension!\n\nExample: 04-case-study/coursenotes"
   },
   {
-    "objectID": "slides/04-case-study.html#section",
-    "href": "slides/04-case-study.html#section",
+    "objectID": "slides/04-case-study.html#reusable-components",
+    "href": "slides/04-case-study.html#reusable-components",
     "title": "Case study",
-    "section": "",
-    "text": "[TO DO: Say anything about filters for changing document content?]"
+    "section": "Reusable components",
+    "text": "Reusable components\n\n{{&lt; include &gt;}}s are a convenient way to reuse content across documents\n\nThe same content\nBasically copy-paste\n\ntemplate-partials are a way to create reusable components\n\nThe same structure, but different content\nCopy-paste with substitutions from meta-data fields\n\nShortcodes are like copy-paste with substitutions in the body of your document\nfilters are a way to modify content\n\nThe same structure, but different content\nOperating on the document content\n\n_extensions are combinations of partials and filters, and possibly other things, that are designed for portability and reusability"
   },
   {
-    "objectID": "slides/04-case-study.html#invitation-for-questions",
-    "href": "slides/04-case-study.html#invitation-for-questions",
+    "objectID": "slides/04-case-study.html#workshop-survey",
+    "href": "slides/04-case-study.html#workshop-survey",
     "title": "Case study",
-    "section": "Invitation for questions",
-    "text": "Invitation for questions\nhow do I solve X with?"
+    "section": "Workshop survey",
+    "text": "Workshop survey\nBefore we move on to Q&A, please take a note of the workshop survey:\n\n\n pos.it/conf-workshop-survey"
+  },
+  {
+    "objectID": "slides/04-case-study.html#questions",
+    "href": "slides/04-case-study.html#questions",
+    "title": "Case study",
+    "section": "Questions?",
+    "text": "Questions?\nAny questions, but especially of the kind:\n\nHow can I solve _my problem_ with a filter, partial, etc.?\nDo I need a filter or partial or something else for solving _my problem_?"
   },
   {
     "objectID": "resources/participate.html",
