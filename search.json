@@ -586,14 +586,14 @@
     "href": "slides/02-partials.html#templates",
     "title": "Partials",
     "section": "Templates",
-    "text": "Templates\n\nQuarto uses Pandoc templates to generate the rendered output from a markdown file.\nA Pandoc template is a mix of format specific content and variables, and the variables are replaced with their values from a rendered document\nProvide your custom template for complete control of the final output:\n\nformat:\n  pdf:\n    template-partials:\n      - mytemplate.tex"
+    "text": "Templates\n\nQuarto uses Pandoc templates to generate the rendered output from a markdown file.\nA Pandoc template is a mix of format specific content and variables, where the variables are replaced with their values from a rendered document\nUsage: Provide your custom template for complete control of the final output:\n\nformat:\n  pdf:\n    template-partials:\n      - my-awesome-template.tex"
   },
   {
     "objectID": "slides/02-partials.html#example-basic-latex-template",
     "href": "slides/02-partials.html#example-basic-latex-template",
     "title": "Partials",
     "section": "Example: Basic LaTeX template",
-    "text": "Example: Basic LaTeX template\n\n\nInput:\n\n\narticle.qmd\n\nHello **world**!\n\n\nTemplate:\n\n\nmytemplate.tex\n\n\\documentclass{scrartcl}\n\\begin{document}\n$body$\n\\end{document}\n\n\nOutput:\n\n\narticle.tex\n\n\\documentclass{scrartcl}\n\\begin{document}\nHello \\textbf{world}!\n\\end{document}\n\n$body$ replaced with LaTeX generated from body of document"
+    "text": "Example: Basic LaTeX template\n\n\nInput:\n\n\narticle.qmd\n\nHello **world**!\n\n\nTemplate:\n\n\nmy-awesome-template.tex\n\n\\documentclass{scrartcl}\n\\begin{document}\n$body$\n\\end{document}\n\n\nOutput:\n\n\narticle.tex\n\n\\documentclass{scrartcl}\n\\begin{document}\nHello \\textbf{world}!\n\\end{document}\n\n$body$ replaced with LaTeX generated from body of document"
   },
   {
     "objectID": "slides/02-partials.html#full-or-partial",
@@ -607,21 +607,21 @@
     "href": "slides/02-partials.html#replacing-partials",
     "title": "Partials",
     "section": "Replacing partials",
-    "text": "Replacing partials\n\nQuarto provides built in templates that are composed of a set of partial template files for LaTeX / PDF and HTML output\nYou can replace portions of Quarto’s built in template which allows you to customize just a portion of the template without needing to replace it entirely\n\nA simple partial to provide custom handling of the document title in LaTeX looks like:"
+    "text": "Replacing partials\n\nQuarto provides built in templates that are composed of a set of partial template files for LaTeX / PDF and HTML output\nYou can replace portions of Quarto’s built in template which allows you to customize just a portion of the template without needing to replace it entirely"
   },
   {
     "objectID": "slides/02-partials.html#example-basic-latex-partial",
     "href": "slides/02-partials.html#example-basic-latex-partial",
     "title": "Partials",
     "section": "Example: Basic LaTeX partial",
-    "text": "Example: Basic LaTeX partial\nWhen using a partial for modifying the title in LaTeX, Quarto will use the built in template but replace the title portion of the template with the provided partial:\n\n\nPartial:\n\n\ntitle.text\n\n\\title{$title$}\n\\author{$for(author)$$author$$sep$ \\and $endfor$}\n\\date{$date$}\n\n\nUsage:\nformat:\n  pdf:\n    template-partials:\n      - title.tex\n$body$ replaced with LaTeX generated from body of document"
+    "text": "Example: Basic LaTeX partial\nWhen using a partial for modifying the title in LaTeX, Quarto will use the built in template but replace the title portion of the template with the provided partial:\n\n\nPartial:\n\n\ntitle.text\n\n\\title{$title$}\n\\author{$for(author)$$author$$sep$ \\and $endfor$}\n\\date{$date$}\n\n\nUsage:\n\n\nmy-document.qmd\n\nformat:\n  pdf:\n    template-partials:\n      - title.tex"
   },
   {
     "objectID": "slides/02-partials.html#whats-in-a-name",
     "href": "slides/02-partials.html#whats-in-a-name",
     "title": "Partials",
-    "section": "What’s in a name?",
-    "text": "What’s in a name?\n\nIn this case, everything!\nThe name of the partial file must match the name of the partial in the built in template that you want to replace.\nProviding an empty file as a partial is a way to opt out of some features without modifying the whole main template."
+    "section": "What’s in a name? 🌹",
+    "text": "What’s in a name? 🌹\nThe name of the partial file must match the name of the partial in the built in template that you want to replace.\n\n\n\n\nmy-document.qmd\n\nformat:\n  revealjs:\n    template-partials:\n      - better-title-slide.html\n\n\nERROR: The format 'revealjs' only supports \nthe following partials:\nmetadata.html\ntitle-block.html\ntoc.html\nstyles.html\ntoc-slide.html\ntitle-slide.html\n\nPlease provide one or more of these \npartials.\n\n\n\n\n\n\n\n\nTip\n\n\nProvide an empty file as a partial to opt out of some features without modifying the whole main template."
   },
   {
     "objectID": "slides/02-partials.html#including-partials",
@@ -635,7 +635,7 @@
     "href": "slides/02-partials.html#partials-for-various-formats",
     "title": "Partials",
     "section": "Partials for various formats",
-    "text": "Partials for various formats\nThey exist!\n\nLaTeX\nBeamer\nTypst\nHTML\nRevealjs\n\n\n\nhttps://quarto.org/docs/journals/templates.html"
+    "text": "Partials for various formats\nThey exist! https://quarto.org/docs/journals/templates.html\n\nLaTeXTypstHTMLRevealjs\n\n\nbabel-lang.tex\nbefore-bib.tex\nbiblio.tex\nbiblio-config.tex\ncitations.tex\ndoc-class.tex\ngraphics.tex\nafter-body.tex\nbefore-body.tex\npandoc.tex\ntables.tex\ntightlist.tex\nbefore-title.tex\ntitle.tex\ntoc.tex\nafter-header-includes.latex\ncommon.latex\nfont-settings.latex\nfonts.latex\nhypersetup.latex\npassoptions.latex\n\n\ndefinitions.typ\ntypst-template.typ\npage.typ\ntypst-show.typ\nnotes.typ\nbiblio.typ\n\n\nhtml.styles\nhtml.template\nmetadata.html\nstyles.html\ntemplate.html\ntitle-block.html\ntoc.html\n\n\nmetadata.html\ntitle-block.html\ntoc.html\nstyles.html\ntoc-slide.html\ntitle-slide.html"
   },
   {
     "objectID": "slides/02-partials.html#example-1-a-title-slide",
