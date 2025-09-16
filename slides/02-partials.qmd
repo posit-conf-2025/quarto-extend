@@ -9,15 +9,15 @@ format: revealjs
 
 - Quarto uses Pandoc templates to generate the rendered output from a markdown file. 
 
-- A Pandoc template is a mix of format specific content and variables, and the variables are replaced with their values from a rendered document
+- A **Pandoc template** is a mix of format specific content and variables, where the variables are replaced with their values from a rendered document
 
-- Provide your custom template for complete control of the final output:
+- **Usage:** Provide your custom template for complete control of the final output:
 
 ``` yaml
 format:
   pdf:
     template-partials:
-      - mytemplate.tex
+      - my-awesome-template.tex
 ```
 
 ## Example: Basic LaTeX template
@@ -38,7 +38,7 @@ Hello **world**!
 
 **Template:**
 
-``` {.latex filename="mytemplate.tex"}
+``` {.latex filename="my-awesome-template.tex"}
 \documentclass{scrartcl}
 \begin{document}
 $body$
@@ -58,20 +58,21 @@ Hello \textbf{world}!
 \end{document}
 ```
 
-[`$body$` replaced with LaTeX generated from body of document]{.small}
+`$body$` replaced with LaTeX generated from body of document
 
 :::
 :::
 
 ## Full or partial?
 
+
 - Replacing an entire template offers full control of output but comes with the risk of omitting required variables that can break Pandoc/Quarto features.
 
 - Safer approaches:
 
-  - Selectively *replace* partials that exist within the master LaTeX or HTML template
+  - Selectively **replace** partials that exist within the master LaTeX or HTML template
 
-  - Replace the entire LaTeX or HTML template, but then *include* partials provided with Quarto to ensure that your template takes advantage of all Pandoc and Quarto features
+  - Replace the entire LaTeX or HTML template, but then **include** partials provided with Quarto to ensure that your template takes advantage of all Pandoc and Quarto features
 
 # Working with partials
 
@@ -81,15 +82,13 @@ Hello \textbf{world}!
 
 - You can *replace* portions of Quarto’s built in template which allows you to customize just a portion of the template without needing to replace it entirely
 
-A simple partial to provide custom handling of the document title in LaTeX looks like:
-
 ## Example: Basic LaTeX partial
 
 When using a partial for modifying the title in LaTeX, Quarto will use the built in template but replace the title portion of the template with the provided partial:
 
 ::: {.columns}
 
-::: {.column .fragment width="50%"}
+::: {.column .fragment width="65%"}
 
 **Partial:**
 
@@ -101,29 +100,59 @@ When using a partial for modifying the title in LaTeX, Quarto will use the built
 
 :::
 
-::: {.column .fragment width="50%"}
+::: {.column .fragment width="35%"}
 
 **Usage:**
 
-``` {.yaml}
+``` {.yaml filename="my-document.qmd"}
 format:
   pdf:
     template-partials:
       - title.tex
 ```
 
-[`$body$` replaced with LaTeX generated from body of document]{.small}
-
 :::
 :::
 
-## What's in a name?
+## What's in a name? 🌹
 
-- In this case, everything!
+The name of the partial file must match the name of the partial in the built in template that you want to replace.
 
-- The name of the partial file must match the name of the partial in the built in template that you want to replace.
+::: {.columns}
 
-- Providing an empty file as a partial is a way to opt out of some features without modifying the whole main template.
+::: {.column .fragment width="43%"}
+
+```{ .yaml filename="my-document.qmd"}
+format:
+  revealjs:
+    template-partials:
+      - better-title-slide.html
+```
+
+:::
+::: {.column .fragment width="57%"}
+
+``` {.bash}
+ERROR: The format 'revealjs' only supports 
+the following partials:
+metadata.html
+title-block.html
+toc.html
+styles.html
+toc-slide.html
+title-slide.html
+
+Please provide one or more of these 
+partials.
+```
+
+:::
+
+:::
+
+::: {.callout-tip .fragment}
+Provide an empty file as a partial to opt out of some features without modifying the whole main template.
+:::
 
 ## Including partials {.smaller}
 
@@ -149,23 +178,71 @@ $body$
 :::
 ::: 
 
-## Partials for various formats
+## Partials for various formats {.smaller}
 
-They exist!
+They exist! <https://quarto.org/docs/journals/templates.html>
 
-- LaTeX
+::: {.panel-tabset}
 
-- Beamer
+### LaTeX
 
-- Typst
+```
+babel-lang.tex
+before-bib.tex
+biblio.tex
+biblio-config.tex
+citations.tex
+doc-class.tex
+graphics.tex
+after-body.tex
+before-body.tex
+pandoc.tex
+tables.tex
+tightlist.tex
+before-title.tex
+title.tex
+toc.tex
+after-header-includes.latex
+common.latex
+font-settings.latex
+fonts.latex
+hypersetup.latex
+passoptions.latex
+```
 
-- HTML
+### Typst
 
-- Revealjs
+```
+definitions.typ
+typst-template.typ
+page.typ
+typst-show.typ
+notes.typ
+biblio.typ
+```
 
-::: aside
+### HTML
 
-<https://quarto.org/docs/journals/templates.html>
+```
+html.styles
+html.template
+metadata.html
+styles.html
+template.html
+title-block.html
+toc.html
+```
+
+### Revealjs
+
+```
+metadata.html
+title-block.html
+toc.html
+styles.html
+toc-slide.html
+title-slide.html
+```
 
 :::
 
