@@ -3,7 +3,173 @@ title: Partials
 format: revealjs
 ---
 
-# Partials
+# Templates and template partials
+
+## Templates
+
+- Quarto uses Pandoc templates to generate the rendered output from a markdown file. 
+
+- A Pandoc template is a mix of format specific content and variables, and the variables are replaced with their values from a rendered document
+
+- Provide your custom template for complete control of the final output:
+
+``` yaml
+format:
+  pdf:
+    template-partials:
+      - mytemplate.tex
+```
+
+## Example: Basic LaTeX template
+
+::: {.columns}
+
+::: {.column .fragment width="25%"}
+
+**Input:**
+
+``` {.markdown filename="article.qmd"}
+Hello **world**!
+```
+
+:::
+
+::: {.column .fragment width="35%"}
+
+**Template:**
+
+``` {.latex filename="mytemplate.tex"}
+\documentclass{scrartcl}
+\begin{document}
+$body$
+\end{document}
+```
+
+:::
+
+::: {.column .fragment width="40%"}
+
+**Output:**
+
+``` {.latex filename="article.tex"}
+\documentclass{scrartcl}
+\begin{document}
+Hello \textbf{world}!
+\end{document}
+```
+
+[`$body$` replaced with LaTeX generated from body of document]{.small}
+
+:::
+:::
+
+## Full or partial?
+
+- Replacing an entire template offers full control of output but comes with the risk of omitting required variables that can break Pandoc/Quarto features.
+
+- Safer approaches:
+
+  - Selectively *replace* partials that exist within the master LaTeX or HTML template
+
+  - Replace the entire LaTeX or HTML template, but then *include* partials provided with Quarto to ensure that your template takes advantage of all Pandoc and Quarto features
+
+# Working with partials
+
+## Replacing partials
+
+- Quarto provides built in templates that are composed of a set of partial template files for LaTeX / PDF and HTML output
+
+- You can *replace* portions of Quarto’s built in template which allows you to customize just a portion of the template without needing to replace it entirely
+
+A simple partial to provide custom handling of the document title in LaTeX looks like:
+
+## Example: Basic LaTeX partial
+
+When using a partial for modifying the title in LaTeX, Quarto will use the built in template but replace the title portion of the template with the provided partial:
+
+::: {.columns}
+
+::: {.column .fragment width="50%"}
+
+**Partial:**
+
+``` {.latex filename="title.text"}
+\title{$title$}
+\author{$for(author)$$author$$sep$ \and $endfor$}
+\date{$date$}
+```
+
+:::
+
+::: {.column .fragment width="50%"}
+
+**Usage:**
+
+``` {.yaml}
+format:
+  pdf:
+    template-partials:
+      - title.tex
+```
+
+[`$body$` replaced with LaTeX generated from body of document]{.small}
+
+:::
+:::
+
+## What's in a name?
+
+- In this case, everything!
+
+- The name of the partial file must match the name of the partial in the built in template that you want to replace.
+
+- Providing an empty file as a partial is a way to opt out of some features without modifying the whole main template.
+
+## Including partials {.smaller}
+
+Use built in partials when composing your own template, which allows you to include specific features from Quarto and Pandoc without copying and maintaining the entire template code:
+
+::: {.columns}
+::: {.column width="35%"}
+
+```{.latex filename="my-template.tex" code-line-numbers="|2|3-5"}
+\documentclass{scrartcl}
+$pandoc.tex()$  
+\begin{document}
+$body$          
+\end{document}  
+```
+
+:::
+::: {.column width="65%"}
+
+- Use the `$pandoc.tex()$` partial to include pandoc configuration for text highlighting, tables, graphics, tight lists, citations, and header include.
+- Add your custom template for `$body$`.
+
+:::
+::: 
+
+## Partials for various formats
+
+They exist!
+
+- LaTeX
+
+- Beamer
+
+- Typst
+
+- HTML
+
+- Revealjs
+
+::: aside
+
+<https://quarto.org/docs/journals/templates.html>
+
+:::
+
+# Zhuzh up your `title-slide` 💅
 
 
 
