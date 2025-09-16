@@ -649,7 +649,7 @@
     "href": "slides/02-partials.html#your-turn-1-default-title-slide-partial",
     "title": "Partials",
     "section": "Your turn 1: Default title-slide partial",
-    "text": "Your turn 1: Default title-slide partial\n\n\nFind the default title-slide.html partial in the Quarto GitHub repo, copy it to your exercise folder, and include it as a template-partial in your YAML.\nRender your slides and observe the difference, or lack thereof!\n\n\n\nExercise: 02-partials/exercises/1-default-title-slide\n\n\n  \n    −\n    +\n \n 03:00"
+    "text": "Your turn 1: Default title-slide partial\n\n\nFind the default title-slide.html partial in the Quarto GitHub repo, copy it to your exercise folder, and include it as a template-partial in your YAML.\nRender your slides and observe the difference, or lack thereof!\n\n\n\nExercise: 02-partials/your-turns/1-default-title-slide\n\n\n  \n    −\n    +\n \n 03:00"
   },
   {
     "objectID": "slides/02-partials.html#example-2-modify-date-author-email",
