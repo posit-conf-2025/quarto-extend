@@ -638,6 +638,76 @@
     "text": "Partials for various formats\nThey exist!\n\nLaTeX\nBeamer\nTypst\nHTML\nRevealjs\n\n\n\nhttps://quarto.org/docs/journals/templates.html"
   },
   {
+    "objectID": "slides/02-partials.html#example-1-a-title-slide",
+    "href": "slides/02-partials.html#example-1-a-title-slide",
+    "title": "Partials",
+    "section": "Example 1: A title slide…",
+    "text": "Example 1: A title slide…\nwith plenty of meta data\n\ntitle: The Best Title Ever\nsubtitle: and a mediocre subtitle\nauthor:\n  - name: Mine Çetinkaya-Rundel\n    url: https://mine-cr.com\n    orcid: 0000-0001-6452-2420\n    email: mine@posit.co\n    affiliations:\n      - name: Duke University\n      - name: Posit, PBC\n  - name: Charlotte Wickham\n    url: https://cwick.co.nz\n    orcid: 0000-0002-6365-5499\n    email: charlotte@posit.co\n    affiliation:\n      - name: Posit, PBC\ndate: 2025-09-16\nfooter: \"[pos.it/quarto-extend-conf25](https://pos.it/quarto-extend-conf25)\"\nformat: revealjs\n\n\nExample: 02-filters/examples/1-start-here"
+  },
+  {
+    "objectID": "slides/02-partials.html#your-turn-1-default-title-slide-partial",
+    "href": "slides/02-partials.html#your-turn-1-default-title-slide-partial",
+    "title": "Partials",
+    "section": "Your turn 1: Default title-slide partial",
+    "text": "Your turn 1: Default title-slide partial\n\n\nFind the default title-slide.html partial in the Quarto GitHub repo, copy it to your exercise folder, and include it as a template-partial in your YAML.\nRender your slides and observe the difference, or lack thereof!\n\n\n\nExercise: 02-filters/exercises/1-default-title-slide"
+  },
+  {
+    "objectID": "slides/02-partials.html#example-2-modify-date-author-email",
+    "href": "slides/02-partials.html#example-2-modify-date-author-email",
+    "title": "Partials",
+    "section": "Example 2: Modify date & author email",
+    "text": "Example 2: Modify date & author email\n\n\n\nMove date to under the subtitle and format it as a 3rd level heading h3.\nAdd an envelope icon next to the email address; e.g., one from https://icon-sets.iconify.design/line-md/?icon-filter=email.\n\n\n\n\n\nExample: 02-filters/examples/2-modify-date-author-email"
+  },
+  {
+    "objectID": "slides/02-partials.html#your-turn-2-modify-orcid",
+    "href": "slides/02-partials.html#your-turn-2-modify-orcid",
+    "title": "Partials",
+    "section": "Your turn 2: Modify ORCID",
+    "text": "Your turn 2: Modify ORCID\n\n\n\nModify how the ORCID logo shown to match the color scheme of the title slide; use this one instead: https://icon-sets.iconify.design/simple-icons/?icon-filter=orcid.\n\n\n\n\n\nExercise: 02-filters/your-turn/2-modify-orcid"
+  },
+  {
+    "objectID": "slides/02-partials.html#your-turn-3-modify-affiliations",
+    "href": "slides/02-partials.html#your-turn-3-modify-affiliations",
+    "title": "Partials",
+    "section": "Your turn 3: Modify affiliations",
+    "text": "Your turn 3: Modify affiliations\n\n\n\nDisplay multiple affiliations on the same line, separated by +.\n\n\n\n\n\nExercise: 02-filters/your-turn/3-modify-affiliations"
+  },
+  {
+    "objectID": "slides/02-partials.html#your-turn-4-modify-author-url",
+    "href": "slides/02-partials.html#your-turn-4-modify-author-url",
+    "title": "Partials",
+    "section": "Your turn 4: Modify author URL",
+    "text": "Your turn 4: Modify author URL\n\n\n\nDisplay author url on the title slide, next to a home icon, e.g., https://icon-sets.iconify.design/line-md/?icon-filter=home.\n\n\n\n\n\nExercise: 02-filters/your-turn/4-modify-author-url"
+  },
+  {
+    "objectID": "slides/02-partials.html#example-3-add-venue",
+    "href": "slides/02-partials.html#example-3-add-venue",
+    "title": "Partials",
+    "section": "Example 3: Add venue",
+    "text": "Example 3: Add venue\n\n\nAdd a new field, venue, to the YAML and place it under the date.\n\n\n\n\nExercise: 02-filters/examples/3-add-venue"
+  },
+  {
+    "objectID": "slides/02-partials.html#your-turn-5-add-github-usernames",
+    "href": "slides/02-partials.html#your-turn-5-add-github-usernames",
+    "title": "Partials",
+    "section": "Your turn 5: Add GitHub usernames",
+    "text": "Your turn 5: Add GitHub usernames\n\n\n\n\nAdd GitHub usernames to the document YAML with a field called github under author.\nUpdate title-slide.html to place GitHub usernames along with the GitHub logo under affiliations.\n\n\n\n\n\n\nExercise: 02-filters/your-turn/5-add-github"
+  },
+  {
+    "objectID": "slides/02-partials.html#your-turn-6-style",
+    "href": "slides/02-partials.html#your-turn-6-style",
+    "title": "Partials",
+    "section": "Your turn 6: Style",
+    "text": "Your turn 6: Style\n\n\n\nMake the title slide match the screenshot in below. Specifically:\n\nMake the title small caps.\nUse handwriting font for the subtitle.\nAdjust font sizes of various fields: date, affiliation, author URL, GitHub username, and email are smaller.\nAdjust font colors: subtitle and affiliations are gray.\n\n\n\n\n\n\nExercise: 02-filters/your-turn/6-style"
+  },
+  {
+    "objectID": "slides/02-partials.html#example-4-move-footer-add-horiz.-line",
+    "href": "slides/02-partials.html#example-4-move-footer-add-horiz.-line",
+    "title": "Partials",
+    "section": "Example 4: Move footer + add horiz. line",
+    "text": "Example 4: Move footer + add horiz. line\n\n\n\nRemove the link to slides from footer (using include-after-body) and use that field in the partial to be displayed below the venue.\nDisplay content from footer under venue with a link icon, e.g., https://icon-sets.iconify.design/line-md/?icon-filter=link.\nAdd a horizontal line below the slide URL.\n\n\n\n\n\nExercise: 02-filters/examples/4-hr-footer"
+  },
+  {
     "objectID": "slides/01-basics.html#extending-quarto-welcome",
     "href": "slides/01-basics.html#extending-quarto-welcome",
     "title": "Extension Basics",

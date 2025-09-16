@@ -362,11 +362,173 @@ Mine Çetinkaya-Rundel
 <aside><div>
 <p><a href="https://quarto.org/docs/journals/templates.html" class="uri">https://quarto.org/docs/journals/templates.html</a></p>
 </div></aside></section></section>
+<section>
 <section id="zhuzh-up-your-title-slide" class="title-slide slide level1 center">
 <h1>Zhuzh up your <code>title-slide</code> 💅</h1>
 
 </section>
-
+<section id="example-1-a-title-slide" class="slide level2">
+<h2>Example 1: A title slide…</h2>
+<p>with plenty of meta data</p>
+<div class="small">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-code-line-numbers="|19|1-2|3-16|4-10|11-16|17|18"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a></a><span class="fu">title</span><span class="kw">:</span><span class="at"> The Best Title Ever</span></span>
+<span id="cb8-2"><a></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> and a mediocre subtitle</span></span>
+<span id="cb8-3"><a></a><span class="fu">author</span><span class="kw">:</span></span>
+<span id="cb8-4"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Mine Çetinkaya-Rundel</span></span>
+<span id="cb8-5"><a></a><span class="at">    </span><span class="fu">url</span><span class="kw">:</span><span class="at"> https://mine-cr.com</span></span>
+<span id="cb8-6"><a></a><span class="at">    </span><span class="fu">orcid</span><span class="kw">:</span><span class="at"> 0000-0001-6452-2420</span></span>
+<span id="cb8-7"><a></a><span class="at">    </span><span class="fu">email</span><span class="kw">:</span><span class="at"> mine@posit.co</span></span>
+<span id="cb8-8"><a></a><span class="at">    </span><span class="fu">affiliations</span><span class="kw">:</span></span>
+<span id="cb8-9"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Duke University</span></span>
+<span id="cb8-10"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Posit, PBC</span></span>
+<span id="cb8-11"><a></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Charlotte Wickham</span></span>
+<span id="cb8-12"><a></a><span class="at">    </span><span class="fu">url</span><span class="kw">:</span><span class="at"> https://cwick.co.nz</span></span>
+<span id="cb8-13"><a></a><span class="at">    </span><span class="fu">orcid</span><span class="kw">:</span><span class="at"> 0000-0002-6365-5499</span></span>
+<span id="cb8-14"><a></a><span class="at">    </span><span class="fu">email</span><span class="kw">:</span><span class="at"> charlotte@posit.co</span></span>
+<span id="cb8-15"><a></a><span class="at">    </span><span class="fu">affiliation</span><span class="kw">:</span></span>
+<span id="cb8-16"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Posit, PBC</span></span>
+<span id="cb8-17"><a></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 2025-09-16</span></span>
+<span id="cb8-18"><a></a><span class="fu">footer</span><span class="kw">:</span><span class="at"> </span><span class="st">"[pos.it/quarto-extend-conf25](https://pos.it/quarto-extend-conf25)"</span></span>
+<span id="cb8-19"><a></a><span class="fu">format</span><span class="kw">:</span><span class="at"> revealjs</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="example-folder">
+<p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Example</a>: <code>02-filters/examples/1-start-here</code></p>
+</div>
+</section>
+<section id="your-turn-1-default-title-slide-partial" class="slide level2">
+<h2><span class="small">Your turn 1: Default <code>title-slide</code> partial</span></h2>
+<div class="your-turn">
+<ul>
+<li><p>Find the default <code>title-slide.html</code> partial in the Quarto GitHub repo, copy it to your exercise folder, and include it as a <code>template-partial</code> in your YAML.</p></li>
+<li><p>Render your slides and observe the difference, or lack thereof!</p></li>
+</ul>
+</div>
+<div class="exercise-folder">
+<p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Exercise</a>: <code>02-filters/exercises/1-default-title-slide</code></p>
+</div>
+</section>
+<section id="example-2-modify-date-author-email" class="slide level2">
+<h2><span class="small">Example 2: Modify date &amp; author email</span></h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>Move date to under the subtitle and format it as a 3rd level heading <code>h3</code>.</p></li>
+<li><p>Add an envelope icon next to the email address; e.g., one from <a href="https://icon-sets.iconify.design/line-md/?icon-filter=email" class="uri">https://icon-sets.iconify.design/line-md/?icon-filter=email</a>.</p></li>
+</ul>
+</div><div class="column">
+<p><img data-src="images/partials/examples/2-modify-date-author-email.png"></p>
+</div></div>
+<div class="example-folder">
+<p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Example</a>: <code>02-filters/examples/2-modify-date-author-email</code></p>
+</div>
+</section>
+<section id="your-turn-2-modify-orcid" class="slide level2">
+<h2>Your turn 2: Modify ORCID</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="your-turn">
+<p>Modify how the ORCID logo shown to match the color scheme of the title slide; use this one instead: <a href="https://icon-sets.iconify.design/simple-icons/?icon-filter=orcid" class="uri">https://icon-sets.iconify.design/simple-icons/?icon-filter=orcid</a>.</p>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/partials/your-turn/2-modify-orcid.png"></p>
+</div></div>
+<div class="exercise-folder">
+<p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Exercise</a>: <code>02-filters/your-turn/2-modify-orcid</code></p>
+</div>
+</section>
+<section id="your-turn-3-modify-affiliations" class="slide level2">
+<h2>Your turn 3: Modify affiliations</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="your-turn">
+<p>Display multiple affiliations on the same line, separated by <code>+</code>.</p>
+</div>
+</div><div class="column" style="width:60%;">
+<p><img data-src="images/partials/your-turn/3-modify-affiliations.png"></p>
+</div></div>
+<div class="exercise-folder">
+<p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Exercise</a>: <code>02-filters/your-turn/3-modify-affiliations</code></p>
+</div>
+</section>
+<section id="your-turn-4-modify-author-url" class="slide level2">
+<h2>Your turn 4: Modify author URL</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="your-turn">
+<p>Display author <code>url</code> on the title slide, next to a home icon, e.g., <a href="https://icon-sets.iconify.design/line-md/?icon-filter=home" class="uri">https://icon-sets.iconify.design/line-md/?icon-filter=home</a>.</p>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/partials/your-turn/4-modify-author-url.png"></p>
+</div></div>
+<div class="exercise-folder">
+<p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Exercise</a>: <code>02-filters/your-turn/4-modify-author-url</code></p>
+</div>
+</section>
+<section id="example-3-add-venue" class="slide level2">
+<h2>Example 3: Add venue</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>Add a new field, <code>venue</code>, to the YAML and place it under the date.</p>
+</div><div class="column" style="width:60%;">
+<p><img data-src="images/partials/examples/3-add-venue.png"></p>
+</div></div>
+<div class="exercise-folder">
+<p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Exercise</a>: <code>02-filters/examples/3-add-venue</code></p>
+</div>
+</section>
+<section id="your-turn-5-add-github-usernames" class="slide level2">
+<h2>Your turn 5: Add GitHub usernames</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="your-turn">
+<ul>
+<li><p>Add GitHub usernames to the document YAML with a field called <code>github</code> under <code>author</code>.</p></li>
+<li><p>Update <code>title-slide.html</code> to place GitHub usernames along with the GitHub logo under affiliations.</p></li>
+</ul>
+</div>
+</div><div class="column" style="width:40%;">
+<p><img data-src="images/partials/your-turn/5-add-github.png"></p>
+</div></div>
+<div class="exercise-folder">
+<p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Exercise</a>: <code>02-filters/your-turn/5-add-github</code></p>
+</div>
+</section>
+<section id="your-turn-6-style" class="slide level2">
+<h2>Your turn 6: Style</h2>
+<div class="columns">
+<div class="column small" style="width:60%;">
+<div class="your-turn">
+<p>Make the title slide match the screenshot in below. Specifically:</p>
+<ul>
+<li>Make the title small caps.</li>
+<li>Use handwriting font for the subtitle.</li>
+<li>Adjust font sizes of various fields: date, affiliation, author URL, GitHub username, and email are smaller.</li>
+<li>Adjust font colors: subtitle and affiliations are gray.</li>
+</ul>
+</div>
+</div><div class="column" style="width:40%;">
+<p><img data-src="images/partials/your-turn/6-style.png"></p>
+</div></div>
+<div class="exercise-folder">
+<p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Exercise</a>: <code>02-filters/your-turn/6-style</code></p>
+</div>
+</section>
+<section id="example-4-move-footer-add-horiz.-line" class="slide level2">
+<h2><span class="small">Example 4: Move footer + add horiz. line</span></h2>
+<div class="columns">
+<div class="column small" style="width:60%;">
+<ul>
+<li><p>Remove the link to slides from footer (using <code>include-after-body</code>) and use that field in the partial to be displayed below the venue.</p></li>
+<li><p>Display content from <code>footer</code> under venue with a link icon, e.g., <a href="https://icon-sets.iconify.design/line-md/?icon-filter=link" class="uri">https://icon-sets.iconify.design/line-md/?icon-filter=link</a>.</p></li>
+<li><p>Add a horizontal line below the slide URL.</p></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="images/partials/examples/4-hr-footer.png"></p>
+</div></div>
+<div class="exercise-folder">
+<p><a href="https://github.com/posit-conf-2025/quarto-extend-exercises">Exercise</a>: <code>02-filters/examples/4-hr-footer</code></p>
+</div>
+</section></section>
 <section id="questions" class="title-slide slide level1 center">
 <h1>Questions?</h1>
 
