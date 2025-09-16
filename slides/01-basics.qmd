@@ -315,7 +315,33 @@ Computation step: not this workshop
 
 ## Inside the Pandoc step
 
-![](images/pandoc-step.jpg)
+::: {.r-stack}
+:::{}
+![](images/pandoc-steps/pandoc-step-0.jpg)
+:::
+:::{}
+![](images/pandoc-steps/pandoc-step-1.jpg){.fragment}
+:::
+:::{}
+![](images/pandoc-steps/pandoc-step-2.jpg){.fragment}
+:::
+:::{}
+![](images/pandoc-steps/pandoc-step-3.jpg){.fragment}
+:::
+:::{}
+![](images/pandoc-steps/pandoc-step-4.jpg){.fragment}
+:::
+:::{}
+![](images/pandoc-steps/pandoc-step-5.jpg){.fragment}
+:::
+:::{}
+![](images/pandoc-steps/pandoc-step-6.jpg){.fragment}
+:::
+:::{}
+![](images/pandoc-steps/pandoc-step-7.jpg){.fragment}
+:::
+
+:::
 
 ## `.md` → Reader → AST
 
