@@ -143,15 +143,13 @@ as an extension!
   - The _same_ content
   - Basically copy-paste
 
-- `template-partial`s are a way to create reusable components
+- `template-partial`s are a way to create reusable components with meta-data
   - The _same_ structure, but different content
-  - Copy-paste with substitutions from meta-data fields
   - `format` specific
 
-- `filter`s are a way to modify content
+- `filter`s are a way to modify document content
   - The _same_ structure, but different content
-  - Operate on the document content
-  - Not `format` specific, work with the document AST
+  - Not `format` specific (they operate on the document AST), but can function differently for different formats
 
 - `_extensions` are combinations of `partial`s and `filter`s, and possibly other things, that are designed for portability and reusability
 
