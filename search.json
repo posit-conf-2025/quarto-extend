@@ -778,6 +778,13 @@
     "text": "Your turn: Install and explore an extension\n\n\nAdd the quarto-revealjs-clean extension to the project in 01-basics/ by running:\n\n\nTerminal\n\ncd 01-basics\nquarto add grantmcdermott/quarto-revealjs-clean@v1.3\n\nWhere did the file _extension.yml get installed?\nCompare _extension.yml and the files alongside it to those in the source on GitHub. What’s the same? What’s different?\nPreview slides.qmd. Then, edit to use the clean-revealjs format, and preview.\n\nDone? Browse https://m.canouil.dev/quarto-extensions for other extensions and explore their source.\n\n\nExercise: 01-basics/\n\n\n  \n    −\n    +\n \n 10:00"
   },
   {
+    "objectID": "slides/01-basics.html#your-turn-solutions",
+    "href": "slides/01-basics.html#your-turn-solutions",
+    "title": "Extension Basics",
+    "section": "Your turn: Solutions",
+    "text": "Your turn: Solutions\nInstalled: _extensions/grantmcdermott/clean/_extension.yml\nSource: https://github.com/grantmcdermott/quarto-revealjs-clean/_extensions/clean/_extension.yml\nInstalling copies the contents of the _extensions/clean to our project.\nOther files alongside _extensions/ are not copied with quarto add, but would be had we done quarto use template:\n\n\nTerminal\n\nquarto use template grantmcdermott/quarto-revealjs-clean@v1.3"
+  },
+  {
     "objectID": "slides/01-basics.html#what-is-a-quarto-extension",
     "href": "slides/01-basics.html#what-is-a-quarto-extension",
     "title": "Extension Basics",
