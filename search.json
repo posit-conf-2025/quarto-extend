@@ -224,6 +224,20 @@
     "text": "Your turn: Simon says\n\nComplete says.lua, a filter that:\n\ntargets Span elements with class says, and\nturns them into “Simon says” instructions.\n\n\n\nE.g. source:\n\n\nBefore\n\n[Write a filter]{.says}\n\n\nBecomes equivalent to:\n\n\nAfter\n\nSimon says \"Write a filter\"\n\n\nChallenge: Instead of Simon, let the user specify the name as an attribute, e.g. [Write a filter]{.says name=\"Charlotte\"}\n\n\n  \n    −\n    +\n \n 10:00\n \n\nExercise: 03-filters/your-turns/3-simon-says"
   },
   {
+    "objectID": "slides/03-filters.html#solution-4",
+    "href": "slides/03-filters.html#solution-4",
+    "title": "Filters and Shortcodes",
+    "section": "Solution",
+    "text": "Solution\n\n\nsays.lua\n\nSpan = function(el)\n  if el.classes:includes(\"says\") then\n    result = pandoc.Inlines({})\n    result:insert(pandoc.Str(\"Simon says \"))\n    result:insert(pandoc.Quoted('DoubleQuote', el.content))\n    return result\n  end\nend"
+  },
+  {
+    "objectID": "slides/03-filters.html#solution-5",
+    "href": "slides/03-filters.html#solution-5",
+    "title": "Filters and Shortcodes",
+    "section": "Solution",
+    "text": "Solution\n\n\nsays.lua\n\nSpan = function(el)\n  if not el.classes:includes(\"says\") then    \n    return nil\n  end\n  local name = el.attributes.name or \"Simon\"\n  local results = pandoc.Inlines({})\n  results:insert(pandoc.Str(name))\n  results:insert(pandoc.Str(\" says \"))\n  results:insert(pandoc.Quoted('DoubleQuote', el.content))\n  return results\nend"
+  },
+  {
     "objectID": "slides/03-filters.html#target-content-in-a-div",
     "href": "slides/03-filters.html#target-content-in-a-div",
     "title": "Filters and Shortcodes",
